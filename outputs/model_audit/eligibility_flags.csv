@@ -1,0 +1,21 @@
+role,current_rank,player_id,player_name,last_match_date,in_ipl_2025_2026,hp_balls_ipl,hp_balls_t20i_full,hp_balls_t20i_assoc,hp_qual_matches,flags
+Batter,1,768,Reeza Hendricks,2025-12-19,False,0,223,0,7,Zero IPL high-pressure balls; No IPL 2025-2026 batting record in dataset; Last dataset match 2025-12-19 (check retirement/active status); Only 7 qualifying matches (>=6 HP balls) for consistency
+Batter,2,796,Matthew Wade,2024-04-10,False,3,155,0,10,Low IPL HP exposure (3 balls); No IPL 2025-2026 batting record in dataset; Last dataset match 2024-04-10 (check retirement/active status)
+Batter,3,37052,Naman Dhir,2026-11-01,True,142,44,0,15,Clear in dataset (verify IPL 2027 auction status externally)
+Batter,4,6396,Tim David,2026-06-21,True,362,208,0,31,Clear in dataset (verify IPL 2027 auction status externally)
+Batter,5,2258,Sanju Samson,2026-11-01,True,150,28,0,10,Clear in dataset (verify IPL 2027 auction status externally)
+Batter,6,6288,Shubman Gill,2026-05-31,True,105,28,0,8,Only 8 qualifying matches (>=6 HP balls) for consistency
+Batter,7,3374,Mark Chapman,2026-01-28,False,0,297,37,16,Zero IPL high-pressure balls; No IPL 2025-2026 batting record in dataset
+Batter,8,838,Glenn Maxwell,2025-11-06,True,116,144,0,14,Last dataset match 2025-11-06 (check retirement/active status)
+Batter,9,4369,Shai Hope,2026-10-14,False,0,128,0,6,Zero IPL high-pressure balls; No IPL 2025-2026 batting record in dataset; Only 6 qualifying matches (>=6 HP balls) for consistency
+Batter,10,3024,Mohammad Rizwan,2024-12-13,False,0,147,0,7,Zero IPL high-pressure balls; No IPL 2025-2026 batting record in dataset; Last dataset match 2024-12-13 (check retirement/active status); Only 7 qualifying matches (>=6 HP balls) for consistency; Pakistan national (practical IPL auction restriction; verify separately)
+Bowler,1,34485,Sufiyan Muqeem,2026-10-13,False,0,120,28,11,Zero IPL high-pressure balls; No IPL 2025-2026 bowling record in dataset; Pakistan national (practical IPL auction restriction; verify separately)
+Bowler,2,5577,Sai Kishore,2026-05-16,True,123,0,0,7,Only 7 qualifying matches (>=6 HP balls) for consistency
+Bowler,3,781,Sunil Narine,2026-05-24,True,454,0,0,29,Clear in dataset (verify IPL 2027 auction status externally)
+Bowler,4,2490,Mohammad Nawaz,2026-02-01,False,0,248,34,22,Zero IPL high-pressure balls; No IPL 2025-2026 bowling record in dataset; Pakistan national (practical IPL auction restriction; verify separately)
+Bowler,5,2878,Mohit Sharma,2025-05-24,True,277,0,0,18,Last dataset match 2025-05-24 (check active status)
+Bowler,6,4373,Mustafizur Rahman,2026-06-19,True,149,305,46,36,Clear in dataset (verify IPL 2027 auction status externally)
+Bowler,7,3644,Kuldeep Yadav,2026-10-09,True,455,172,15,42,Clear in dataset (verify IPL 2027 auction status externally)
+Bowler,8,2933,Jasprit Bumrah,2026-09-17,True,303,193,0,39,Clear in dataset (verify IPL 2027 auction status externally)
+Bowler,9,4101,Mitchell Santner,2026-11-01,True,148,340,27,33,Clear in dataset (verify IPL 2027 auction status externally)
+Bowler,10,5979,Abrar Ahmed,2026-10-11,False,0,277,32,21,Zero IPL high-pressure balls; No IPL 2025-2026 bowling record in dataset; Pakistan national (practical IPL auction restriction; verify separately)

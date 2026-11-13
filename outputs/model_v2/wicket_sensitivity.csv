@@ -1,0 +1,9 @@
+role,wicket_mode,mean_wicket_value,n_eligible,n_common_with_ref,top10_overlap,spearman_rho,top10_players
+batter,fixed_4.0,4.0,99,99,9,0.9829189857761286,Tim David | Naman Dhir | Matthew Wade | Reeza Hendricks | Dinesh Karthik | Shashank Singh | Andre Russell | Heinrich Klaasen | Glenn Maxwell | Ashutosh Sharma
+bowler,fixed_4.0,4.0,128,128,9,0.9873363394982603,Sunil Narine | Jasprit Bumrah | Mustafizur Rahman | Jamie Overton | Mohit Sharma | Sufiyan Muqeem | Sai Kishore | Abrar Ahmed | Mohsin Khan | Mohammad Nawaz
+batter,fixed_6.0,6.0,99,99,10,0.9999999999999999,Tim David | Matthew Wade | Naman Dhir | Dinesh Karthik | Reeza Hendricks | Shashank Singh | Heinrich Klaasen | Rinku Singh | Andre Russell | Ashutosh Sharma
+bowler,fixed_6.0,6.0,128,128,10,1.0,Sunil Narine | Jasprit Bumrah | Mustafizur Rahman | Jamie Overton | Mohit Sharma | Sai Kishore | Sufiyan Muqeem | Mohsin Khan | Mohammad Nawaz | Josh Hazlewood
+batter,fixed_8.0,8.0,99,99,9,0.9820284477427333,Tim David | Matthew Wade | Naman Dhir | Dinesh Karthik | Shashank Singh | Reeza Hendricks | Rinku Singh | Heinrich Klaasen | Romario Shepherd | Ashutosh Sharma
+bowler,fixed_8.0,8.0,128,128,10,0.9878112982970152,Sunil Narine | Jasprit Bumrah | Sai Kishore | Jamie Overton | Sufiyan Muqeem | Mohsin Khan | Mohit Sharma | Mohammad Nawaz | Mustafizur Rahman | Josh Hazlewood
+batter,context_marginal,7.822871672555152,99,99,9,0.9539270253555967,Tim David | Naman Dhir | Heinrich Klaasen | Reeza Hendricks | Andre Russell | Matthew Wade | Shashank Singh | Dinesh Karthik | Romario Shepherd | Rinku Singh
+bowler,context_marginal,7.822871672555152,128,128,7,0.9656084050540195,Sufiyan Muqeem | Sunil Narine | Jasprit Bumrah | Mohit Sharma | Mustafizur Rahman | Mohammad Nawaz | Kuldeep Yadav | Sai Kishore | Abrar Ahmed | Varun Chakravarthy

@@ -1,0 +1,9 @@
+role,wicket_mode,mean_wicket_value,n_eligible,n_common_with_ref,top10_overlap,spearman_rho,top10_players
+batter,fixed_4.0,4.0,99,99,9,0.9829189857761286,Tim David | Naman Dhir | Matthew Wade | Reeza Hendricks | Dinesh Karthik | Shashank Singh | Andre Russell | Heinrich Klaasen | Glenn Maxwell | Ashutosh Sharma
+bowler,fixed_4.0,4.0,99,99,9,0.9859121830550401,Jasprit Bumrah | Sunil Narine | Rashid Khan | Nathan Ellis | Abbas Afridi | Matheesha Pathirana | Eshan Malinga | Mujeeb Ur Rahman | Mohammad Nawaz | Lungi Ngidi
+batter,fixed_6.0,6.0,99,99,10,0.9999999999999999,Tim David | Matthew Wade | Naman Dhir | Dinesh Karthik | Reeza Hendricks | Shashank Singh | Heinrich Klaasen | Rinku Singh | Andre Russell | Ashutosh Sharma
+bowler,fixed_6.0,6.0,99,99,10,0.9999999999999999,Sunil Narine | Jasprit Bumrah | Rashid Khan | Nathan Ellis | Abbas Afridi | Eshan Malinga | Mujeeb Ur Rahman | Matheesha Pathirana | Mohammad Nawaz | Naveen ul Haq
+batter,fixed_8.0,8.0,99,99,9,0.9820284477427333,Tim David | Matthew Wade | Naman Dhir | Dinesh Karthik | Shashank Singh | Reeza Hendricks | Rinku Singh | Heinrich Klaasen | Romario Shepherd | Ashutosh Sharma
+bowler,fixed_8.0,8.0,99,99,10,0.9875200989486703,Sunil Narine | Rashid Khan | Abbas Afridi | Jasprit Bumrah | Mujeeb Ur Rahman | Eshan Malinga | Matheesha Pathirana | Nathan Ellis | Mohammad Nawaz | Naveen ul Haq
+batter,context_marginal,7.822871672555152,99,99,9,0.9539270253555967,Tim David | Naman Dhir | Heinrich Klaasen | Reeza Hendricks | Andre Russell | Matthew Wade | Shashank Singh | Dinesh Karthik | Romario Shepherd | Rinku Singh
+bowler,context_marginal,7.822871672555152,99,99,9,0.952442795299938,Jasprit Bumrah | Sunil Narine | Rashid Khan | Nathan Ellis | Bhuvneshwar Kumar | Mohammad Nawaz | Matheesha Pathirana | Eshan Malinga | Abbas Afridi | Mujeeb Ur Rahman

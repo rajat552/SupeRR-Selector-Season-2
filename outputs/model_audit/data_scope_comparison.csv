@@ -1,0 +1,7 @@
+scope,deliveries,legal_balls,matches,high_pressure_deliveries,low_pressure_deliveries,intermediate_excluded_deliveries,pct_high_pressure,pct_low_pressure,pct_intermediate
+Raw All (incl Other_T20 + SuperOvers),200999,192445,867,53766,119449,27784,26.75,59.43,13.82
+No SuperOvers (incl Other_T20),200961,192412,867,53762,119407,27792,26.75,59.42,13.83
+"Primary Scope (IPL + All T20I, Inn 1-2)",193988,185692,837,52002,115116,26870,26.81,59.34,13.85
+IPL + Full-Member T20I only,182038,174201,784,48853,107971,25214,26.84,59.31,13.85
+IPL only,87673,83742,367,23153,52292,12228,26.41,59.64,13.95
+T20I only (All),106315,101950,470,28849,62824,14642,27.14,59.09,13.77

@@ -1,0 +1,34 @@
+{
+  "threshold_sensitivity": [
+    {
+      "high_thresh": 0.45,
+      "bat_top10_overlap": 6,
+      "bat_spearman": 0.8777430972388955,
+      "bowl_top10_overlap": 9,
+      "bowl_spearman": 0.9157814096016343
+    },
+    {
+      "high_thresh": 0.5,
+      "bat_top10_overlap": 10,
+      "bat_spearman": 0.9999999999999999,
+      "bowl_top10_overlap": 10,
+      "bowl_spearman": 0.9999999999999999
+    },
+    {
+      "high_thresh": 0.55,
+      "bat_top10_overlap": 5,
+      "bat_spearman": 0.8510655538449073,
+      "bowl_top10_overlap": 7,
+      "bowl_spearman": 0.9187529301453353
+    }
+  ],
+  "scope_sensitivity": [
+    {
+      "scope": "IPL + Full-Member T20I only",
+      "bat_top10_overlap": 10,
+      "bat_spearman": 0.9925012094823416,
+      "bowl_top10_overlap": 9,
+      "bowl_spearman": 0.984065372829418
+    }
+  ]
+}

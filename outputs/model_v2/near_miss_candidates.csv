@@ -1,0 +1,93 @@
+striker_id,player_name,status,tot_balls,hp_balls,lp_balls,hp_matches,pressure_neff,metric_value,reason,role,bowler_id
+47.0,Virat Kohli,near_miss,2456,114,2109,15,621.74,5.137792725846692,hp_balls=114<120,batter,
+220.0,David Warner,near_miss,1117,164,739,9,426.33,4.21985406105139,hp_matches=9<10,batter,
+3672.0,Kusal Mendis,near_miss,1326,99,1080,12,393.79,-1.9072437093866856,hp_balls=99<120,batter,
+7216.0,Prabhsimran Singh,near_miss,1134,44,932,7,378.6,2.8426930613578594,hp_balls=44<120; hp_matches=7<10,batter,
+88.0,Faf du Plessis,near_miss,1276,84,1068,9,364.22,14.25926377427724,hp_balls=84<120; hp_matches=9<10,batter,
+5553.0,Phil Salt,near_miss,1643,112,1415,9,354.76,32.89201410633213,hp_balls=112<120; hp_matches=9<10,batter,
+2485.0,Babar Azam,near_miss,1181,115,932,7,343.18,19.590027969040662,hp_balls=115<120; hp_matches=7<10,batter,
+6059.0,Ruturaj Gaikwad,near_miss,1822,100,1650,8,319.71,-9.70570970192523,hp_balls=100<120; hp_matches=8<10,batter,
+167.0,Ajinkya Rahane,near_miss,1025,88,816,13,302.74,-2.758047484059123,hp_balls=88<120,batter,
+2671.0,Liton Das,near_miss,1139,95,927,8,290.88,9.436016166731788,hp_balls=95<120; hp_matches=8<10,batter,
+6314.0,Devdutt Padikkal,near_miss,998,102,790,9,283.04,-22.48964628158625,hp_balls=102<120; hp_matches=9<10,batter,
+6674.0,Rahmanullah Gurbaz,near_miss,1123,58,931,7,276.5,-8.407906472269103,hp_balls=58<120; hp_matches=7<10,batter,
+4736.0,Josh Inglis,near_miss,904,59,729,12,269.18,-0.708718706943122,hp_balls=59<120,batter,
+24017.0,Brian Bennett,near_miss,793,68,594,9,262.63,-7.146950400963583,hp_balls=68<120; hp_matches=9<10,batter,
+7808.0,Marco Jansen,near_miss,277,197,29,26,240.03,-10.800712047909911,tot_balls=277<300,batter,
+7741.0,Gareth Delany,near_miss,296,200,57,18,238.64,11.885256980756742,tot_balls=296<300,batter,
+21781.0,Clive Madande,near_miss,298,175,63,16,236.87,-7.872678456813421,tot_balls=298<300,batter,
+5379.0,Mark Adair,near_miss,277,198,40,22,232.47,8.666594697950272,tot_balls=277<300,batter,
+1758.0,Patrick Cummins,near_miss,247,204,16,26,225.33,2.9155562796788677,tot_balls=247<300,batter,
+4854.0,Rachin Ravindra,near_miss,582,98,386,11,220.06,-0.5661151053986169,hp_balls=98<120,batter,
+5837.0,Mahedi Hasan,near_miss,253,176,50,20,210.51,-10.037530579715778,tot_balls=253<300,batter,
+6272.0,William Jacks,near_miss,697,75,552,12,210.35,-4.1096025063181525,hp_balls=75<120,batter,
+3700.0,Tim Seifert,near_miss,760,66,648,7,202.19,-8.638071451353957,hp_balls=66<120; hp_matches=7<10,batter,
+2003.0,Bhanuka Rajapaksa,near_miss,421,106,250,9,194.87,5.565111997322235,hp_balls=106<120; hp_matches=9<10,batter,
+305.0,Ravichandran Ashwin,near_miss,317,96,156,18,180.73,-8.45197300518246,hp_balls=96<120,batter,
+3280.0,Nazmul Hossain Shanto,near_miss,510,81,374,7,176.68,-11.695621475065158,hp_balls=81<120; hp_matches=7<10,batter,
+2680.0,Nurul Hasan,near_miss,238,130,66,14,175.47,2.101304004502733,tot_balls=238<300,batter,
+4867.0,Wesley Madhevere,near_miss,427,118,274,9,175.36,-16.645335242090113,hp_balls=118<120; hp_matches=9<10,batter,
+6512.0,Michael Bracewell,near_miss,350,115,196,12,175.26,-19.835310145957482,hp_balls=115<120,batter,
+507.0,Mohammad Mahmudullah,near_miss,262,124,97,8,173.66,3.1523014425894953,tot_balls=262<300; hp_matches=8<10,batter,
+8238.0,Sameer Rizvi,near_miss,293,97,144,7,172.31,3.5698483080105463,tot_balls=293<300; hp_balls=97<120; hp_matches=7<10,batter,
+4926.0,Shadab Khan,near_miss,332,107,164,13,172.22,-11.132289265512538,hp_balls=107<120,batter,
+2533.0,Najibullah Zadran,near_miss,306,103,154,12,167.58,6.73733400382248,hp_balls=103<120,batter,
+535.0,Ambati Rayudu,near_miss,337,100,193,10,163.72,-5.408607859125148,hp_balls=100<120,batter,
+772.0,Rilee Rossouw,near_miss,417,81,271,11,159.44,-2.91536554501152,hp_balls=81<120,batter,
+23311.0,Jacob Bethell,near_miss,453,59,333,7,159.02,6.160562836417025,hp_balls=59<120; hp_matches=7<10,batter,
+26906.0,Angkrish Raghuvanshi,near_miss,608,71,492,9,154.79,3.95395943324007,hp_balls=71<120; hp_matches=9<10,batter,
+6467.0,Anuj Rawat,near_miss,266,96,134,9,150.61,-8.456646528991168,tot_balls=266<300; hp_balls=96<120; hp_matches=9<10,batter,
+6433.0,Darwish Rasooli,near_miss,307,61,180,10,147.18,-15.719687753106513,hp_balls=61<120,batter,
+3727.0,Matthew Short,near_miss,420,76,316,7,141.41,-6.247714888024034,hp_balls=76<120; hp_matches=7<10,batter,
+20327.0,Usman Khan,near_miss,321,96,194,7,136.19,2.4866199290997697,hp_balls=96<120; hp_matches=7<10,batter,
+5808.0,Karim Janat,near_miss,238,113,110,11,136.15,-15.416684233190018,tot_balls=238<300; hp_balls=113<120,batter,
+4494.0,Abhinav Manohar,near_miss,235,80,109,9,136.11,-25.544895630729062,tot_balls=235<300; hp_balls=80<120; hp_matches=9<10,batter,
+8600.0,Tadiwanashe Marumani,near_miss,433,53,330,7,127.7,-18.687255394843792,hp_balls=53<120; hp_matches=7<10,batter,
+8101.0,Ashutosh Sharma,rescued_from_v1_lp_trap,334,273,42,22,290.62,24.97070161650839,V1 excluded lp_balls=42<60; V2 eligible,batter,
+,Harpreet Brar,near_miss,667,116,433,17,277.82,-1.2265368589077086,hp_balls=116<120,bowler,7325.0
+,Glenn Maxwell,near_miss,638,92,410,13,262.87,-0.41270820153772947,hp_balls=92<120,bowler,838.0
+,Curtis Campher,near_miss,396,101,197,13,232.71,-4.704103223111331,hp_balls=101<120,bowler,7094.0
+,Matt Henry,near_miss,622,101,436,13,231.34,-2.7447694498711264,hp_balls=101<120,bowler,3174.0
+,Nuwan Thushara,near_miss,775,116,586,13,226.65,0.44067952266936955,hp_balls=116<120,bowler,19312.0
+,Naseem Shah,near_miss,576,108,371,9,226.0,-1.282625802706835,hp_balls=108<120; hp_matches=9<10,bowler,8049.0
+,Adam Milne,near_miss,545,118,333,14,225.14,2.6409442536387906,hp_balls=118<120,bowler,1487.0
+,Xavier Bartlett,near_miss,624,102,451,14,220.08,0.12567245435886906,hp_balls=102<120,bowler,5738.0
+,Wellington Masakadza,near_miss,480,101,301,8,200.85,1.0253381524417542,hp_balls=101<120; hp_matches=8<10,bowler,4639.0
+,Vyshak Kumar,near_miss,519,114,339,8,198.76,-0.3638169622775595,hp_balls=114<120; hp_matches=8<10,bowler,4487.0
+,Nandre Burger,near_miss,441,112,287,10,195.3,0.9827247136122015,hp_balls=112<120,bowler,7312.0
+,Jason Behrendorff,near_miss,438,80,266,12,192.15,-3.1915653732711147,hp_balls=80<120,bowler,2054.0
+,Piyush Chawla,near_miss,576,116,415,9,191.87,-0.5327298829169425,hp_balls=116<120; hp_matches=9<10,bowler,23.0
+,Shamar Joseph,near_miss,471,96,309,12,189.57,-0.9878386740774756,hp_balls=96<120,bowler,47050.0
+,Anshul Kamboj,near_miss,491,99,332,12,189.53,4.975282726180916,hp_balls=99<120,bowler,27964.0
+,Mukesh Choudhary,near_miss,483,71,317,8,188.38,-4.054479005430257,hp_balls=71<120; hp_matches=8<10,bowler,7250.0
+,Craig Young,near_miss,466,56,334,10,187.44,-1.496101463205844,hp_balls=56<120,bowler,3720.0
+,Ishant Sharma,near_miss,422,103,249,15,187.31,1.277821129131773,hp_balls=103<120,bowler,28.0
+,Dwaine Pretorius,near_miss,308,155,127,9,185.14,1.062374848397937,hp_matches=9<10,bowler,2334.0
+,Nasum Ahmed,near_miss,600,108,451,11,180.39,-5.582835845701387,hp_balls=108<120,bowler,4658.0
+,Fareed Malik,near_miss,308,119,140,10,177.29,-0.9897252820750304,hp_balls=119<120,bowler,4201.0
+,Odean Smith,near_miss,384,89,225,11,174.18,-3.564266758032048,hp_balls=89<120,bowler,4840.0
+,Wayne Parnell,near_miss,400,98,243,8,170.82,0.13939286487533126,hp_balls=98<120; hp_matches=8<10,bowler,295.0
+,William Jacks,near_miss,413,78,273,9,169.26,-0.04385490952110063,hp_balls=78<120; hp_matches=9<10,bowler,6272.0
+,Benjamin White,near_miss,390,70,249,8,167.49,-2.172466703199944,hp_balls=70<120; hp_matches=8<10,bowler,4815.0
+,Brad Evans,near_miss,438,92,294,10,164.73,4.468833012684426,hp_balls=92<120,bowler,21784.0
+,David Willey,near_miss,380,78,226,8,164.52,-1.1573284415433167,hp_balls=78<120; hp_matches=8<10,bowler,1219.0
+,Salman Mirza,near_miss,328,114,172,12,158.96,7.851066774306016,hp_balls=114<120,bowler,20704.0
+,Shakib Al Hasan,near_miss,340,87,188,9,158.3,5.052937031379966,hp_balls=87<120; hp_matches=9<10,bowler,499.0
+,Dunith Wellalage,near_miss,255,104,105,9,157.32,-0.6799850410775076,tot_balls=255<300; hp_balls=104<120; hp_matches=9<10,bowler,7052.0
+,Abbas Afridi,near_miss,399,85,258,10,155.17,0.6619331272091096,hp_balls=85<120,bowler,7699.0
+,Brydon Carse,near_miss,268,99,117,8,153.27,-0.608457665551903,tot_balls=268<300; hp_balls=99<120; hp_matches=8<10,bowler,6097.0
+,Zakary Foulkes,near_miss,364,92,234,8,151.13,1.7922110497564931,hp_balls=92<120; hp_matches=8<10,bowler,29066.0
+,Ryan Burl,near_miss,318,78,186,9,150.91,-0.02093889900596143,hp_balls=78<120; hp_matches=9<10,bowler,2463.0
+,Umesh Yadav,near_miss,558,57,451,9,149.61,3.647665807628697,hp_balls=57<120; hp_matches=9<10,bowler,403.0
+,Akash Deep,near_miss,278,73,143,8,148.01,-6.678804695168059,tot_balls=278<300; hp_balls=73<120; hp_matches=8<10,bowler,7473.0
+,Matthew Humphreys,near_miss,305,85,173,8,147.0,8.49050610402587,hp_balls=85<120; hp_matches=8<10,bowler,22471.0
+,Brijesh Sharma,near_miss,273,113,137,8,144.31,4.158702487712375,tot_balls=273<300; hp_balls=113<120; hp_matches=8<10,bowler,67036.0
+,Mohammad Wasim,near_miss,355,80,225,10,139.19,3.3670018481650414,hp_balls=80<120,bowler,7696.0
+,Mark Wood,near_miss,281,75,156,8,136.92,6.53735811260531,tot_balls=281<300; hp_balls=75<120; hp_matches=8<10,bowler,2985.0
+,Kuldeep Sen,near_miss,241,81,110,8,135.49,-0.307508182648792,tot_balls=241<300; hp_balls=81<120; hp_matches=8<10,bowler,7545.0
+,Binura Fernando,near_miss,342,76,228,8,132.87,-2.1072836729078857,hp_balls=76<120; hp_matches=8<10,bowler,3664.0
+,Vipraj Nigam,near_miss,288,63,170,7,132.29,1.745386310675477,tot_balls=288<300; hp_balls=63<120; hp_matches=7<10,bowler,46066.0
+,Daniel Sams,near_miss,350,66,244,8,131.26,-1.0482917589030543,hp_balls=66<120; hp_matches=8<10,bowler,6518.0
+,Mitchell Marsh,near_miss,295,74,178,7,130.86,-1.6809033605073478,tot_balls=295<300; hp_balls=74<120; hp_matches=7<10,bowler,818.0
+,Junaid Siddique,near_miss,330,84,229,9,125.36,6.992158587969878,hp_balls=84<120; hp_matches=9<10,bowler,8009.0
+,Riley Meredith,near_miss,310,65,220,7,123.53,2.439852792574447,hp_balls=65<120; hp_matches=7<10,bowler,5940.0

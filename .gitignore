@@ -1,0 +1,16 @@
+# Raw competition data (proprietary; never commit or share externally)
+data/raw/
+
+# Python caches & artifacts
+__pycache__/
+*.py[cod]
+*.pyc
+*$py.class
+
+# Jupyter & test caches
+.ipynb_checkpoints/
+.pytest_cache/
+
+# OS / Editor artifacts
+.DS_Store
+Thumbs.db
