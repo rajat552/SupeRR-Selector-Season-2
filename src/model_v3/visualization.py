@@ -66,7 +66,7 @@ def plot_01_02_top10_ranking(
         height=0.30,
         color=RR_SLATE,
         alpha=0.45,
-        label="Observed Pressure-Weighted Impact",
+        label="Raw Pressure-Weighted Impact (Raw PWI)",
     )
     ax.barh(
         y + 0.16,
@@ -74,7 +74,7 @@ def plot_01_02_top10_ranking(
         height=0.30,
         color=RR_PINK,
         alpha=0.92,
-        label="EB-Shrunk Pressure Impact (via Kish $N_{eff}$)",
+        label="EB-Shrunk Pressure Impact (Shrunk PWI, via Kish $N_{eff}$)",
     )
 
     ax.axvline(0.0, color=RR_NAVY, linewidth=0.9, linestyle="--")
@@ -101,10 +101,10 @@ def plot_01_02_top10_ranking(
         )
 
     title_role = "Batters" if role == "batter" else "Bowlers"
-    ax.set_xlabel(f"Context-Adjusted Pressure Impact ({unit_lbl})")
+    ax.set_xlabel(f"Context-Adjusted Pressure-Weighted Impact (PWI, {unit_lbl})")
     ax.set_title(
         f"Model V3 Top 10 {title_role} Under Pressure (Rank 1 at Top)\n"
-        "Observed vs Empirical-Bayes Shrunk Impact, Sample Size (N_hp) & Kish N_eff"
+        "Raw PWI vs Empirical-Bayes Shrunk PWI, Sample Size (N_hp) & Kish N_eff"
     )
     ax.legend(loc="upper center", bbox_to_anchor=(0.5, -0.11), ncol=2, frameon=True)
     _save(fig, out_path)
@@ -122,14 +122,16 @@ def plot_03_pressure_vs_normal_impact(
     # Hand-tuned collision-free offsets (dx, dy) in points
     bat_offsets = {
         "Tim David": (6, 4),
-        "Dinesh Karthik": (6, 4),
         "Naman Dhir": (-15, 10),
-        "Matthew Wade": (-95, 6),
         "Reeza Hendricks": (6, -14),
+        "Romario Shepherd": (6, 6),
+        "Rashid Khan": (6, -10),
         "Shashank Singh": (6, 6),
-        "Heinrich Klaasen": (6, -12),
+        "Dinesh Karthik": (6, 4),
         "Rinku Singh": (6, 4),
         "Andre Russell": (-85, -12),
+        "Heinrich Klaasen": (6, -12),
+        "Matthew Wade": (-95, 6),
         "Ashutosh Sharma": (6, -12),
         "Suryakumar Yadav": (6, -4),
     }
@@ -137,13 +139,20 @@ def plot_03_pressure_vs_normal_impact(
     bowl_offsets = {
         "Sunil Narine": (-85, 8),
         "Jasprit Bumrah": (6, 4),
+        "Rashid Khan": (6, -12),
+        "Nathan Ellis": (6, 6),
+        "Eshan Malinga": (6, -10),
+        "Matheesha Pathirana": (6, 4),
+        "Mohammad Nawaz": (6, -14),
+        "Arshdeep Singh": (6, 6),
+        "Krunal Pandya": (-85, -10),
+        "Wanindu Hasaranga": (6, 8),
         "Jamie Overton": (-15, 10),
         "Mustafizur Rahman": (6, -14),
         "Mohit Sharma": (-85, -12),
         "Sai Kishore": (-75, 8),
         "Sufiyan Muqeem": (-12, -15),
         "Mohsin Khan": (6, 8),
-        "Mohammad Nawaz": (6, -14),
         "Josh Hazlewood": (6, -10),
         "Varun Chakravarthy": (6, -2),
         "Kuldeep Yadav": (6, 4),
@@ -153,15 +162,15 @@ def plot_03_pressure_vs_normal_impact(
         (
             axes[0],
             bat_all,
-            "Batters (Impact per 100 Balls)",
-            {"Ashutosh Sharma", "Suryakumar Yadav", "Rinku Singh", "Tim David", "Matthew Wade", "Naman Dhir"},
+            "Batters (Shrunk PWI per 100 Balls)",
+            {"Tim David", "Naman Dhir", "Romario Shepherd", "Rashid Khan", "Rinku Singh", "Andre Russell", "Heinrich Klaasen"},
             bat_offsets,
         ),
         (
             axes[1],
             bowl_all,
-            "Bowlers (Impact per 24 Legal Balls)",
-            {"Jasprit Bumrah", "Sunil Narine", "Varun Chakravarthy", "Mustafizur Rahman", "Sai Kishore", "Sufiyan Muqeem", "Mohit Sharma"},
+            "Bowlers (Shrunk PWI per 24 Legal Balls)",
+            {"Jasprit Bumrah", "Sunil Narine", "Rashid Khan", "Nathan Ellis", "Matheesha Pathirana", "Arshdeep Singh", "Krunal Pandya"},
             bowl_offsets,
         ),
     ]
@@ -206,12 +215,12 @@ def plot_03_pressure_vs_normal_impact(
                 color=RR_NAVY,
                 fontweight="bold" if r["rank"] <= 10 else "normal",
             )
-        ax.set_xlabel("EB-Shrunk Normal-Pressure Baseline Impact")
-        ax.set_ylabel("EB-Shrunk High-Pressure Impact")
+        ax.set_xlabel("EB-Shrunk Normal Baseline Impact (Shrunk PWI)")
+        ax.set_ylabel("EB-Shrunk High-Pressure Impact (Shrunk PWI)")
         ax.set_title(subtitle)
         ax.legend(loc="lower right", fontsize=8.2)
 
-    fig.suptitle("High-Pressure Performance vs Normal Baseline (Maintenance & Lift Without Elite Penalty)", fontsize=13, fontweight="bold")
+    fig.suptitle("High-Pressure Performance vs Normal Baseline (Shrunk PWI Maintenance & Lift Without Elite Penalty)", fontsize=13, fontweight="bold")
     _save(fig, out_path)
 
 
@@ -220,30 +229,30 @@ def plot_04_pressure_performance_comparison(
     bowl_all: pd.DataFrame,
     out_path: Path,
 ) -> None:
-    """04: Observed vs Shrunk Pressure Impact and Maintenance-Lift Comparison for Top 10 + Spotlight."""
+    """04: Observed Raw PWI vs Shrunk PWI and Maintenance-Lift Comparison for Top 10 + Spotlight."""
     _setup_style()
     fig, axes = plt.subplots(1, 2, figsize=(15.5, 6.6))
     fig.subplots_adjust(wspace=0.38)
 
     for ax, df_r, obs_col, title, extras in [
-        (axes[0], bat_all, "wp_impact_100", "Batters: Observed vs Shrunk vs Maint-Lift", ["Suryakumar Yadav", "Ashutosh Sharma"]),
-        (axes[1], bowl_all, "wp_impact_24", "Bowlers: Observed vs Shrunk vs Maint-Lift", ["Varun Chakravarthy", "Kuldeep Yadav"]),
+        (axes[0], bat_all, "wp_impact_100", "Batters: Raw PWI vs Shrunk PWI vs Maint-Lift", ["Romario Shepherd", "Rashid Khan"]),
+        (axes[1], bowl_all, "wp_impact_24", "Bowlers: Raw PWI vs Shrunk PWI vs Maint-Lift", ["Nathan Ellis", "Matheesha Pathirana"]),
     ]:
         sel = df_r[(df_r["rank"] <= 10) | df_r["player_name"].isin(extras)].sort_values("rank").copy()
         y = np.arange(len(sel))
         h = 0.26
-        ax.barh(y - h, sel[obs_col], height=h, color=RR_SLATE, alpha=0.55, label="Observed Pressure Impact")
-        ax.barh(y, sel["shrunk_wp_impact"], height=h, color=RR_PINK, alpha=0.9, label="EB-Shrunk Pressure Impact")
-        ax.barh(y + h, sel["maint_lift"], height=h, color=RR_TEAL, alpha=0.85, label="Attenuated Maint & Lift")
+        ax.barh(y - h, sel[obs_col], height=h, color=RR_SLATE, alpha=0.55, label="Raw Pressure Impact (Raw PWI)")
+        ax.barh(y, sel["shrunk_wp_impact"], height=h, color=RR_PINK, alpha=0.9, label="EB-Shrunk Impact (Shrunk PWI)")
+        ax.barh(y + h, sel["maint_lift"], height=h, color=RR_TEAL, alpha=0.85, label="Attenuated Maint & Lift (Model B)")
         ax.axvline(0.0, color=RR_NAVY, linewidth=0.8, linestyle="--")
         ax.set_yticks(y)
         ax.set_yticklabels([f"#{int(r['rank'])} {r['player_name']}" for _, r in sel.iterrows()], fontsize=8.8)
         ax.invert_yaxis()
-        ax.set_xlabel("Impact Scale (per 100 Bat Balls / per 24 Bowl Balls)")
+        ax.set_xlabel("Impact Scale (PWI per 100 Bat Balls / per 24 Bowl Balls)")
         ax.set_title(title)
         ax.legend(loc="upper center", bbox_to_anchor=(0.5, -0.12), ncol=2, fontsize=8.0)
 
-    fig.suptitle("Observed vs Empirical-Bayes Shrunk Pressure Impact & Maintenance-Lift Decomposition", fontsize=13, fontweight="bold")
+    fig.suptitle("Raw PWI vs Empirical-Bayes Shrunk PWI & Maintenance-Lift Decomposition", fontsize=13, fontweight="bold")
     _save(fig, out_path)
 
 
@@ -263,8 +272,10 @@ def plot_05_batter_role_analysis(
         "Heinrich Klaasen": (8, 6),
         "Suryakumar Yadav": (8, -10),
         "Tim David": (8, 6),
-        "Matthew Wade": (8, -10),
+        "Romario Shepherd": (8, -10),
+        "Shashank Singh": (8, 4),
         "Reeza Hendricks": (8, 4),
+        "Naman Dhir": (8, -8),
         "Quinton de Kock": (8, -8),
     }
 
@@ -291,7 +302,7 @@ def plot_05_batter_role_analysis(
     ax1.axhline(0, color=RR_GRAY, linestyle="--", linewidth=0.9)
     ax1.set_xticks(range(len(roles)))
     ax1.set_xticklabels([f"{r}\n(n={int((bat_all['primary_batting_role']==r).sum())})" for r in roles])
-    ax1.set_ylabel("EB-Shrunk Pressure Impact (per 100 Balls)")
+    ax1.set_ylabel("EB-Shrunk Pressure Impact (Shrunk PWI per 100 Balls)")
     ax1.set_title("Eligible Pool Pressure Impact by Primary Batting Role")
     ax1.set_xlim(-0.55, 2.7)
     ax1.legend(loc="lower right")
@@ -307,7 +318,7 @@ def plot_05_batter_role_analysis(
     ax2.set_yticks(y)
     ax2.set_yticklabels([f"#{int(r['rank'])} {r['player_name']} ({r['primary_batting_role']})" for _, r in top10_p.iterrows()], fontsize=8.2)
     ax2.invert_yaxis()
-    ax2.set_xlabel("Phase-Specific Shrunk Pressure Impact (per 100 Balls)")
+    ax2.set_xlabel("Phase-Specific Shrunk PWI (per 100 Balls)")
     ax2.set_title("Top 10 Batters: Phase-by-Phase Pressure Impact")
     ax2.legend(loc="lower right", fontsize=8.2)
 
@@ -335,7 +346,7 @@ def plot_06_bowling_phase_analysis(
     ax1.set_yticks(y)
     ax1.set_yticklabels([f"#{int(r['rank'])} {r['player_name']} ({r['pace_or_spin']})" for _, r in top10_p.iterrows()], fontsize=8.2)
     ax1.invert_yaxis()
-    ax1.set_xlabel("Phase-Specific Shrunk Pressure Impact (per 24 Legal Balls)")
+    ax1.set_xlabel("Phase-Specific Shrunk PWI (per 24 Legal Balls)")
     ax1.set_title("Top 10 Bowlers: Phase-by-Phase Pressure Impact")
     ax1.legend(loc="lower right", fontsize=8.2)
 
@@ -344,11 +355,15 @@ def plot_06_bowling_phase_analysis(
 
     bowl_offsets = {
         "Jasprit Bumrah": (8, 4),
-        "Jamie Overton": (-82, 4),
-        "Mustafizur Rahman": (8, -8),
+        "Nathan Ellis": (8, -8),
+        "Eshan Malinga": (8, 6),
+        "Matheesha Pathirana": (8, -8),
+        "Arshdeep Singh": (-82, 4),
         "Sunil Narine": (8, 4),
-        "Sufiyan Muqeem": (8, 7),
-        "Sai Kishore": (-82, -4),
+        "Rashid Khan": (8, 7),
+        "Mohammad Nawaz": (-82, -4),
+        "Krunal Pandya": (8, -8),
+        "Wanindu Hasaranga": (-82, 4),
     }
 
     for idx, st in enumerate(styles):
@@ -373,7 +388,7 @@ def plot_06_bowling_phase_analysis(
     ax2.axhline(0, color=RR_GRAY, linestyle="--", linewidth=0.9)
     ax2.set_xticks(range(len(styles)))
     ax2.set_xticklabels([f"{s}\n(n={int((bowl_all['pace_or_spin']==s).sum())})" for s in styles])
-    ax2.set_ylabel("EB-Shrunk Pressure Impact (per 24 Legal Balls)")
+    ax2.set_ylabel("EB-Shrunk Pressure Impact (Shrunk PWI per 24 Legal Balls)")
     ax2.set_title("Pace vs Spin Pressure Impact Across Eligible Pool")
     ax2.set_xlim(-0.6, 1.65)
     ax2.legend(loc="lower right")
@@ -556,31 +571,37 @@ def plot_09_ipl_vs_t20i_comparison(
     fmt_offsets = {
         # Batters
         "Tim David": (6, 4),
-        "Matthew Wade": (6, -8),
         "Naman Dhir": (6, 4),
-        "Dinesh Karthik": (6, 4),
         "Reeza Hendricks": (6, 4),
+        "Romario Shepherd": (6, -8),
+        "Rashid Khan": (6, 4),
         "Shashank Singh": (6, 4),
-        "Heinrich Klaasen": (-68, 8),
+        "Dinesh Karthik": (6, 4),
         "Rinku Singh": (6, -8),
         "Andre Russell": (6, -6),
+        "Heinrich Klaasen": (-68, 8),
+        "Matthew Wade": (6, -8),
         "Ashutosh Sharma": (6, -8),
         # Bowlers
         "Sunil Narine": (6, 4),
         "Jasprit Bumrah": (6, 4),
-        "Mustafizur Rahman": (6, -8),
+        "Rashid Khan": (6, 4),
+        "Nathan Ellis": (6, 6),
+        "Eshan Malinga": (6, -10),
+        "Matheesha Pathirana": (6, 4),
+        "Mohammad Nawaz": (-15, -15),
+        "Arshdeep Singh": (6, 4),
+        "Krunal Pandya": (-75, 2),
+        "Wanindu Hasaranga": (6, -8),
         "Jamie Overton": (6, 6),
+        "Mustafizur Rahman": (6, -8),
         "Mohit Sharma": (-75, 2),
         "Sai Kishore": (6, -10),
-        "Sufiyan Muqeem": (-15, 8),
-        "Mohsin Khan": (6, 8),
-        "Mohammad Nawaz": (-15, -15),
-        "Josh Hazlewood": (6, 4),
     }
 
     for ax, df_r, title in [
-        (axes[0], bat_all, "Batters: IPL vs T20I Shrunk Pressure Impact"),
-        (axes[1], bowl_all, "Bowlers: IPL vs T20I Shrunk Pressure Impact"),
+        (axes[0], bat_all, "Batters: IPL vs T20I Shrunk Pressure Impact (Shrunk PWI)"),
+        (axes[1], bowl_all, "Bowlers: IPL vs T20I Shrunk Pressure Impact (Shrunk PWI)"),
     ]:
         zero_ipl = df_r["hp_balls_ipl"] == 0
         zero_t20i = df_r["hp_balls_t20i"] == 0
@@ -630,8 +651,8 @@ def plot_09_ipl_vs_t20i_comparison(
                 color=RR_NAVY,
             )
 
-        ax.set_xlabel("EB-Shrunk T20I Pressure Impact")
-        ax.set_ylabel("EB-Shrunk IPL Pressure Impact")
+        ax.set_xlabel("EB-Shrunk T20I Pressure Impact (Shrunk PWI)")
+        ax.set_ylabel("EB-Shrunk IPL Pressure Impact (Shrunk PWI)")
         ax.set_title(title)
         ax.legend(loc="lower right", fontsize=8.0)
 
@@ -809,12 +830,24 @@ def plot_12_rr_recruitment_fit_matrix(
         "Heinrich Klaasen": (6, 6),
         "Andre Russell": (-85, -4),
         "Rinku Singh": (6, 4),
-        "Jamie Overton": (6, 6),
-        "Mustafizur Rahman": (6, -10),
-        "Rashid Khan": (-75, -2),
         "Tim David": (6, 4),
+        "Naman Dhir": (-70, 8),
+        "Reeza Hendricks": (6, 4),
+        "Romario Shepherd": (6, -10),
+        "Rashid Khan": (-75, -2),
+        "Shashank Singh": (6, 4),
+        "Dinesh Karthik": (6, -8),
         "Jasprit Bumrah": (6, 4),
         "Sunil Narine": (-75, 4),
+        "Nathan Ellis": (6, 6),
+        "Eshan Malinga": (6, -8),
+        "Matheesha Pathirana": (6, 4),
+        "Mohammad Nawaz": (-85, 4),
+        "Arshdeep Singh": (6, 4),
+        "Krunal Pandya": (-80, -6),
+        "Wanindu Hasaranga": (6, -8),
+        "Jamie Overton": (6, 6),
+        "Mustafizur Rahman": (6, -10),
     }
 
     for ax, df_r, title in [
@@ -889,6 +922,8 @@ def generate_all_charts(
     near_miss_df: pd.DataFrame,
     chart_dir: Path,
     external_research_path: Path,
+    top10_bat: pd.DataFrame | None = None,
+    top10_bowl: pd.DataFrame | None = None,
 ) -> Dict[str, Path]:
     """Generate all 12 required Model V3 publication charts."""
     chart_dir.mkdir(parents=True, exist_ok=True)
@@ -906,14 +941,17 @@ def generate_all_charts(
         "11": chart_dir / "11_model_sensitivity_comparison.png",
         "12": chart_dir / "12_rr_recruitment_fit_matrix.png",
     }
-    plot_01_02_top10_ranking(bat_all.head(10), role="batter", out_path=paths["01"])
-    plot_01_02_top10_ranking(bowl_all.head(10), role="bowler", out_path=paths["02"])
+    t10_b = top10_bat if top10_bat is not None else bat_all.head(10)
+    t10_w = top10_bowl if top10_bowl is not None else bowl_all.head(10)
+
+    plot_01_02_top10_ranking(t10_b, role="batter", out_path=paths["01"])
+    plot_01_02_top10_ranking(t10_w, role="bowler", out_path=paths["02"])
     plot_03_pressure_vs_normal_impact(bat_all, bowl_all, out_path=paths["03"])
     plot_04_pressure_performance_comparison(bat_all, bowl_all, out_path=paths["04"])
     plot_05_batter_role_analysis(bat_all, bat_profiles, out_path=paths["05"])
     plot_06_bowling_phase_analysis(bowl_all, bowl_profiles, out_path=paths["06"])
     plot_07_pressure_consistency_analysis(bat_all, bowl_all, out_path=paths["07"])
-    plot_08_bootstrap_rank_uncertainty(bat_all.head(10), bowl_all.head(10), out_path=paths["08"])
+    plot_08_bootstrap_rank_uncertainty(t10_b, t10_w, out_path=paths["08"])
     plot_09_ipl_vs_t20i_comparison(bat_all, bowl_all, out_path=paths["09"])
     plot_10_player_sample_size_comparison(bat_all, bowl_all, near_miss_df, out_path=paths["10"])
     plot_11_model_sensitivity_comparison(model_cmp_df, loso_df, wicket_df, out_path=paths["11"])

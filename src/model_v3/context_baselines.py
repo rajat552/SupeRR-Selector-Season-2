@@ -16,15 +16,6 @@ def assign_wickets_bucket(pre_wickets: pd.Series | np.ndarray) -> np.ndarray:
 
 
 BAT_HIERARCHY: List[List[str]] = [
-    ["comp_tier", "season_year", "phase", "batting_role", "opp_tier_bat"],
-    ["comp_tier", "season_year", "phase", "batting_role"],
-    ["comp_tier", "season_year", "phase"],
-    ["comp_tier", "phase"],
-    ["phase"],
-    [],
-]
-
-BAT_HIERARCHY_WICKET_SENSITIVITY: List[List[str]] = [
     ["comp_tier", "season_year", "phase", "wickets_bucket", "batting_role", "opp_tier_bat"],
     ["comp_tier", "season_year", "phase", "batting_role", "opp_tier_bat"],
     ["comp_tier", "season_year", "phase", "batting_role"],
@@ -33,6 +24,17 @@ BAT_HIERARCHY_WICKET_SENSITIVITY: List[List[str]] = [
     ["phase"],
     [],
 ]
+
+BAT_HIERARCHY_V2: List[List[str]] = [
+    ["comp_tier", "season_year", "phase", "batting_role", "opp_tier_bat"],
+    ["comp_tier", "season_year", "phase", "batting_role"],
+    ["comp_tier", "season_year", "phase"],
+    ["comp_tier", "phase"],
+    ["phase"],
+    [],
+]
+
+BAT_HIERARCHY_WICKET_SENSITIVITY: List[List[str]] = BAT_HIERARCHY
 
 BOWL_HIERARCHY: List[List[str]] = [
     ["comp_tier", "season_year", "phase", "wickets_bucket", "pace_or_spin", "opp_tier_bowl"],

@@ -125,6 +125,8 @@ def main(n_boot: int = 1000, seed: int = 42) -> None:
 
     all_bat.to_csv(OUT_DIR / "all_batter_rankings.csv", index=False)
     all_bowl.to_csv(OUT_DIR / "all_bowler_rankings.csv", index=False)
+    all_bat.head(10).to_csv(OUT_DIR / "unfiltered_top10_batters.csv", index=False)
+    all_bowl.head(10).to_csv(OUT_DIR / "unfiltered_top10_bowlers.csv", index=False)
     top10_bat.to_csv(OUT_DIR / "final_top10_batters.csv", index=False)
     top10_bowl.to_csv(OUT_DIR / "final_top10_bowlers.csv", index=False)
 
@@ -186,6 +188,8 @@ def main(n_boot: int = 1000, seed: int = 42) -> None:
         near_miss_df=near_miss_df,
         chart_dir=CHART_DIR,
         external_research_path=EXT_RESEARCH_PATH,
+        top10_bat=top10_bat,
+        top10_bowl=top10_bowl,
     )
     timings["charts_sec"] = time.perf_counter() - t0
     timings["total_pipeline_sec"] = time.perf_counter() - t_start

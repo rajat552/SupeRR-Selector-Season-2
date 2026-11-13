@@ -1,11 +1,11 @@
 role,dropped_season,model_name,n_eligible,n_common_with_ref,top10_overlap,spearman_rho,top10_players
-batter,2022,model_b,77,77,7,0.9042273515957724,Tim David | Shashank Singh | Naman Dhir | Reeza Hendricks | Heinrich Klaasen | Ravindra Jadeja | Ashutosh Sharma | Rinku Singh | Rovman Powell | Jason Holder
+batter,2022,model_b,77,77,7,0.9167411535832588,Tim David | Shashank Singh | Naman Dhir | Reeza Hendricks | Ashutosh Sharma | Rashid Khan | Heinrich Klaasen | Andre Russell | Romario Shepherd | Jason Holder
 bowler,2022,model_b,74,74,8,0.9157349129951868,Jasprit Bumrah | Rashid Khan | Sunil Narine | Abbas Afridi | Prasidh Krishna | Eshan Malinga | Matheesha Pathirana | Mohammad Nawaz | Nathan Ellis | Ravichandran Ashwin
-batter,2023,model_b,81,81,7,0.9070460704607046,Tim David | Naman Dhir | Dinesh Karthik | Shashank Singh | Ashutosh Sharma | Andre Russell | Rovman Powell | Heinrich Klaasen | Romario Shepherd | Marcus Stoinis
+batter,2023,model_b,81,81,6,0.9081752484191508,Tim David | Naman Dhir | Dinesh Karthik | Shashank Singh | Ashutosh Sharma | Romario Shepherd | Andre Russell | Marcus Stoinis | Heinrich Klaasen | Fakhar Zaman
 bowler,2023,model_b,78,78,8,0.942513183019512,Sunil Narine | Jasprit Bumrah | Rashid Khan | Abbas Afridi | Mujeeb Ur Rahman | Eshan Malinga | Matheesha Pathirana | Lungi Ngidi | Mohammad Nawaz | Arshdeep Singh
-batter,2024,model_b,76,76,5,0.8320164046479835,Tim David | Matthew Wade | Rinku Singh | Heinrich Klaasen | Naman Dhir | Glenn Maxwell | Suryakumar Yadav | Romario Shepherd | Shreyas Iyer | George Dockrell
+batter,2024,model_b,76,76,6,0.8628571428571428,Tim David | Matthew Wade | Rinku Singh | Romario Shepherd | Rashid Khan | Naman Dhir | Heinrich Klaasen | Glenn Maxwell | Shreyas Iyer | Suryakumar Yadav
 bowler,2024,model_b,75,75,7,0.9279089615931719,Jasprit Bumrah | Mohammad Nawaz | Sunil Narine | Rashid Khan | Nathan Ellis | Eshan Malinga | Mujeeb Ur Rahman | Krunal Pandya | Lungi Ngidi | Ravichandran Ashwin
-batter,2025,model_b,76,76,9,0.9504579630895421,Naman Dhir | Matthew Wade | Reeza Hendricks | Shashank Singh | Andre Russell | Dinesh Karthik | Heinrich Klaasen | Rinku Singh | Tim David | Dasun Shanaka
+batter,2025,model_b,76,76,8,0.9467942583732057,Naman Dhir | Reeza Hendricks | Andre Russell | Matthew Wade | Rashid Khan | Shashank Singh | Rinku Singh | Dinesh Karthik | Heinrich Klaasen | Romario Shepherd
 bowler,2025,model_b,77,77,7,0.8990220306009779,Sunil Narine | Matheesha Pathirana | Rashid Khan | Nathan Ellis | Jasprit Bumrah | Jofra Archer | Naveen ul Haq | Alzarri Joseph | Mitchell Santner | Eshan Malinga
-batter,2026,model_b,86,86,7,0.9298646162554837,Tim David | Matthew Wade | Reeza Hendricks | Dinesh Karthik | Rinku Singh | Suryakumar Yadav | Heinrich Klaasen | Andre Russell | Rashid Khan | Romario Shepherd
+batter,2026,model_b,86,86,8,0.9375630925987073,Tim David | Rashid Khan | Matthew Wade | Romario Shepherd | Reeza Hendricks | Dinesh Karthik | Rinku Singh | Andre Russell | Shashank Singh | Suryakumar Yadav
 bowler,2026,model_b,80,80,8,0.943061415846226,Jasprit Bumrah | Rashid Khan | Sunil Narine | Abbas Afridi | Matheesha Pathirana | Nathan Ellis | Bhuvneshwar Kumar | Josh Hazlewood | Mohammad Nawaz | Naveen ul Haq

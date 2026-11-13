@@ -179,7 +179,9 @@ def test_lpo_context_baselines_no_self_leakage_and_fallback():
     assert np.isclose(p1["ctx_bat_rpb"], 1.0)
 
     p2 = res[res["striker_id"] == 2].iloc[0]
-    assert p2["ctx_bat_level"] == 1  # fell back because 20 < 50 at Level 0
+    # In V3, Level 0 has wickets_bucket + opp_tier_bat; Level 1 drops wickets_bucket but keeps opp_tier_bat (count=20 < 50);
+    # Level 2 drops opp_tier_bat, merging Cell A and Cell B (20 + 50 = 70 >= 50).
+    assert p2["ctx_bat_level"] == 2
     assert p2["ctx_bat_lpo_n"] == 70.0  # 20 from player 1 + 50 from player 3
     assert np.isclose(p2["ctx_bat_rpb"], (20 * 6.0 + 50 * 0.0) / 70.0)
 

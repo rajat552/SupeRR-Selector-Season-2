@@ -59,7 +59,29 @@ def assemble_canonical_rankings(
         np.where(~out["in_ipl_2025_2026"], "No_IPL_2025_2026_Record", "Active_IPL_2025_2026"),
     )
 
-    top10 = out.head(10).copy()
+    unfiltered_top10 = out.head(10).copy()
+
+    # D3 & D4: Final Top 10 restricted to players eligible in >= 800 bootstrap draws, with statistical tiers
+    filtered_pool = out[out["valid_eligible_iters"] >= 800].copy().reset_index(drop=True)
+    top10 = filtered_pool.head(10).copy()
+    top10["unfiltered_rank"] = top10["rank"]
+    top10["final_rank"] = np.arange(1, len(top10) + 1)
+    top10["rank"] = top10["final_rank"]
+
+    # Assign statistical tiers per D4
+    if role == "batter":
+        top10["tier"] = np.where(
+            top10["pressure_score"] >= 2.00,
+            "Tier 1",
+            np.where(top10["pressure_score"] >= 1.50, "Tier 2", "Tier 3"),
+        )
+    else:
+        top10["tier"] = np.where(
+            top10["pressure_score"] >= 2.10,
+            "Tier 1",
+            np.where(top10["pressure_score"] >= 1.20, "Tier 2", "Tier 3"),
+        )
+
     return out, top10
 
 

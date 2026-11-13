@@ -18,6 +18,7 @@ from src.model_v3.pressure_model import (
     compute_bowler_pressure_index,
     compute_pressure_features,
 )
+from src.model_v3.context_baselines import BAT_HIERARCHY_V2, add_lpo_context_baselines
 from src.model_v3.impact_models import compute_player_base_metrics, score_model_a, score_model_b
 
 
@@ -99,34 +100,38 @@ def test_batting_pipeline_invariance_to_bowler_pressure(dataset):
         df["is_high_pressure"].to_numpy(),
     )
 
-    # Score batting pipeline
+    # 1. Under V2 batting baseline hierarchy, batting scores match V2 exactly
+    df_v2 = add_lpo_context_baselines(df, bat_hierarchy=BAT_HIERARCHY_V2)
+    bat_base_v2, _ = compute_player_base_metrics(df_v2, player_lookup, role="batter")
+    elig_bat_v2 = bat_base_v2[bat_base_v2["is_eligible"]].copy()
+    elig_bat_v2 = score_model_a(elig_bat_v2)
+    elig_bat_v2 = score_model_b(elig_bat_v2, role="batter")
+
+    v2_top_bat_path = ROOT / "outputs" / "model_v2" / "final_top10_batters.csv"
+    if v2_top_bat_path.exists():
+        v2_top = pd.read_csv(v2_top_bat_path)
+        v3_top_v2hier = elig_bat_v2.sort_values("model_b_score", ascending=False).head(10)
+        np.testing.assert_array_equal(
+            v3_top_v2hier["striker_id"].to_numpy(),
+            v2_top["striker_id"].to_numpy(),
+            err_msg="Batting Top 10 IDs changed when introducing bowler pressure index under V2 hierarchy.",
+        )
+        np.testing.assert_allclose(
+            v3_top_v2hier["model_b_score"].to_numpy(),
+            v2_top["pressure_score"].to_numpy(),
+            rtol=1e-5,
+            atol=1e-5,
+            err_msg="Batting Top 10 scores changed when introducing bowler pressure index under V2 hierarchy.",
+        )
+
+    # 2. Under promoted canonical V3 hierarchy (with wickets_bucket), check core candidates
     bat_base, _ = compute_player_base_metrics(df, player_lookup, role="batter")
     elig_bat = bat_base[bat_base["is_eligible"]].copy()
     elig_bat = score_model_a(elig_bat)
     elig_bat = score_model_b(elig_bat, role="batter")
-
-    # In V2, the top batters under Model B were Tim David, Wade, Dhir, Karthik, Hendricks, Shashank Singh, Klaasen, Rinku, Russell, Ashutosh
     top_bat_names = elig_bat.sort_values("model_b_score", ascending=False).head(10)["player_name"].tolist()
-    assert "Shashank Singh" in top_bat_names
     assert "Tim David" in top_bat_names
-    assert "Heinrich Klaasen" in top_bat_names
-    assert "Ashutosh Sharma" in top_bat_names
-
-    # Check exact match with V2 top 10 batter IDs and ranks
-    v2_top_bat_path = ROOT / "outputs" / "model_v2" / "final_top10_batters.csv"
-    if v2_top_bat_path.exists():
-        v2_top = pd.read_csv(v2_top_bat_path)
-        v3_top = elig_bat.sort_values("model_b_score", ascending=False).head(10)
-        np.testing.assert_array_equal(
-            v3_top["striker_id"].to_numpy(),
-            v2_top["striker_id"].to_numpy(),
-            err_msg="Batting Top 10 IDs changed when introducing bowler pressure index.",
-        )
-        np.testing.assert_allclose(
-            v3_top["model_b_score"].to_numpy(),
-            v2_top["pressure_score"].to_numpy(),
-            rtol=1e-5,
-            atol=1e-5,
-            err_msg="Batting Top 10 scores changed when introducing bowler pressure index.",
-        )
+    assert "Naman Dhir" in top_bat_names
+    assert "Shashank Singh" in top_bat_names
+    assert "Romario Shepherd" in top_bat_names
 
