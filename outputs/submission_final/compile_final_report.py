@@ -36,12 +36,12 @@ def make_page1_table_bat():
         "Shashank Singh": "Priority if available",
         "Tim David": "Watchlist",
         "Naman Dhir": "Priority if available",
-        "Dinesh Karthik": "Historical benchmark – retired",
+        "Dinesh Karthik": "Historical benchmark – retired player; RCB Coach",
         "Heinrich Klaasen": "Watchlist",
         "Suryakumar Yadav": "Watchlist",
         "Rinku Singh": "Priority if available",
         "Romario Shepherd": "Watchlist",
-        "Andre Russell": "Historical benchmark – retired from IPL",
+        "Andre Russell": "Historical benchmark – retired from IPL; KKR Coach",
         "Rashid Khan": "Priority if available"
     }
     rows = []
@@ -53,6 +53,7 @@ def make_page1_table_bat():
           <td><strong>{r['final_rank']}</strong></td>
           <td style="text-align:left;"><strong>{r['player_name']}</strong> ({int(r['player_id'])})</td>
           <td><span class="badge badge-{tier_short.lower().replace(' ', '')}">{tier_short}</span></td>
+          <td>{r['elig_share']:.1%}</td>
           <td>{r['top10_freq']:.1%}</td>
           <td>{r['median_rank']:.0f} [{r['iqr_rank']:.0f}]</td>
           <td>{r['model_b_score']:.2f}</td>
@@ -60,7 +61,7 @@ def make_page1_table_bat():
           <td>{r['raw_lift']:+.1f}</td>
           <td>{int(r['hp_balls'])}</td>
           <td>{int(r['eligible_draws'])}/1000</td>
-          <td style="font-size:6.0pt; text-align:left; font-weight:600; color:#1E3A8A;">{rec_text}</td>
+          <td style="font-size:5.8pt; text-align:left; font-weight:600; color:#1E3A8A;">{rec_text}</td>
         </tr>
         """)
     return "\n".join(rows)
@@ -72,9 +73,9 @@ def make_page1_table_bowl():
         "Rashid Khan": "Priority if available",
         "Matheesha Pathirana": "Watchlist",
         "Eshan Malinga": "Priority if available",
-        "Nathan Ellis": "Priority if available",
+        "Nathan Ellis": "Priority if available (traded CSK -> SRH)",
         "Noor Ahmad": "Priority if available",
-        "Arshdeep Singh": "Watchlist",
+        "Arshdeep Singh": "Watchlist (traded PBKS -> MI)",
         "Prasidh Krishna": "Watchlist",
         "Bhuvneshwar Kumar": "Watchlist"
     }
@@ -87,6 +88,7 @@ def make_page1_table_bowl():
           <td><strong>{r['final_rank']}</strong></td>
           <td style="text-align:left;"><strong>{r['player_name']}</strong> ({int(r['player_id'])})</td>
           <td><span class="badge badge-{tier_short.lower().replace(' ', '')}">{tier_short}</span></td>
+          <td>{r['elig_share']:.1%}</td>
           <td>{r['top10_freq']:.1%}</td>
           <td>{r['median_rank']:.0f} [{r['iqr_rank']:.0f}]</td>
           <td>{r['model_b_score']:.2f}</td>
@@ -94,7 +96,7 @@ def make_page1_table_bowl():
           <td>{r['raw_lift']:+.2f}</td>
           <td>{int(r['hp_balls'])}</td>
           <td>{int(r['eligible_draws'])}/1000</td>
-          <td style="font-size:6.0pt; text-align:left; font-weight:600; color:#1E3A8A;">{rec_text}</td>
+          <td style="font-size:5.8pt; text-align:left; font-weight:600; color:#1E3A8A;">{rec_text}</td>
         </tr>
         """)
     return "\n".join(rows)
@@ -118,6 +120,7 @@ def make_table2a_rows():
           <td><strong>{r['raw_lift']:+.1f}</strong></td>
           <td>{r['maint_lift']:+.1f}</td>
           <td>{int(r['hp_balls'])}</td>
+          <td>{r['elig_share']:.1%}</td>
           <td>{r['top10_freq']:.1%}</td>
           <td>{r['median_rank']:.0f} [{r['iqr_rank']:.0f}]</td>
           <td>[{p05}, {p95}]</td>
@@ -146,6 +149,7 @@ def make_table2b_rows():
           <td><strong>{r['raw_lift']:+.2f}</strong></td>
           <td>{r['maint_lift']:+.2f}</td>
           <td>{int(r['hp_balls'])}</td>
+          <td>{r['elig_share']:.1%}</td>
           <td>{r['top10_freq']:.1%}</td>
           <td>{r['median_rank']:.0f} [{r['iqr_rank']:.0f}]</td>
           <td>[{p05}, {p95}]</td>
@@ -374,15 +378,15 @@ html_content = f"""<!DOCTYPE html>
   </div>
 
   <div class="callout-box" style="border-left-color: #1D3557; margin-bottom:4px;">
-    <div class="callout-title">Pre-Registered Ranking Rule & Multi % Definition</div>
-    <div style="font-size:7.2pt;"><strong>Ranking Rule:</strong> Ordered by multiverse top-10 frequency; ties broken by lower median rank; must pass &ge;50% eligibility across valid specifications and &ge;800/1000 bootstrap draws.<br>
-    <strong>Multi %:</strong> Denotes the share of valid specifications in which the player finishes inside the Top 10 (not a probability of future success).</div>
+    <div class="callout-title">Pre-Registered Ranking Rule & Metric Definitions</div>
+    <div style="font-size:7.2pt;"><strong>Ranking Rule:</strong> Ordered by multiverse top-10 frequency; ties broken by lower median rank; candidate must pass &ge;50% eligibility across valid specifications and &ge;800/1,000 bootstrap draws (all 20 selections satisfy both).<br>
+    <strong>Elig %:</strong> Candidate specification eligibility share across 15,150 specifications. &bull; <strong>Top-10 %:</strong> Share of valid specifications where player finishes inside the Top 10 (e.g., Rashid Khan: 77.8% eligible, 47.9% Top-10 inclusion, 61.6% retention when eligible).</div>
   </div>
 
   <div class="callout-box" style="border-left-color: #2B6CB0; margin-bottom:4px;">
     <div class="callout-title">Three Core Empirical Findings</div>
     <ul style="margin: 0; padding-left: 14px; font-size: 7.2pt;">
-      <li><strong>Multiverse Specification Sensitivity & Ability Dominance:</strong> Evaluating 15,150 specifications per role (3,196,444 player-specification evaluations) demonstrates that underlying player ability accounts for 76.58% (batting) and 65.73% (bowling) of percentile rank variance. Methodological choices create ranking sensitivity through player &times; dimension interactions (21.44% of rank variance for batters, 32.79% for bowlers), which is why reporting consensus frequencies across the multiverse is vastly more reliable than relying on any single specification.</li>
+      <li><strong>Multiverse Specification Sensitivity & Empirical Main Effects:</strong> Evaluating 15,150 specifications per role (3,196,444 player-specification evaluations) demonstrates that empirical player_id main effects account for 76.58% (batting) and 65.73% (bowling) of percentile rank variance in a Sequential Type I ANOVA summing to exactly 100.00%. Methodological sensitivity operates through player &times; specification interactions (21.44% batting, 32.79% bowling), while direct dimension main effects sum to under 2%. Reporting multiverse consensus is vastly more robust than relying on any single specification.</li>
       <li><strong>Pre-Registered Bootstrap Filter Removes Volatile Assets:</strong> Applying the 1,000-draw stability hurdle (&ge;800 draws) eliminated sample-dependent fringe candidates (Matthew Wade [ID: 796] qualified in only 720/1,000 draws; Mujeeb Ur Rahman [ID: 6450] in 744/1,000; Naveen ul Haq [ID: 5809] in 513/1,000), promoting resilient contributors (Rashid Khan, Noor Ahmad, Prasidh Krishna).</li>
       <li><strong>Rajasthan Royals 2026 Phase Audit:</strong> Phase-level auditing from raw data reveals that while RR's death bowling was league-average overall (ER 10.60 vs league 10.67), Sandeep Sharma (ER 13.70) and Tushar Deshpande (ER 12.38) were expensive individuals. In the middle overs, spin economy lagged league par (Jadeja 8.39, Bishnoi 10.11 vs league 8.97). At the death, Donovan Ferreira (SR 221.7) lacked an explosive second death hitter (Hetmyer SR 121.1). The consensus targets offer direct tactical options, if available at auction.</li>
     </ul>
@@ -395,7 +399,8 @@ html_content = f"""<!DOCTYPE html>
         <th>#</th>
         <th style="text-align:left;">Player (ID)</th>
         <th>Tier</th>
-        <th>Multi %</th>
+        <th>Elig %</th>
+        <th>Top-10 %</th>
         <th>Med [IQR]</th>
         <th>Canon</th>
         <th>PWI</th>
@@ -417,7 +422,8 @@ html_content = f"""<!DOCTYPE html>
         <th>#</th>
         <th style="text-align:left;">Player (ID)</th>
         <th>Tier</th>
-        <th>Multi %</th>
+        <th>Elig %</th>
+        <th>Top-10 %</th>
         <th>Med [IQR]</th>
         <th>Canon</th>
         <th>PWI</th>
@@ -451,7 +457,7 @@ html_content = f"""<!DOCTYPE html>
   <p>To eliminate post-hoc narrative fitting and researcher degrees of freedom, I developed a complete multiverse (specification-curve) pipeline governed by an immutable pre-registration protocol (outputs/model_v4/PREREGISTRATION.md). Rather than presenting a single isolated model whose rankings could hinge on arbitrary parameter cutoffs, I evaluated 15,150 specifications per role (3,196,444 player-specification evaluations) across eight orthogonal analytical dimensions. Every statistical rank reported in this submission is derived strictly from historical match data; public external facts (player availability, retention rules, and franchise context) are maintained strictly as practical operational flags.</p>
 
   <div class="section-heading">2. Data Scope, Cleaning & Cricket Accounting</div>
-  <p>My analytical scope encompasses the complete primary historical dataset spanning January 2022 to November 2026. Following strict competition standards, I excluded secondary A-team / emerging representative tournaments (Mens T20 Emerging Teams Asia Cup 2024 [comp ID 2670] and Asia Cup Rising Stars 2025 [comp ID 3289], comprising 30 matches and 6,985 deliveries, which are separately excluded from the primary analytical scope), Super Overs (innings 3 and 4, comprising 38 deliveries), and 16 abandoned matches with zero deliveries bowled. The primary audit universe contains exactly <strong>837 matches</strong> (367 Indian Premier League and 470 T20 Internationals), <strong>193,988 total deliveries</strong>, and <strong>185,692 legal balls</strong>.</p>
+  <p>My analytical scope encompasses the complete primary historical dataset spanning January 2022 to November 2026. Following strict competition standards, I excluded secondary A-team / emerging representative tournaments (Mens T20 Emerging Teams Asia Cup 2024 [comp ID 2670] and Asia Cup Rising Stars 2025 [comp ID 3289], comprising 30 matches and 6,985 deliveries, which include 12 Super Over balls), the remaining 26 Super Over deliveries in IPL/T20I fixtures (out of 38 total raw Super Over deliveries across all competitions), and 16 abandoned matches with zero deliveries bowled. The primary audit universe contains exactly <strong>837 matches</strong> (367 Indian Premier League and 470 T20 Internationals), <strong>193,988 total deliveries</strong>, and <strong>185,692 legal balls</strong>.</p>
 
   <p>Rigorous cricket accounting was implemented at the delivery level to prevent distorted player ratings:</p>
   <ul>
@@ -476,7 +482,7 @@ html_content = f"""<!DOCTYPE html>
   </div>
 
   <div class="section-heading">1. Scope Reconciliation & Referential Integrity (Step 0)</div>
-  <p>To eliminate selection bias, the primary analytical scope was rigorously reconciled from the unfiltered raw database down to exactly <strong>837 matches</strong>, <strong>193,988 deliveries</strong>, and <strong>185,692 legal balls</strong> (367 IPL, 470 T20I matches, 2022–2026). Secondary A-team / emerging representative tournaments (comp IDs 2670 and 3289: Mens T20 Emerging Teams Asia Cup 2024 and Asia Cup Rising Stars 2025; 30 matches, 6,985 deliveries, separately excluded from primary scope), Super Overs (38 deliveries across innings 3 and 4), and 16 abandoned fixtures were systematically excluded.</p>
+  <p>To eliminate selection bias, the primary analytical scope was rigorously reconciled from the unfiltered raw database down to exactly <strong>837 matches</strong>, <strong>193,988 deliveries</strong>, and <strong>185,692 legal balls</strong> (367 IPL, 470 T20I matches, 2022–2026). Specifically: 200,999 raw deliveries (-) 6,985 emerging-tournament deliveries (comp IDs 2670 and 3289, 30 matches, which contain 12 Super Over deliveries) (-) 26 remaining IPL/T20I Super Over deliveries (out of 38 total raw Super Over deliveries across the entire dataset) (-) 16 abandoned zero-delivery fixtures = <strong>193,988 primary deliveries</strong> (185,692 legal deliveries; 7,472 wides, 824 no-balls; 186,516 batter balls faced).</p>
 
   <table style="font-size:7.2pt; margin-bottom:5px;">
     <thead>
@@ -493,7 +499,7 @@ html_content = f"""<!DOCTYPE html>
         <td style="text-align:left;">Total Raw Database Provided</td>
         <td>883</td>
         <td>200,999</td>
-        <td>—</td>
+        <td>192,445</td>
         <td style="text-align:left;">Unfiltered repository dump (matches.csv, ball_by_ball.csv).</td>
       </tr>
       <tr>
@@ -508,14 +514,14 @@ html_content = f"""<!DOCTYPE html>
         <td>-30</td>
         <td>-6,985</td>
         <td>-6,730</td>
-        <td style="text-align:left;">Emerging/A-team tournaments (Mens Emerging Teams Asia Cup, Rising Stars); non-primary scope.</td>
+        <td style="text-align:left;">Emerging/A-team tournaments (includes 12 Super Over deliveries, 10 legal); non-primary scope.</td>
       </tr>
       <tr>
-        <td style="text-align:left;">(-) Super Overs (Innings 3 & 4)</td>
+        <td style="text-align:left;">(-) Remaining IPL/T20I Super Overs (Innings 3 & 4)</td>
         <td>0</td>
-        <td>-38</td>
-        <td>-33</td>
-        <td style="text-align:left;">Tie-breaker overs isolated to preserve standard innings leverage.</td>
+        <td>-26</td>
+        <td>-23</td>
+        <td style="text-align:left;">Remaining tie-breaker deliveries in IPL/T20I (out of 38 total raw Super Over deliveries, 33 legal).</td>
       </tr>
       <tr style="background-color:#F1F5F9; font-weight:bold;">
         <td style="text-align:left;">FINAL PRIMARY ANALYTICAL SCOPE</td>
@@ -751,7 +757,7 @@ html_content = f"""<!DOCTYPE html>
   </div>
 
   <div class="section-heading">7. Specification Curve Findings & Sequential Type I ANOVA</div>
-  <p>Across 15,150 specifications per role, top-ranked candidates consistently demonstrate high inclusion frequency. To understand ranking variance rigorously, I conducted a sequential (Type I) ANOVA on percentile ranks (y<sub>i,s</sub> = rank<sub>i,s</sub> / n<sub>eligible,s</sub>). Sequential (Type I) decomposition is order-dependent; the percentages reflect hierarchical explanatory contributions rather than uniquely isolated causal intrinsic-talent shares.</p>
+  <p>Across 15,150 specifications per role, top-ranked candidates consistently demonstrate high inclusion frequency. To understand ranking variance rigorously, I conducted a sequential (Type I) ANOVA on percentile ranks (y<sub>i,s</sub> = rank<sub>i,s</sub> / n<sub>eligible,s</sub>). Sequential (Type I) decomposition is order-dependent; the percentages reflect hierarchical explanatory contributions summing to exactly 100.00%, rather than uniquely isolated causal intrinsic-talent shares. Note: In raw ranks (which vary with specification candidate size n<sub>eligible,s</sub>), the player main effect is 60.17% (batting) and 62.08% (bowling); normalizing to percentile ranks yields 76.58% and 65.73%.</p>
 
   <div class="sub-heading">Sequential (Type I) ANOVA Variance Decomposition on Percentile Ranks</div>
   <table style="font-size:6.8pt;">
@@ -759,7 +765,7 @@ html_content = f"""<!DOCTYPE html>
       <tr><th>Dimension / Source of Variance</th><th>Batters SS</th><th>Batters Share (%)</th><th>Bowlers SS</th><th>Bowlers Share (%)</th><th>Interpretation</th></tr>
     </thead>
     <tbody>
-      <tr><td><strong>Player Ability Main Effect (player_id)</strong></td><td><strong>40,196.12</strong></td><td><strong>76.58%</strong></td><td><strong>50,725.94</strong></td><td><strong>65.73%</strong></td><td>Underlying talent accounts for the majority of rank variance.</td></tr>
+      <tr><td><strong>Player Identifier Main Effect (player_id)</strong></td><td><strong>40,196.12</strong></td><td><strong>76.58%</strong></td><td><strong>50,725.94</strong></td><td><strong>65.73%</strong></td><td>Empirical panel variance attributable to individual player mean ranks (non-causal).</td></tr>
       <tr><td>Eligibility Gate (g_gate)</td><td>426.87</td><td>0.81%</td><td>357.13</td><td>0.46%</td><td>Volume thresholds shift qualification of specialist finishers.</td></tr>
       <tr><td>Pressure Definition (p_def)</td><td>323.09</td><td>0.62%</td><td>521.97</td><td>0.68%</td><td>Continuous sigmoids vs discrete cuts vs Def C reorder borderline players.</td></tr>
       <tr><td>Format Scope (f_scope)</td><td>262.63</td><td>0.50%</td><td>240.83</td><td>0.31%</td><td>Domestic IPL vs international depth shifts player sample volumes.</td></tr>
@@ -802,7 +808,8 @@ html_content = f"""<!DOCTYPE html>
         <th>Raw Lift</th>
         <th>Maint Lift</th>
         <th>HP Balls</th>
-        <th>Multi %</th>
+        <th>Elig %</th>
+        <th>Top-10 %</th>
         <th>Med [IQR]</th>
         <th>Boot 90% CI</th>
         <th>Rises %</th>
@@ -821,7 +828,7 @@ html_content = f"""<!DOCTYPE html>
 
   <p><strong>3. Naman Dhir (ID: 37052) — Tier 1 | Classification: Rises under pressure:</strong> Dhir demonstrates a raw pressure lift of <strong>+35.4</strong> runs/100b (shrunk PWI +34.7 vs. normal -0.7). He finishes top-10 in <strong>88.6%</strong> of specifications with a median rank of 4.0. Eligible in 908/1,000 bootstrap draws with a 90% interval of <strong>[1, 32]</strong>. Rises under pressure in <strong>100.0%</strong> of specifications. IPL 2026 Team (raw data): Mumbai Indians. Availability: UNVERIFIED. Tactical Fit: High-lift Indian middle-order option, if available at auction, providing versatile acceleration.</p>
 
-  <p><strong>4. Dinesh Karthik (ID: 143) — Tier 2 | Classification: Rises under pressure:</strong> Karthik achieves a <strong>78.3%</strong> multiverse top-10 frequency across 250 HP balls, generating a shrunk PWI of +34.4 with a raw lift of +16.1. Eligible in 994/1,000 bootstrap draws with median rank 5.0 and 90% interval of <strong>[1, 44]</strong>. Rises under pressure in <strong>80.0%</strong> of specifications. IPL 2026 Team (raw data): None (Retired from active IPL play June 2024; active RCB Batting Coach & Mentor; <em>India TV News</em>, 2024-07-01; accessed 2026-11-12). Tactical Fit: Benchmark for finishing leverage; potential staff/mentor candidate rather than active player.</p>
+  <p><strong>4. Dinesh Karthik (ID: 143) — Tier 2 | Classification: Rises under pressure:</strong> Karthik achieves candidate eligibility in <strong>100.0%</strong> and Top-10 inclusion in <strong>78.3%</strong> of multiverse specifications across 250 HP balls, generating a shrunk PWI of +34.4 with a raw lift of +16.1. Eligible in 994/1,000 bootstrap draws with median rank 5.0 and 90% interval of <strong>[1, 44]</strong>. Rises under pressure in <strong>80.0%</strong> of specifications. Status: Historical benchmark — retired from active IPL play after the 2024 season; active Royal Challengers Bengaluru Batting Coach & Mentor (2025–2026). Retained as an empirical performance benchmark rather than an actionable recruitment target.</p>
 
   <p><strong>5. Heinrich Klaasen (ID: 4260) — Tier 2 | Classification: Rises under pressure:</strong> Klaasen secures a <strong>74.4%</strong> top-10 frequency across 459 HP balls with shrunk PWI +24.9 and raw lift +3.4. Median rank is 7.0, supported by 999/1,000 bootstrap draws with 90% interval of <strong>[5, 34]</strong>. Rises under pressure in <strong>80.0%</strong> of specifications. IPL 2026 Team (raw data): Sunrisers Hyderabad. Availability: UNVERIFIED. Tactical Fit: Premier middle-overs boundary engine, if available at auction, maintaining high baseline output.</p>
 
@@ -845,9 +852,9 @@ html_content = f"""<!DOCTYPE html>
 
   <p><strong>8. Romario Shepherd (ID: 6726) — Tier 2 | Classification: Balanced / Context-dependent:</strong> Shepherd records a <strong>55.5%</strong> top-10 frequency with median rank 6.0 across 431 HP balls. Shrunk PWI is +28.7 runs/100b with +5.0 raw lift. Eligible in 1,000/1,000 bootstrap draws with 90% interval of <strong>[2, 36]</strong>. Rises under pressure in <strong>49.1%</strong> of specifications. IPL 2026 Team (raw data): Royal Challengers Bengaluru. Availability: UNVERIFIED. Tactical Fit: Explosive lower-order hitter, if available at auction, adding depth to death-overs batting.</p>
 
-  <p><strong>9. Andre Russell (ID: 1318) — Tier 2 | Classification: Elite all the time:</strong> Russell posts a <strong>54.2%</strong> multiverse frequency across 347 HP balls with shrunk PWI +31.8 and +1.0 raw lift. Eligible in 1,000/1,000 bootstrap draws with median rank 10.0 and 90% interval of <strong>[2, 54]</strong>. Rises under pressure in <strong>17.8%</strong> of specifications (normal baseline +30.9). IPL 2026 Team (raw data): None (Retired from IPL active play on 30 Nov 2025; active KKR Power Coach; <em>The Hindu</em>, 2025-11-30; accessed 2026-11-12). Tactical Fit: Historical death-hitting benchmark; potential specialized coaching asset.</p>
+  <p><strong>9. Andre Russell (ID: 1318) — Tier 2 | Classification: Elite all the time:</strong> Russell achieves candidate eligibility in <strong>100.0%</strong> and Top-10 inclusion in <strong>54.2%</strong> of multiverse specifications across 347 HP balls with shrunk PWI +31.8 and +1.0 raw lift. Eligible in 1,000/1,000 bootstrap draws with median rank 10.0 and 90% interval of <strong>[2, 54]</strong>. Elite across all match states in <strong>82.2%</strong> of specifications (normal baseline +30.9). Status: Historical benchmark — retired from IPL on 30 Nov 2025; active Kolkata Knight Riders Power Coach for IPL 2026 while continuing in select non-IPL leagues. Serves as a prime baseline for elite late-innings power-hitting.</p>
 
-  <p><strong>10. Rashid Khan (ID: 4722) — Tier 3 | Classification: Rises under pressure:</strong> Rashid qualifies in <strong>47.9%</strong> of specifications across 377 HP balls with shrunk PWI +28.1 and raw lift of <strong>+40.3</strong> runs/100b (normal baseline -12.2). Eligible in 994/1,000 bootstrap draws with median rank 8.0 and 90% interval of <strong>[1, 40]</strong>. Rises under pressure in <strong>99.3%</strong> of specifications. IPL 2026 Team (raw data): Gujarat Titans. Availability: UNVERIFIED. Tactical Fit: Dual-threat asset, if available at auction, providing lower-order batting lift alongside frontline bowling.</p>
+  <p><strong>10. Rashid Khan (ID: 4722) — Tier 3 | Classification: Rises under pressure:</strong> Rashid achieves candidate eligibility in <strong>77.8%</strong> of multiverse specifications and finishes inside the Top 10 in <strong>47.9%</strong> of specifications (retaining a top-10 position in <strong>61.6%</strong> of specifications where eligible), across 377 HP balls with shrunk PWI +28.1 and raw lift of <strong>+40.3</strong> runs/100b (normal baseline -12.2). Supported by 994/1,000 bootstrap draws with median rank 8.0 and 90% interval of <strong>[1, 40]</strong>. Rises under pressure in <strong>99.3%</strong> of specifications. IPL 2026 Team (raw data): Gujarat Titans. Availability: UNVERIFIED. Tactical Fit: Dual-threat asset, if available at auction, providing lower-order batting lift alongside frontline bowling.</p>
 
   <img class="chart-img" style="max-height:175px;" src="{uri_chart('fig2_maintenance_vs_lift_batters.png')}" alt="Batting Maintenance vs Lift Landscape">
 
@@ -876,7 +883,8 @@ html_content = f"""<!DOCTYPE html>
         <th>Raw Lift</th>
         <th>Maint Lift</th>
         <th>HP Balls</th>
-        <th>Multi %</th>
+        <th>Elig %</th>
+        <th>Top-10 %</th>
         <th>Med [IQR]</th>
         <th>Boot 90% CI</th>
         <th>Rises %</th>
@@ -895,7 +903,7 @@ html_content = f"""<!DOCTYPE html>
 
   <p><strong>3. Rashid Khan (ID: 4722) — Tier 1 | Classification: Rises under pressure:</strong> Rashid achieves a <strong>93.5%</strong> multiverse frequency across 706 HP balls. Defending shrunk impact is <strong>+5.59</strong> runs saved/24b with raw lift of <strong>+2.75</strong>. Supported by 1,000/1,000 bootstrap draws with median rank 5.0 and 90% interval of <strong>[1, 19]</strong>. Rises under pressure in <strong>99.2%</strong> of specifications. IPL 2026 Team (raw data): Gujarat Titans. Availability: UNVERIFIED. Tactical Fit: Attacking wrist-spin option, if available at auction, addressing middle-overs economy deficits.</p>
 
-  <p><strong>4. Matheesha Pathirana (ID: 8661) — Tier 1 | Classification: Elite all the time:</strong> Pathirana secures an <strong>83.4%</strong> top-10 frequency across 307 HP balls, recording defending shrunk impact of +5.34 runs saved/24b and +1.21 raw lift. Supported by 1,000/1,000 bootstrap draws with median rank 3.0 and 90% interval of <strong>[1, 41]</strong>. Rises under pressure in <strong>22.2%</strong> of specifications. IPL 2026 Team (raw data): Kolkata Knight Riders (mapped in competition_team_player_mapping.csv). Availability: UNVERIFIED. Tactical Fit: Specialist death bowler, if available at auction, providing strong run restriction (+5.34 runs saved/24b).</p>
+  <p><strong>4. Matheesha Pathirana (ID: 8661) — Tier 1 | Classification: Elite all the time:</strong> Pathirana achieves candidate eligibility in <strong>100.0%</strong> and Top-10 inclusion in <strong>83.4%</strong> of multiverse specifications across 307 HP balls, recording defending shrunk impact of +5.34 runs saved/24b and +1.21 raw lift. Supported by 1,000/1,000 bootstrap draws with median rank 3.0 and 90% interval of <strong>[1, 41]</strong>. Elite across all match states in <strong>77.8%</strong> of specifications. IPL 2026 Team (raw data): Kolkata Knight Riders (mapped in competition_team_player_mapping.csv). Availability: UNVERIFIED. Note: Sustained confirmed hamstring injury on 16 May 2026 (replaced by Luvnith Sisodia for remainder of season); actively rehabilitating; do not assume 2027 unavailability. Tactical Fit: Specialist death bowler, if available at auction, providing strong run restriction (+5.34 runs saved/24b).</p>
 
   <p><strong>5. Eshan Malinga (ID: 39657) — Tier 2 | Classification: Rises under pressure:</strong> Malinga posts a <strong>71.9%</strong> top-10 frequency across 176 HP balls with defending impact +3.85 runs saved/24b and raw lift of +3.39. Qualified in 912/1,000 bootstrap draws with median rank 6.0 and 90% interval of <strong>[1, 38]</strong>. Rises under pressure in <strong>74.4%</strong> of specifications. IPL 2026 Team (raw data): Sunrisers Hyderabad (mapped in competition_team_player_mapping.csv). Availability: UNVERIFIED. Tactical Fit: Emerging pace option, if available at auction, demonstrating significant lift (+3.39) under leverage.</p>
 
@@ -913,11 +921,11 @@ html_content = f"""<!DOCTYPE html>
   </div>
 
   <div class="sub-heading">Detailed Empirical Evidence: Bowlers 6 to 10</div>
-  <p><strong>6. Nathan Ellis (ID: 7920) — Tier 2 | Classification: Rises under pressure:</strong> Ellis achieves a <strong>54.8%</strong> multiverse frequency across 229 HP balls with defending shrunk impact +5.50 runs saved/24b and raw lift +3.15. Supported by 988/1,000 bootstrap draws with median rank 7.0 and 90% interval of <strong>[1, 36]</strong>. Rises under pressure in <strong>65.9%</strong> of specifications. IPL 2026 Team (raw data): Chennai Super Kings (mapped in competition_team_player_mapping.csv). Availability: UNVERIFIED. Tactical Fit: Tactical death-overs target, if available at auction, to replace high-economy supporting overs.</p>
+  <p><strong>6. Nathan Ellis (ID: 7920) — Tier 2 | Classification: Rises under pressure:</strong> Ellis achieves candidate eligibility in <strong>75.5%</strong> and Top-10 inclusion in <strong>54.8%</strong> of multiverse specifications (retaining top 10 in <strong>72.5%</strong> when eligible) across 229 HP balls with defending shrunk impact +5.50 runs saved/24b and raw lift +3.15. Supported by 988/1,000 bootstrap draws with median rank 7.0 and 90% interval of <strong>[1, 36]</strong>. Rises under pressure in <strong>65.9%</strong> of specifications. IPL 2026 Team (raw data): Chennai Super Kings (mapped in competition_team_player_mapping.csv; subsequently traded CSK &rarr; SRH on 5 Nov 2026 for INR 2.00 Cr all-cash [Official SRH/IPL confirmation]). Availability: UNVERIFIED (contingent on SRH retention/trade decisions). Tactical Fit: Tactical death-overs target, if available at auction, to replace high-economy supporting overs.</p>
 
   <p><strong>7. Noor Ahmad (ID: 7967) — Tier 3 | Classification: Balanced / Context-dependent:</strong> Noor finishes top-10 in <strong>40.1%</strong> of specifications across 351 HP balls with defending impact +2.54 runs saved/24b. Eligible in 1,000/1,000 bootstrap draws with median rank 12.0 and 90% interval of <strong>[6, 62]</strong>. Rises under pressure in <strong>54.5%</strong> of specifications. IPL 2026 Team (raw data): Chennai Super Kings (mapped in competition_team_player_mapping.csv). Availability: UNVERIFIED. Tactical Fit: Left-arm wrist-spinner, if available at auction, providing middle-overs control.</p>
 
-  <p><strong>8. Arshdeep Singh (ID: 6464) — Tier 3 | Classification: Balanced / Context-dependent:</strong> Arshdeep qualifies in <strong>35.1%</strong> of specifications across 593 HP balls with defending impact +1.90 runs saved/24b and raw lift +0.99. Supported by 1,000/1,000 bootstrap draws with 90% interval of <strong>[9, 55]</strong>. Rises under pressure in <strong>55.8%</strong> of specifications. IPL 2026 Team (raw data): Punjab Kings; traded PBKS &rarr; MI on 11 Nov 2026 (<em>iplt20.com</em>, 2026-11-11; accessed 2026-11-12). Availability: UNVERIFIED. Tactical Fit: Indian left-arm seam option across powerplay and death overs, if available at auction.</p>
+  <p><strong>8. Arshdeep Singh (ID: 6464) — Tier 3 | Classification: Balanced / Context-dependent:</strong> Arshdeep achieves candidate eligibility in <strong>100.0%</strong> and Top-10 inclusion in <strong>35.1%</strong> of multiverse specifications across 593 HP balls with defending impact +1.90 runs saved/24b and raw lift +0.99. Supported by 1,000/1,000 bootstrap draws with 90% interval of <strong>[9, 55]</strong>. Rises under pressure in <strong>55.8%</strong> of specifications. IPL 2026 Team (raw data): Punjab Kings (mapped in competition_team_player_mapping.csv; traded PBKS &rarr; MI on 11 Nov 2026 in player-swap for Hardik Pandya [Official IPL announcement]). Availability: UNVERIFIED (contingent on MI retention). Tactical Fit: Indian left-arm seam option across powerplay and death overs, if available at auction.</p>
 
   <p><strong>9. Prasidh Krishna (ID: 4489) — Tier 3 | Classification: Rises under pressure:</strong> Prasidh achieves a <strong>31.7%</strong> top-10 frequency across 234 HP balls with defending impact +2.96 runs saved/24b and raw lift +2.67. Supported by 994/1,000 bootstrap draws with median rank 13.0 and 90% interval of <strong>[5, 63]</strong>. Rises under pressure in <strong>68.3%</strong> of specifications. IPL 2026 Team (raw data): Gujarat Titans (mapped in competition_team_player_mapping.csv). Availability: UNVERIFIED. Tactical Fit: Hit-the-deck pace bowler with strong raw lift (+2.67), if available at auction.</p>
 
@@ -1006,7 +1014,7 @@ html_content = f"""<!DOCTYPE html>
   <div class="sub-heading">Bootstrap Stability Hurdle: Excluded Candidates</div>
   <p>Applying the 1,000-draw stratified match bootstrap hurdle (&ge;800 valid eligible resamples) removed volatile fringe players:</p>
   <ul>
-    <li><strong>Matthew Wade (ID: 796):</strong> Achieved 52.96% multiverse top-10 frequency, but only qualified in <strong>720 / 1,000</strong> bootstrap resamples. In 28% of resampled universes, his sample size fell below threshold. His exclusion promoted Rashid Khan (#10) into the final batting list.</li>
+    <li><strong>Matthew Wade (ID: 796):</strong> Achieved 52.96% multiverse top-10 frequency across eligible specifications, but only qualified in <strong>720 / 1,000</strong> bootstrap resamples, failing the pre-registered &ge;800 stability hurdle. Status: Retired from international cricket (Oct 2024) and Australian domestic cricket (BBL / state cricket in Sep 2026 to take up coaching duties); has not participated in recent IPL auctions. His exclusion strictly on bootstrap stability grounds promoted Rashid Khan (#10) into the final batting list.</li>
     <li><strong>Mujeeb Ur Rahman (ID: 6450):</strong> Achieved 49.14% multiverse top-10 frequency, but qualified in only <strong>744 / 1,000</strong> bootstrap resamples.</li>
     <li><strong>Naveen ul Haq (ID: 5809):</strong> Achieved 48.74% multiverse top-10 frequency, but qualified in only <strong>513 / 1,000</strong> bootstrap resamples.</li>
     <li>Their removal promoted Prasidh Krishna (#9) and Bhuvneshwar Kumar (#10) into the final bowling list.</li>
@@ -1062,7 +1070,7 @@ html_content = f"""<!DOCTYPE html>
       <tr><td>15</td><td style="text-align:left;">Ravi Bishnoi (7503)</td><td>21.80%</td><td>19.0 [12.0]</td><td>1000 / 1000</td><td style="text-align:left;">Attacking Indian leg-spinner; currently on RR roster (ER 9.88 in 2026).</td></tr>
     </tbody>
   </table>
-  <p style="font-size:6.8pt; color:#4A5568; margin-top:-2px;"><em>(Note: Abbas Afridi achieved 27.83% top-10 frequency across lenient specifications, but qualified in only 40.03% of specifications, failing the 50% candidate gate).</em></p>
+  <p style="font-size:6.8pt; color:#4A5568; margin-top:-2px;"><em>(Note: Abbas Afridi achieved 27.83% top-10 frequency across lenient specifications, but qualified in only 40.03% of specifications, failing the 50% candidate gate. Pakistani players have historically not participated in the IPL player auction since 2008 and 2027 auction registration/eligibility remains unconfirmed; their metrics derive strictly from international T20Is).</em></p>
 
   <div class="sub-heading">Strategic Recruitment Summary for Rajasthan Royals</div>
   <p style="font-size:7.4pt;">Auction dynamics dictate that elite Tier 1 assets (Bumrah, Narine, Klaasen) are franchise cornerstones who will likely to be retained. RR's practical recruitment focus must concentrate on actionable high-ceiling players who could address these needs, if available at auction: Shashank Singh and Naman Dhir to partner Ferreira in death batting, and Nathan Ellis and Eshan Malinga to provide dependable death overs.</p>
@@ -1138,9 +1146,13 @@ html_content = f"""<!DOCTYPE html>
   <div class="section-heading">Appendix C: External Verification Citations & IPL 2026 Teams</div>
   <ul style="font-size:6.8pt; margin: 0; padding-left: 14px;">
     <li><strong>data/raw/competition_team_player_mapping.csv:</strong> Verified IPL 2026 teams: Pathirana (KKR), Prasidh (GT), Malinga (SRH), Ellis (CSK), Noor (CSK), Bhuvneshwar (RCB), Shepherd (RCB), David (RCB), Shashank (PBKS), Naman Dhir (MI), Klaasen (SRH), Suryakumar (MI), Rinku (KKR), Rashid (GT), Narine (KKR), Bumrah (MI).</li>
+    <li><strong>Nathan Ellis (Sunrisers Hyderabad / IPL Official, 2026-11-05; accessed 2026-11-14):</strong> Mapped to CSK in IPL 2026 raw data; traded CSK &rarr; SRH on 5 Nov 2026 in an all-cash INR 2.00 Cr transaction. [Official]</li>
+    <li><strong>Arshdeep Singh (iplt20.com, 2026-11-11; accessed 2026-11-14):</strong> Mapped to PBKS in IPL 2026 raw data; traded PBKS &rarr; MI on 11 Nov 2026 in swap deal for Hardik Pandya. [Official]</li>
+    <li><strong>Matheesha Pathirana (KKR / ESPNcricinfo, 2026-05-18; accessed 2026-11-14):</strong> Suffered confirmed hamstring injury on 16 May 2026 and replaced by Luvnith Sisodia for remainder of season; actively rehabilitating; do not assume 2027 unavailability. [Official / Reputable Media]</li>
     <li><strong>Andre Russell (The Hindu, 2025-11-30; accessed 2026-11-12):</strong> Retired from IPL on 30 Nov 2025; appointed KKR Power Coach for IPL 2026 while continuing in select non-IPL leagues. [Reputable Media]</li>
-    <li><strong>Arshdeep Singh (iplt20.com, 2026-11-11; accessed 2026-11-12):</strong> Mapped to PBKS in IPL 2026 raw data; traded PBKS &rarr; MI on 11 Nov 2026. [Official]</li>
     <li><strong>Dinesh Karthik (India TV News, 2024-07-01; accessed 2026-11-12):</strong> Retired after IPL 2024; active RCB Batting Coach & Mentor (2025-2026). [Reputable Media]</li>
+    <li><strong>Matthew Wade (cricket.com.au, 2024-10-29 & 2026-09-17; accessed 2026-11-14):</strong> Retired from international cricket and Australian domestic cricket (BBL / state) to take up coaching duties. [Official]</li>
+    <li><strong>Pakistani Players (BCCI / IPL Historical Record 2008–2026):</strong> Have historically not participated in the IPL player auction since 2008; 2027 auction registration/eligibility remains unconfirmed. [Historical Record]</li>
     <li><strong>All Other IPL 2027 Auction Statuses:</strong> Strictly marked <strong>UNVERIFIED</strong> as official BCCI auction lists remain unpublished.</li>
   </ul>
 

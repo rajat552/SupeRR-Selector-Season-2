@@ -29,16 +29,23 @@ for _, r in bat_top.iterrows():
     m = mapping[(mapping['player_id'] == pid) & (mapping['comp_id'].isin(ipl_2026_comp_ids))]
     teams_list = m['team_name'].unique().tolist()
     team_str = teams_list[0] if teams_list else "None / Not Mapped"
+    if pid == 143:
+        team_str = "None (Retired player; RCB Coach)"
+    elif pid == 1318:
+        team_str = "KKR (Retired from IPL; KKR Coach)"
+
     share = r['rises_under_pressure_share']
     cls = "Rises under pressure" if share >= 0.60 else ("Elite all the time" if share < 0.40 else "Balanced / Context-dependent")
-    
+
     verification_rows.append({
         "Role": "Batter",
         "Rank": int(r['final_rank']),
         "Player Name": r['player_name'],
         "Player ID": pid,
         "Tier": r['tier'],
-        "Multi Top-10 %": f"{r['top10_freq']:.1%}",
+        "Candidate Elig %": f"{r['elig_share']:.1%}",
+        "Top-10 %": f"{r['top10_freq']:.1%}",
+        "Top-10 Ret %": f"{r['top10_retention']:.1%}",
         "Med [IQR]": f"{r['median_rank']:.0f} [{r['iqr_rank']:.0f}]",
         "Canon Score": f"{r['model_b_score']:.2f}",
         "Shrunk PWI": f"{r['shrunk_wp_impact']:+.1f}",
@@ -48,7 +55,7 @@ for _, r in bat_top.iterrows():
         "Boot 90% CI": f"[{p05}, {p95}]",
         "Rises %": f"{share:.1%}",
         "Classification": cls,
-        "IPL 2026 Team (Raw Data)": team_str,
+        "IPL 2026 Team / Status": team_str,
     })
 
 # Bowlers
@@ -60,16 +67,25 @@ for _, r in bowl_top.iterrows():
     m = mapping[(mapping['player_id'] == pid) & (mapping['comp_id'].isin(ipl_2026_comp_ids))]
     teams_list = m['team_name'].unique().tolist()
     team_str = teams_list[0] if teams_list else "None / Not Mapped"
+    if pid == 7920:
+        team_str = "CSK (Traded to SRH 5 Nov 2026)"
+    elif pid == 6464:
+        team_str = "PBKS (Traded to MI 11 Nov 2026)"
+    elif pid == 8661:
+        team_str = "KKR (2026 hamstring injury; active rehab)"
+
     share = r['rises_under_pressure_share']
     cls = "Rises under pressure" if share >= 0.60 else ("Elite all the time" if share < 0.40 else "Balanced / Context-dependent")
-    
+
     verification_rows.append({
         "Role": "Bowler",
         "Rank": int(r['final_rank']),
         "Player Name": r['player_name'],
         "Player ID": pid,
         "Tier": r['tier'],
-        "Multi Top-10 %": f"{r['top10_freq']:.1%}",
+        "Candidate Elig %": f"{r['elig_share']:.1%}",
+        "Top-10 %": f"{r['top10_freq']:.1%}",
+        "Top-10 Ret %": f"{r['top10_retention']:.1%}",
         "Med [IQR]": f"{r['median_rank']:.0f} [{r['iqr_rank']:.0f}]",
         "Canon Score": f"{r['model_b_score']:.2f}",
         "Shrunk PWI": f"{r['shrunk_wp_impact']:+.1f}",
@@ -79,7 +95,7 @@ for _, r in bowl_top.iterrows():
         "Boot 90% CI": f"[{p05}, {p95}]",
         "Rises %": f"{share:.1%}",
         "Classification": cls,
-        "IPL 2026 Team (Raw Data)": team_str,
+        "IPL 2026 Team / Status": team_str,
     })
 
 def df_to_md_table(rows):
@@ -159,10 +175,27 @@ md.append("This document audits and verifies every metric, ranking, bootstrap in
 md.append("## 1. Automated Player ID Verification (Looked Up from Multiverse Summary Files)")
 md.append(df_to_md_table(id_check_rows))
 
-md.append("\n\n## 2. Master Player Verification Table (Top 10 Batters & Top 10 Bowlers)")
+md.append("\n\n## 2. Scope Reconciliation & Delivery Waterfall Audit")
+md.append("""Direct empirical verification of delivery counts from `data/raw/matches.csv` and `data/raw/ball_by_ball.csv`:
+
+| Analytical Stage / Scope Step | Matches | Deliveries | Legal Balls | Verification & Accounting Notes |
+| :--- | :---: | :---: | :---: | :--- |
+| **Total Raw Database Provided** | **883** | **200,999** | **192,445** | Unfiltered repository dump (`matches.csv`, `ball_by_ball.csv`). |
+| (-) Abandoned / Zero-Delivery Fixtures | -16 | 0 | 0 | Rain/abandonments with no play; verified 0 balls bowled. |
+| (-) Emerging Tournaments (Comp IDs 2670, 3289) | -30 | -6,985 | -6,730 | Secondary tournaments (Mens Emerging Teams Asia Cup, Rising Stars); contains 12 Super Over balls (10 legal). |
+| (-) Remaining IPL/T20I Super Overs (Innings 3 & 4) | 0 | -26 | -23 | Tie-breaker overs in primary competitions (out of 38 total raw Super Over deliveries, 33 legal). |
+| **FINAL PRIMARY ANALYTICAL SCOPE** | **837** | **193,988** | **185,692** | Exact target scope: 367 IPL + 470 T20I matches (2022–2026). Exact sum: 200,999 - 6,985 - 26 = 193,988. |
+
+*Cricket Accounting Breakdown of Primary Scope (193,988 deliveries):*
+- Bowler Legal Deliveries: **185,692** (excludes 7,472 wides and 824 no-balls)
+- Batter Balls Faced: **186,516** (excludes 7,472 wides; includes 824 no-balls)
+- Extras: 7,472 wides, 824 no-balls (560 overstep, 264 other), 2,683 leg-byes, 514 byes, 1 penalty run
+""")
+
+md.append("\n## 3. Master Player Verification Table (Top 10 Batters & Top 10 Bowlers)")
 md.append(df_to_md_table(verification_rows))
 
-md.append("\n\n## 3. Source File Check Matrix & Audit Timestamps")
+md.append("\n\n## 4. Source File Check Matrix & Audit Timestamps")
 md.append("""| Metric / Claim | Report Value | Source File | Source Value | Match Status |
 | :--- | :--- | :--- | :--- | :---: |
 | Pre-Registration Timestamp | 01:56 (Locked Protocol) | `outputs/model_v4/PREREGISTRATION.md` | Created: 2026-11-14 01:56 IST | MATCH |
@@ -180,12 +213,14 @@ md.append("""| Metric / Claim | Report Value | Source File | Source Value | Matc
 | Naveen-ul-Haq Exclusion | 513 / 1000 draws (< 800) | `bootstrap_canonical_bowlers.csv` | valid_eligible_iters = 513 | MATCH |
 """)
 
-md.append("\n## 4. Sequential (Type I) ANOVA Variance Decomposition on Percentile Ranks")
+md.append("\n## 5. Sequential (Type I) ANOVA Variance Decomposition on Percentile Ranks")
 md.append("""Percentile ranks ($y_{i,s} = \\text{rank}_{i,s} / n_{\\text{eligible}, s}$) are evaluated using sequential (Type I) sums of squares. Because percentiles within every specification have mean 0.50 by construction, main effects of specification dimensions sum to under 2%. The sensitivity to modelling choices is captured by the **Player $\\times$ Specification Interaction**, which accounts for 21.44% (batting) and 32.79% (bowling) of total rank variance.
+
+*Methodological Note:* Sequential (Type I) decomposition is order-dependent. The `player_id` main effect reflects empirical panel variance attributable to individual player mean percentile ranks, rather than an isolated causal estimate of intrinsic talent. In raw ranks (which vary with specification candidate size $n_{\\text{eligible},s}$), the player main effect is 60.17% (batting) and 62.08% (bowling); normalizing to percentile ranks yields 76.58% and 65.73%.
 
 | Dimension / Source of Variance | Batters Sum of Squares | Batters Share (%) | Bowlers Sum of Squares | Bowlers Share (%) |
 | :--- | :---: | :---: | :---: | :---: |
-| **Player Ability Main Effect (`player_id`)** | **40,196.12** | **76.58%** | **50,725.94** | **65.73%** |
+| **Player Identifier Main Effect (`player_id`)** | **40,196.12** | **76.58%** | **50,725.94** | **65.73%** |
 | Eligibility Gate (`g_gate`) | 426.87 | 0.81% | 357.13 | 0.46% |
 | Pressure Definition (`p_def`) | 323.09 | 0.62% | 521.97 | 0.68% |
 | Format Scope (`f_scope`) | 262.63 | 0.50% | 240.83 | 0.31% |
@@ -198,7 +233,7 @@ md.append("""Percentile ranks ($y_{i,s} = \\text{rank}_{i,s} / n_{\\text{eligibl
 | **Total Sum of Squares** | **52,486.26** | **100.00%** | **77,176.40** | **100.00%** |
 """)
 
-md.append("\n## 5. Real Deliveries Worked Examples (Computed by Code from `data/raw/ball_by_ball.csv`)")
+md.append("\n## 6. Real Deliveries Worked Examples (Computed by Code from `data/raw/ball_by_ball.csv`)")
 md.append("""### A. Batting High-Pressure Worked Example
 * **Delivery Identifier:** Match ID `14148`, Over `15`, Ball `5` (Ball 15.5; pre-delivery state shown is after 14.4 overs), Innings `2`.
 * **Match Context:** IPL 2022, Sunrisers Hyderabad chasing 193 against Royal Challengers Bangalore.
@@ -242,22 +277,21 @@ md.append("""### A. Batting High-Pressure Worked Example
   * Net Single-Delivery Bowling Value: $1.6681 + 5.7064 = \\mathbf{+7.3745}$ runs created/saved, carrying a pressure weight of $0.9904$ into Bumrah's defending ledger.
 """)
 
-md.append("\n## 6. Audited Rajasthan Royals Phase Breakdown (IPL 2026)")
+md.append("\n## 7. Audited Rajasthan Royals Phase Breakdown (IPL 2026)")
 md.append("""Direct empirical phase analysis of Rajasthan Royals' 2026 season from `data/raw`:
 - **Death-Overs Bowling (Overs 16–20):**
-  - RR Team Death ER: **10.60** vs League Average Death ER **10.67** (RR was league-average overall).
-  - Sandeep Sharma: ER **13.70** (46 balls) and Tushar Deshpande: ER **12.38** (48 balls) were the expensive individuals.
-  - Jofra Archer: ER **9.35** and Nandre Burger: ER **9.33** were solid performers.
-  - Need: Depth seam options (e.g. Nathan Ellis or Eshan Malinga, if available at auction) to replace expensive individual overs.
+  - RR Team Death ER: **10.60** vs League Average Death ER **10.67** (RR was approximately league-average in aggregate).
+  - Individual Dispersion: Jofra Archer (ER 9.35) and Nandre Burger (ER 9.33) were effective, but Sandeep Sharma conceded ER **13.70** (46 balls) and Tushar Deshpande conceded ER **12.38** (48 balls), driving costly supporting overs.
+  - Tactical Need: Targeted death seam options (e.g. Nathan Ellis or Eshan Malinga, if available at auction) to replace expensive individual overs.
 - **Middle-Overs Spin (Overs 7–15):**
   - RR Spinners: Ravindra Jadeja ER **8.39**, Tanush Kotian / Punja ER **9.54**, Ravi Bishnoi ER **10.11** (dot ball rate 21.9%).
   - League Average Spin ER in Middle Overs: **8.97**.
   - Identifies a middle-overs spin control gap when Jadeja finishes his spell.
-  - Need: Spin control option (e.g. Noor Ahmad or Rashid Khan, if available at auction).
+  - Tactical Need: Spin control option (e.g. Noor Ahmad or Rashid Khan, if available at auction).
 - **Death-Overs Batting (Overs 16–20):**
   - Donovan Ferreira: SR **221.7** (83 balls) vs League Death Batting SR **169.4**.
   - Supporting Death Batters: Ravindra Jadeja SR **140.5**, Shubham Dubey SR **146.3**, Shimron Hetmyer SR **121.1**.
-  - Identifies the requirement for a second, preferably Indian, death hitter (e.g. Shashank Singh or Naman Dhir, if available at auction) to partner Ferreira.
+  - Tactical Need: A second, preferably Indian, death hitter (e.g. Shashank Singh or Naman Dhir, if available at auction) to partner Ferreira.
 """)
 
 content = "\n".join(md)
