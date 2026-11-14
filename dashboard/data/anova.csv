@@ -1,0 +1,5 @@
+Component,Percentile_SS_Pct_Batting,Percentile_SS_Pct_Bowling,Interpretation
+Player Main Effect,76.58,65.73,Dominant source of variance across multiverse
+Player x Specification Interaction,21.44,32.79,Sensitivity of individual players to specific model choices
+Specification Main Effects,1.98,1.48,Overall baseline shift between model specifications
+Total Sum of Squares,100.0,100.0,Complete Sequential Type I ANOVA sum of squares

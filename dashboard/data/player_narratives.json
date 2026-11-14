@@ -1,0 +1,206 @@
+{
+  "batters": {
+    "2756": {
+      "player_name": "Shashank Singh",
+      "classification": "Rises under pressure",
+      "tactical_role": "Middle-Order Finisher / Lower-Order Boundary Hitter",
+      "ipl_2026_team": "Punjab Kings (PBKS)",
+      "availability_status": "UNVERIFIED",
+      "status_label": "AUCTION / RETENTION TARGET",
+      "profile_summary": "Demonstrates the highest lift under leverage (+22.2 runs/100b raw lift) in the dataset. Converted 100% of high-pressure chases into positive win-probability contributions in 2026. Right-handed finisher capable of scoring at 178+ SR against express pace.",
+      "rr_fit": "Ideal target to partner Donovan Ferreira in death-overs hitting. Direct solution to RR lack of secondary death-overs boundary production."
+    },
+    "6396": {
+      "player_name": "Tim David",
+      "classification": "Rises under pressure",
+      "tactical_role": "Finisher / Boundary Hitter (Death Overs)",
+      "ipl_2026_team": "Royal Challengers Bengaluru (RCB)",
+      "availability_status": "UNVERIFIED",
+      "status_label": "WATCHLIST / OVERSEAS TARGET",
+      "profile_summary": "Highest absolute shrunk impact (+42.9 runs/100b) among all qualifying batters. Sustained exceptional boundary conversion across 570 high-pressure balls. Ranks #1 median rank across 15,150 multiverse specifications.",
+      "rr_fit": "High-impact boundary asset to provide overseas death-overs boundary power, complementing RR existing top order."
+    },
+    "37052": {
+      "player_name": "Naman Dhir",
+      "classification": "Rises under pressure",
+      "tactical_role": "Top/Middle-Order Utility Power Hitter",
+      "ipl_2026_team": "Mumbai Indians (MI)",
+      "availability_status": "UNVERIFIED",
+      "status_label": "HIGH-UPSIDE DOMESTIC TARGET",
+      "profile_summary": "Highest raw lift in the top 10 (+35.4 runs/100b). Emerging Indian talent who excelled in high-leverage powerplay and death situations for MI. Earned maiden India white-ball squad call-up in September 2026.",
+      "rr_fit": "High-priority auction bid candidate if released by MI. Provides versatile boundary hitting from overs 7 to 20 with domestic player flexibility."
+    },
+    "143": {
+      "player_name": "Dinesh Karthik",
+      "classification": "Rises under pressure",
+      "tactical_role": "Wicketkeeper-Finisher",
+      "ipl_2026_team": "Retired (RCB Batting Coach & Mentor)",
+      "availability_status": "RETIRED BENCHMARK",
+      "status_label": "HISTORICAL BENCHMARK",
+      "profile_summary": "Exceptional historical benchmark with +34.4 runs/100b shrunk impact and +16.1 lift under pressure. Officially retired from active IPL play post-2024; active RCB Batting Coach & Mentor.",
+      "rr_fit": "Empirical gold standard for domestic finishing. Retained as an analytical benchmark rather than an actionable recruitment target."
+    },
+    "4260": {
+      "player_name": "Heinrich Klaasen",
+      "classification": "Rises under pressure",
+      "tactical_role": "Middle-Order / Spin Destroyer",
+      "ipl_2026_team": "Sunrisers Hyderabad (SRH)",
+      "availability_status": "RETAINED / UNVIABLE",
+      "status_label": "RETAINED CORE (UNVIABLE)",
+      "profile_summary": "Global benchmark for spin neutralization in middle overs (+24.9 runs/100b shrunk impact). Retained by SRH at top tier (INR 23 Cr). Exceptional power against both wrist-spin and finger-spin.",
+      "rr_fit": "Franchise cornerstone; serves as the analytical benchmark for middle-overs dominance."
+    },
+    "1699": {
+      "player_name": "Suryakumar Yadav",
+      "classification": "Elite all the time",
+      "tactical_role": "Specialist Batter (360\u00b0 Middle Order)",
+      "ipl_2026_team": "Mumbai Indians (MI)",
+      "availability_status": "RETAINED / UNVIABLE",
+      "status_label": "RETAINED CORE (UNVIABLE)",
+      "profile_summary": "Maintains elite output across all match contexts (+25.4 runs/100b impact; 657 HP balls). India T20I Captain and core Mumbai Indians retention. Baseline prototype for 360-degree boundary striking.",
+      "rr_fit": "Non-acquirable marquee player; represents the upper bound of all-phase batting impact."
+    },
+    "4708": {
+      "player_name": "Rinku Singh",
+      "classification": "Rises under pressure",
+      "tactical_role": "Left-Hand Finisher / Chase Specialist",
+      "ipl_2026_team": "Kolkata Knight Riders (KKR)",
+      "availability_status": "RETAINED / UNVIABLE",
+      "status_label": "RETAINED CORE (UNVIABLE)",
+      "profile_summary": "Prototypical chase-master (+31.0 runs/100b shrunk impact, +17.9 lift). Retained by KKR (INR 13 Cr). Rises under pressure in 80% of specifications with exceptional composure in required-run-rate chases.",
+      "rr_fit": "Elite domestic chase specialist; unviable for trade."
+    },
+    "6726": {
+      "player_name": "Romario Shepherd",
+      "classification": "Balanced / Context-dependent",
+      "tactical_role": "Pace-Bowling All-Rounder / Lower-Order Striker",
+      "ipl_2026_team": "Mumbai Indians (MI)",
+      "availability_status": "UNVERIFIED",
+      "status_label": "VIABLE AUCTION / TRADE TARGET",
+      "profile_summary": "Explosive lower-order striker with +28.7 runs/100b shrunk impact and 192.4 death SR. Squad rotation asset at MI; provides lower-order insurance and raw boundary power.",
+      "rr_fit": "Viable auction target to bolster lower-order power hitting and seam bowling depth."
+    },
+    "1318": {
+      "player_name": "Andre Russell",
+      "classification": "Elite all the time",
+      "tactical_role": "Pace-Bowling All-Rounder / Death Striker",
+      "ipl_2026_team": "KKR (Retired from IPL; KKR Power Coach)",
+      "availability_status": "RETIRED BENCHMARK",
+      "status_label": "HISTORICAL BENCHMARK",
+      "profile_summary": "Generational death-overs striking benchmark (+31.8 runs/100b shrunk impact). Stepped back from active playing squad post-2025 into coaching/mentorship at KKR.",
+      "rr_fit": "Historical gold standard for pace power-hitting under pressure."
+    },
+    "4722": {
+      "player_name": "Rashid Khan",
+      "classification": "Rises under pressure",
+      "tactical_role": "Bowling All-Rounder (Cameo Striker)",
+      "ipl_2026_team": "Gujarat Titans (GT)",
+      "availability_status": "RETAINED / UNVIABLE",
+      "status_label": "DUAL-QUALIFIED / RETAINED",
+      "profile_summary": "Dual-discipline qualifier (Ranks #10 Batter and #3 Bowler). Extraordinary lift (+40.3 runs/100b) in desperate chase situations. Retained by GT (INR 18 Cr).",
+      "rr_fit": "Dual-threat asset of extraordinary value; non-acquirable core retention."
+    }
+  },
+  "bowlers": {
+    "781": {
+      "player_name": "Sunil Narine",
+      "classification": "Balanced / Context-dependent",
+      "tactical_role": "Mystery Off-Spin / Middle-Overs Controller",
+      "ipl_2026_team": "Kolkata Knight Riders (KKR)",
+      "availability_status": "RETAINED / UNVIABLE",
+      "status_label": "RETAINED CORE (UNVIABLE)",
+      "profile_summary": "Ranked #1 Bowler under pressure. 100% multiverse top-10 inclusion. Concedes only 6.34 economy under pressure (+6.57 runs saved/24b). First overseas bowler to cross 200 IPL wickets in 2026.",
+      "rr_fit": "Elite defensive spin controller; non-acquirable KKR stalwart."
+    },
+    "2933": {
+      "player_name": "Jasprit Bumrah",
+      "classification": "Elite all the time",
+      "tactical_role": "Right-Arm Fast / All-Phase Spearhead",
+      "ipl_2026_team": "Mumbai Indians (MI)",
+      "availability_status": "RETAINED / UNVIABLE",
+      "status_label": "RETAINED CORE (UNVIABLE)",
+      "profile_summary": "Highest absolute shrunk impact (+7.61 runs saved/24b). Dot-ball rate of 32.8% and elite wicket-taking under pressure. Rises % is 7.2% only because baseline is already extraordinary (+7.28). Retained at INR 18 Cr.",
+      "rr_fit": "The global gold standard of death-overs and high-pressure bowling; unviable."
+    },
+    "4722": {
+      "player_name": "Rashid Khan",
+      "classification": "Rises under pressure",
+      "tactical_role": "Leg-Break Googly / Middle-Overs Enforcer",
+      "ipl_2026_team": "Gujarat Titans (GT)",
+      "availability_status": "RETAINED / UNVIABLE",
+      "status_label": "DUAL-QUALIFIED / RETAINED",
+      "profile_summary": "Ranked #3 Bowler and #10 Batter. Elite volume (706 HP balls) with +5.59 runs saved/24b and +2.75 raw lift. Rises under pressure in 99.2% of multiverse specifications.",
+      "rr_fit": "Direct answer to RR middle-overs spin economy deficit (RR conceded 9.29 in middle overs); GT core retention."
+    },
+    "8661": {
+      "player_name": "Matheesha Pathirana",
+      "classification": "Elite all the time",
+      "tactical_role": "Right-Arm Fast (Sling) / Death-Overs Specialist",
+      "ipl_2026_team": "Kolkata Knight Riders (KKR)",
+      "availability_status": "REPORTED / INJURED (ACTIVE REHAB)",
+      "status_label": "REPORTED INJURY / REHAB",
+      "profile_summary": "Sling-arm yorker specialist (+5.34 runs saved/24b). Sustained confirmed grade-2 hamstring strain on 16 May 2026 vs GT (replaced by Luvnith Sisodia); actively rehabilitating. Do not assume 2027 unavailability.",
+      "rr_fit": "Elite death bowling option; requires physical medical clearance monitoring."
+    },
+    "39657": {
+      "player_name": "Eshan Malinga",
+      "classification": "Rises under pressure",
+      "tactical_role": "Right-Arm Fast / Emerging Slinger",
+      "ipl_2026_team": "Sunrisers Hyderabad (SRH)",
+      "availability_status": "UNVERIFIED",
+      "status_label": "PRIMARY UNMET SCOUTING TARGET",
+      "profile_summary": "Highest raw lift among frontline seamers (+3.39 runs saved/24b; +3.85 shrunk impact). Qualifies in 88.9% of multiverse specifications. Exceptional yorker capability under leverage.",
+      "rr_fit": "Prime uncapped/overseas auction target for RR. Directly solves death-overs variance at highly efficient auction cost."
+    },
+    "7920": {
+      "player_name": "Nathan Ellis",
+      "classification": "Rises under pressure",
+      "tactical_role": "Right-Arm Fast-Medium / Death Yorker & Changeup Specialist",
+      "ipl_2026_team": "Sunrisers Hyderabad (SRH) [Traded from CSK 5 Nov 2026]",
+      "availability_status": "CONFIRMED TRADE (CSK -> SRH)",
+      "status_label": "CONFIRMED TRADE / TARGET",
+      "profile_summary": "Specialist death bowler with +5.50 runs saved/24b and +3.15 lift. Traded from CSK to SRH on 5 November 2026. High competition for overseas slots at SRH opens potential secondary trade window.",
+      "rr_fit": "Top priority trade candidate for RR. Directly addresses Sandeep Sharma / Tushar Deshpande death overs leakage (13.70 / 12.38 ER)."
+    },
+    "7967": {
+      "player_name": "Noor Ahmad",
+      "classification": "Balanced / Context-dependent",
+      "tactical_role": "Left-Arm Wrist Spin / Middle-Overs Controller",
+      "ipl_2026_team": "Chennai Super Kings (CSK)",
+      "availability_status": "UNVERIFIED",
+      "status_label": "VIABLE TRADE / AUCTION TARGET",
+      "profile_summary": "Left-arm wrist-spinner with +2.54 runs saved/24b and 34.8% dot ball rate. Acquired by CSK in mega-auction. Provides rare spin angle and high control in middle/death phases.",
+      "rr_fit": "Excellent target to partner or upgrade RR spin attack (Yash Punja 9.54 ER; Ravi Bishnoi 10.11 ER)."
+    },
+    "6464": {
+      "player_name": "Arshdeep Singh",
+      "classification": "Balanced / Context-dependent",
+      "tactical_role": "Left-Arm Fast-Medium / Death & Powerplay Specialist",
+      "ipl_2026_team": "Mumbai Indians (MI) [Traded from PBKS 11 Nov 2026]",
+      "availability_status": "CONFIRMED TRADE (PBKS -> MI)",
+      "status_label": "CONFIRMED TRADE (UNVIABLE)",
+      "profile_summary": "Frontline Indian left-arm seamer (593 HP balls). Traded from PBKS to MI on 11 November 2026 in an all-cash deal. Concedes 8.82 economy under pressure with high death reliability.",
+      "rr_fit": "Elite Indian seamer; recently traded to MI making immediate acquisition unviable."
+    },
+    "4489": {
+      "player_name": "Prasidh Krishna",
+      "classification": "Rises under pressure",
+      "tactical_role": "Right-Arm Fast / Hit-the-Deck Enforcer",
+      "ipl_2026_team": "Gujarat Titans (GT)",
+      "availability_status": "UNVERIFIED",
+      "status_label": "HOMECOMING TRADE TARGET",
+      "profile_summary": "Former RR frontline pacer. Generates steep bounce and pace (+2.96 runs saved/24b; +2.67 raw lift). Effective through middle overs and hard-length death bowling.",
+      "rr_fit": "High familiarity with RR management and home venue (Sawai Mansingh Stadium). Strong homecoming trade target."
+    },
+    "360": {
+      "player_name": "Bhuvneshwar Kumar",
+      "classification": "Elite all the time",
+      "tactical_role": "Right-Arm Swing / Powerplay Specialist",
+      "ipl_2026_team": "Royal Challengers Bengaluru (RCB)",
+      "availability_status": "UNVERIFIED",
+      "status_label": "VETERAN AUCTION TARGET",
+      "profile_summary": "Master swing bowler with elite new-ball control (+3.25 runs saved/24b). Baseline is already strong (+4.56). Veteran leader capable of setting early pressure in the powerplay.",
+      "rr_fit": "Experienced powerplay specialist to complement Jofra Archer new-ball spells."
+    }
+  }
+}

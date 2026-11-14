@@ -1,0 +1,6 @@
+Stage,Matches,Deliveries,Legal_Balls,Notes
+Total Raw Deliveries,883,200999,192445,Initial uncurated competition dataset dump
+(-) Abandoned / Rain Fixtures,-16,0,0,Zero-delivery matches excluded
+"(-) Emerging Tournaments (Comp 2670, 3289)",-30,-6985,-6730,Emerging teams competitions (contains 12 Super Over deliveries)
+(-) Remaining IPL/T20I Super Overs,0,-26,-23,Innings 3 & 4 tie-breaker overs in primary competitions
+FINAL PRIMARY ANALYTICAL SCOPE,837,193988,185692,Target scope: 367 IPL + 470 T20I matches (2022-2026)
