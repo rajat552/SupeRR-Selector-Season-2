@@ -1,0 +1,12 @@
+check,violations,examples,impact
+Legal balls per innings <= 120 (or DLS revised limit),0,None,Standard T20 innings compliance confirmed
+Wickets per innings <= 10,1,"[{'match_id': 20880, 'innings': 2, 'dismissed_player_id': 11}]",Cricket rule satisfied
+Over index <= 20 (standard innings),0,None,Over indexing valid
+Extras accounting: runs + extras1_runs + extras_2_runs correctly parsed,0,Mean runs per ball: 1.414,Complete run accounting
+Dismissed player is striker or non-striker on pitch,0,None,Identifies any phantom dismissals
+"Bowler wicket exclusions (Run Out, Retired Out, Obstructing)",0,"Total dismissals: 10879, Bowler credited wickets: 10273",Correctly prevents attributing non-bowler wickets to bowler
+DLS / Rain-affected matches audited (revised overs in balls),0,"Total DLS matches: 19; Match IDs: [13612, 16754, 20182]",Confirmed: first_inn_revised_overs and second_inn_revised_overs store ball counts
+Reconstructed match totals match official win_team_id (excluding DLS/Ties),0,None,100% agreement between reconstructed ball-by-ball score and official match result
+batting_order within standard 1 to 11,4,"[{'match_id': 14147, 'innings': 2, 'striker_id': 29888, 'batting_order': 12}, {'match_id': 20880, 'innings': 2, 'striker_id': 7240, 'batting_order': 12}]",Batting order accurately captured
+is_impact usage (IPL Impact Player Rule),0,Total Impact player substitutions: 558 (IPL 2023-2026),Reflects modern tactical substitution dynamics in IPL
+bowl_speed sensor validity (zeros and >165 km/h),77863,"Zero sentinels: 77843 (38.7%), Speeds > 165 km/h: 20",Speed tracking missing/zero for significant portion; model must not rely on speed features

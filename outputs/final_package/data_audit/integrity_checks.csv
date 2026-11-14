@@ -1,0 +1,12 @@
+check,violations,examples,status
+ball_by_ball.match_id in matches.match_id,0,None,PASS
+matches with deliveries (matches without deliveries identified),16,"[np.int64(48513), np.int64(32610), np.int64(32612), np.int64(50189), np.int64(42030)]",PASS (16 abandoned matches have 0 deliveries)
+striker_id in competition_team_player_mapping.player_id,0,None,PASS
+non_striker_id in competition_team_player_mapping.player_id,0,None,PASS
+bowler_id in competition_team_player_mapping.player_id,0,None,PASS
+dismissed_player_id in competition_team_player_mapping.player_id,0,None,PASS
+playing_eleven.player_id in competition_team_player_mapping.player_id,0,None,PASS
+mapping.team_id in teams.team_id,0,None,PASS
+mapping.comp_id in competitions.comp_id,0,None,PASS
+Single player_id has multiple player_names,0,None,PASS
+Player name has multiple player_ids (Homonyms),7,"Abdul Samad: [7446, 6922]; Bashir Ahmad: [39479, 29833]; Basil Hameed: [8638, 39444]; Haider Ali: [7338, 28756]",INFO (Requires player_id as primary key)

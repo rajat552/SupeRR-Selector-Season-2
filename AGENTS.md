@@ -1,10 +1,10 @@
 # AGENTS.md — Workspace Governance & Engineering Rules
 
-This repository houses the **SupeRR Selector Season 2 (Round 1)** analytics workspace (`Python 3.13`), preserving the audited **V1** baseline pipeline alongside the remediated **V2** statistical architecture.
+This repository houses the **SupeRR Selector Season 2 (Round 1)** analytics workspace (`Python 3.13`), preserving the audited **V1** baseline pipeline alongside the remediated **V2**, **V3**, and final **V4 Multiverse** analytical architectures.
 
 ---
 
-## 1. Repository Layout: V1 vs V2
+## 1. Repository Layout: Iterative Versions & Submission Architecture
 
 ### Immutable V1 Baseline & Audit Artifacts (READ-ONLY)
 - `data/raw/` — Official competition PDF and 6 raw CSV files (`competitions.csv`, `teams.csv`, `matches.csv`, `playing_eleven.csv`, `competition_team_player_mapping.csv`, `ball_by_ball.csv`).
@@ -13,24 +13,41 @@ This repository houses the **SupeRR Selector Season 2 (Round 1)** analytics work
 - `outputs/model_audit/` — Independent Phase 0.5 statistical audit (`audit_summary.md`, `model_formula_audit.md`, `audit_test_results.md`, `independent_audit.py`, `test_audit_rules.py`, and reconciliation CSVs).
 - `docs/03_DATA_AUDIT.md`, `docs/04_ANALYTICAL_STRATEGY.md`, `docs/05_PROJECT_ROADMAP.md` — Original Phase 0 discovery documents.
 
-### V2 Remediated Pipeline & Submission Workspace
-- `src/model_v2/` — Modular V2 package resolving the 7 V1 methodological issues (`data_loader.py`, `cricket_accounting.py`, `state_builder.py`, `opponent_strength.py`, `pressure_model.py`, `batting_features.py`, `bowling_features.py`, `context_baselines.py`, plus modeling/bootstrap/pipeline modules).
-- `tests/model_v2/` — Unit and statistical validation suite (`pytest`).
-- `outputs/model_v2/` — V2 intermediate tables, rankings, diagnostics, `integrity_manifest_pre.json`, and `external_player_research.csv`.
-- `outputs/submission/` — Final competition deliverables (`source_register.md`, final methodology report, charts, Unstop dropdown verification).
-- `docs/00_COMPETITION_OVERVIEW.md`, `docs/01_PROBLEM_DEFINITION.md`, `docs/02_DATA_DICTIONARY.md` — Restored foundational governance and specification docs.
+### V2 & V3 Analytical Pipelines & Intermediate Diagnostics
+- `src/model_v2/`, `src/model_v3/` — Remediated model architectures and feature extraction engines.
+- `tests/model_v2/`, `tests/model_v3/` — Unit and statistical validation suites (`pytest`).
+- `outputs/model_v2/` — V2 intermediate tables, rankings, diagnostics, and `integrity_manifest_pre.json`.
+- `outputs/model_v3/` — V3 sensitivity feature tables and rankings.
+
+### Final V4 Multiverse Model & Submission Deliverables
+- `src/model_v4/` — Final specification-curve pipeline evaluating 15,150 specifications per role.
+- `tests/model_v4/` — Validation suite for V4 components.
+- `outputs/model_v4/` — Final multiverse specification records, summary matrices, bootstrap distributions, and charts.
+- `outputs/data_audit/` — Step 0 raw data audit schema profiles, referential checks, cricket accounting, and pressure separation validation.
+- `outputs/submission_final/` — Final submission compilation scripts and editable Markdown report source.
+- `outputs/final_package/` — **OFFICIAL SUBMISSION DELIVERABLE BUNDLE** (`SupeRR_Final_Report.pdf`, data files, verification matrices, executed notebooks, and run logs).
+- `archive/` — Historical submission drafts (`old_reports/`), reproducibility run comparison baselines (`reproducibility_run/`), and duplicates.
 
 ---
 
 ## 2. Strict Immutability & Preservation Rules
 
 **NEVER modify, overwrite, or delete any of the following:**
-- `data/raw/*`
+- `data/raw/*` (including `data/raw/.DS_Store`)
 - `src/*.py` (V1 modules at `src/` root)
+- `src/model_v2/`, `src/model_v3/`, `src/model_v4/`
+- `tests/` (all subdirectories)
+- `notebooks/` (all notebooks)
 - `outputs/model_audit/*`
 - `outputs/*.csv`, `outputs/sensitivity_summary.json`, `outputs/charts/*`, `outputs/METHODOLOGY_REPORT.md`
+- `outputs/model_v2/*` (including `outputs/model_v2/integrity_manifest_pre.json`)
+- `outputs/model_v3/*`
+- `outputs/model_v4/*`
+- `outputs/data_audit/*`
+- `outputs/submission_final/*`
+- `outputs/final_package/*`
+- `archive/*`
 - `docs/03_DATA_AUDIT.md`, `docs/04_ANALYTICAL_STRATEGY.md`, `docs/05_PROJECT_ROADMAP.md`
-- `outputs/model_v2/integrity_manifest_pre.json`
 
 All V1 checksums are recorded in `outputs/model_v2/integrity_manifest_pre.json` and must verify unchanged.
 
@@ -39,7 +56,7 @@ All V1 checksums are recorded in `outputs/model_v2/integrity_manifest_pre.json` 
 ## 3. Data Confidentiality & External Research Rules
 
 1. **No Raw Data Leakage:** Never copy, paste, upload, or include proprietary `data/raw/*.csv` rows, internal player/match IDs, or dataset-derived aggregates in external web search queries or third-party prompts.
-2. **Public Facts Only Online:** External web research is strictly limited to public cricket knowledge (player career/retirement status, current franchise, BCCI/IPL rules, squad context) with every claim backed by an explicit URL, publication date, access date, and evidence classification (`Official`, `Reputable Media`, or `Unverified`) in `outputs/submission/source_register.md`.
+2. **Public Facts Only Online:** External web research is strictly limited to public cricket knowledge (player career/retirement status, current franchise, BCCI/IPL rules, squad context) with every claim backed by an explicit URL, publication date, access date, and evidence classification (`Official`, `Reputable Media`, or `Unverified`) in `outputs/final_package/source_register.md`.
 3. **Separate Statistical Ranking from Practical Feasibility:** Statistical rankings must be computed strictly from `data/raw/*.csv` without manual overrides; IPL 2027 availability/auction/eligibility notes must remain clearly separated as practical context flags.
 
 ---
@@ -58,12 +75,18 @@ All V1 checksums are recorded in `outputs/model_v2/integrity_manifest_pre.json` 
 ## 5. Canonical Commands
 
 ```powershell
-# Run full V2 pipeline
-python -m src.model_v2.run_pipeline
+# 1. Verify V1 File Immutability Checksums (39/39)
+python -c "from src.model_v4.run_multiverse_pipeline import verify_v1_checksums; print(verify_v1_checksums())"
 
-# Run V2 test suite
-pytest tests/model_v2/ -v
+# 2. Run full V4 Multiverse Pipeline (Final Model: 15,150 specifications)
+python -m src.model_v4.run_multiverse_pipeline
 
-# Re-run V1 independent audit unit tests (read-only verification)
-python outputs/model_audit/test_audit_rules.py
+# 3. Run complete test suite (54 unit and statistical tests)
+pytest tests/model_v2 tests/model_v3 tests/model_v4 -q
+
+# 4. Compile final submission report (15 pages, outputs/submission_final/SupeRR_Final_Report.pdf)
+python outputs/submission_final/compile_final_report.py
+
+# 5. Run automated PDF and player verification audit
+python outputs/submission_final/build_verification.py
 ```

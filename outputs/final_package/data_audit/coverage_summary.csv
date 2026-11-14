@@ -1,0 +1,6 @@
+stage,matches,deliveries,legal_balls,note
+Total Raw Data Provided,883,200999,N/A,Unfiltered database
+Exclusion: Abandoned Matches (0 deliveries),-16,0,0,Rain/no-play before toss/start
+"Exclusion: Other_T20 Comps (2670, 3289)",-30,-6985,-6730,Non-IPL / non-T20I domestic tournaments
+Exclusion: Super Overs (Innings 3 & 4),0,-38,-33,Tie-breaker single overs
+FINAL PRIMARY ANALYTICAL SCOPE,837,193988,185692,"Exact competition target scope (837 matches, 193,988 deliveries, 185,692 legal balls)"

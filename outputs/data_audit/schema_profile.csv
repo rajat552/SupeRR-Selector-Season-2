@@ -1,0 +1,78 @@
+table_name,column_name,dtype,total_rows,null_count,null_pct,distinct_count,candidate_pk,pk_is_unique,exact_duplicate_rows
+competitions.csv,comp_id,int64,141,0,0.0,141,comp_id,True,0
+competitions.csv,comp_name,str,141,0,0.0,141,comp_id,True,0
+competitions.csv,match_format,str,141,0,0.0,2,comp_id,True,0
+competitions.csv,season,str,141,0,0.0,8,comp_id,True,0
+teams.csv,comp_id,int64,353,0,0.0,141,team_id,False,0
+teams.csv,team_id,int64,353,0,0.0,38,team_id,False,0
+teams.csv,team_name,str,353,0,0.0,38,team_id,False,0
+matches.csv,match_id,int64,883,0,0.0,883,match_id,True,0
+matches.csv,comp_id,int64,883,0,0.0,138,match_id,True,0
+matches.csv,match_number,int64,883,0,0.0,75,match_id,True,0
+matches.csv,match_date,str,883,0,0.0,686,match_id,True,0
+matches.csv,stage,str,883,0,0.0,7,match_id,True,0
+matches.csv,venue_id,int64,883,0,0.0,98,match_id,True,0
+matches.csv,venue_country,str,883,0,0.0,17,match_id,True,0
+matches.csv,home_team_id,int64,883,0,0.0,36,match_id,True,0
+matches.csv,home_team,str,883,0,0.0,36,match_id,True,0
+matches.csv,away_team_id,int64,883,0,0.0,36,match_id,True,0
+matches.csv,away_team,str,883,0,0.0,36,match_id,True,0
+matches.csv,home_team_captain_id,float64,883,44,4.98,89,match_id,True,0
+matches.csv,away_team_captain_id,float64,883,45,5.1,98,match_id,True,0
+matches.csv,toss_win_team_id,float64,883,15,1.7,37,match_id,True,0
+matches.csv,toss_opted,str,883,15,1.7,2,match_id,True,0
+matches.csv,man_of_the_match,int64,883,0,0.0,293,match_id,True,0
+matches.csv,first_inn_revised_overs,float64,883,858,97.17,13,match_id,True,0
+matches.csv,second_inn_revised_overs,float64,883,858,97.17,12,match_id,True,0
+matches.csv,revised_target,float64,883,860,97.4,23,match_id,True,0
+matches.csv,knock_out,int64,883,0,0.0,2,match_id,True,0
+matches.csv,win_team_id,float64,883,41,4.64,36,match_id,True,0
+matches.csv,result,str,883,0,0.0,670,match_id,True,0
+playing_eleven.csv,match_id,int64,28381,0,0.0,880,match_id + player_id,False,0
+playing_eleven.csv,team_id,int64,28381,0,0.0,38,match_id + player_id,False,0
+playing_eleven.csv,player_id,int64,28381,0,0.0,1082,match_id + player_id,False,0
+playing_eleven.csv,batting_order,float64,28381,8678,30.58,13,match_id + player_id,False,0
+playing_eleven.csv,is_played,bool,28381,0,0.0,2,match_id + player_id,False,0
+playing_eleven.csv,is_captain,object,28381,8667,30.54,2,match_id + player_id,False,0
+playing_eleven.csv,is_wk,object,28381,8667,30.54,2,match_id + player_id,False,0
+playing_eleven.csv,is_impact,int64,28381,0,0.0,2,match_id + player_id,False,0
+playing_eleven.csv,is_impact_off,int64,28381,0,0.0,2,match_id + player_id,False,0
+competition_team_player_mapping.csv,comp_id,int64,6413,0,0.0,140,comp_id + team_id + player_id,True,0
+competition_team_player_mapping.csv,comp_name,str,6413,0,0.0,140,comp_id + team_id + player_id,True,0
+competition_team_player_mapping.csv,team_id,int64,6413,0,0.0,38,comp_id + team_id + player_id,True,0
+competition_team_player_mapping.csv,team_name,str,6413,0,0.0,38,comp_id + team_id + player_id,True,0
+competition_team_player_mapping.csv,player_id,int64,6413,0,0.0,1217,comp_id + team_id + player_id,True,0
+competition_team_player_mapping.csv,player_name,str,6413,0,0.0,1210,comp_id + team_id + player_id,True,0
+ball_by_ball.csv,match_id,int64,200999,0,0.0,867,match_id + innings + overid + over_ball_num,True,0
+ball_by_ball.csv,innings,int64,200999,0,0.0,4,match_id + innings + overid + over_ball_num,True,0
+ball_by_ball.csv,overid,int64,200999,0,0.0,20,match_id + innings + overid + over_ball_num,True,0
+ball_by_ball.csv,over_ball_num,int64,200999,0,0.0,13,match_id + innings + overid + over_ball_num,True,0
+ball_by_ball.csv,innings_ball_num,int64,200999,0,0.0,136,match_id + innings + overid + over_ball_num,True,0
+ball_by_ball.csv,batting_team_id,int64,200999,0,0.0,38,match_id + innings + overid + over_ball_num,True,0
+ball_by_ball.csv,bowling_team_id,int64,200999,0,0.0,38,match_id + innings + overid + over_ball_num,True,0
+ball_by_ball.csv,striker_id,int64,200999,0,0.0,888,match_id + innings + overid + over_ball_num,True,0
+ball_by_ball.csv,striker_name,str,200999,0,0.0,885,match_id + innings + overid + over_ball_num,True,0
+ball_by_ball.csv,non_striker_id,int64,200999,0,0.0,867,match_id + innings + overid + over_ball_num,True,0
+ball_by_ball.csv,non_striker_name,str,200999,0,0.0,864,match_id + innings + overid + over_ball_num,True,0
+ball_by_ball.csv,bowler_id,int64,200999,0,0.0,647,match_id + innings + overid + over_ball_num,True,0
+ball_by_ball.csv,bowler_name,str,200999,0,0.0,646,match_id + innings + overid + over_ball_num,True,0
+ball_by_ball.csv,batting_type,str,200999,0,0.0,2,match_id + innings + overid + over_ball_num,True,0
+ball_by_ball.csv,bowling_type,str,200999,0,0.0,12,match_id + innings + overid + over_ball_num,True,0
+ball_by_ball.csv,batting_order,int64,200999,0,0.0,13,match_id + innings + overid + over_ball_num,True,0
+ball_by_ball.csv,runs,int64,200999,0,0.0,7,match_id + innings + overid + over_ball_num,True,0
+ball_by_ball.csv,is_four,bool,200999,0,0.0,2,match_id + innings + overid + over_ball_num,True,0
+ball_by_ball.csv,is_six,bool,200999,0,0.0,2,match_id + innings + overid + over_ball_num,True,0
+ball_by_ball.csv,is_wicket,bool,200999,0,0.0,2,match_id + innings + overid + over_ball_num,True,0
+ball_by_ball.csv,dismissal_type_id,float64,200999,190118,94.59,8,match_id + innings + overid + over_ball_num,True,0
+ball_by_ball.csv,dismissal_type,str,200999,190118,94.59,9,match_id + innings + overid + over_ball_num,True,0
+ball_by_ball.csv,dismissed_player_id,float64,200999,190107,94.58,814,match_id + innings + overid + over_ball_num,True,0
+ball_by_ball.csv,extras_type,str,200999,189167,94.11,6,match_id + innings + overid + over_ball_num,True,0
+ball_by_ball.csv,extras1_runs,int64,200999,0,0.0,6,match_id + innings + overid + over_ball_num,True,0
+ball_by_ball.csv,extras_2_runs,int64,200999,0,0.0,3,match_id + innings + overid + over_ball_num,True,0
+ball_by_ball.csv,pace_or_spin,str,200999,0,0.0,2,match_id + innings + overid + over_ball_num,True,0
+ball_by_ball.csv,bowl_speed,float64,200999,0,0.0,1033,match_id + innings + overid + over_ball_num,True,0
+ball_by_ball.csv,stroke,str,200999,6158,3.06,30,match_id + innings + overid + over_ball_num,True,0
+ball_by_ball.csv,delivery_style,str,200999,391,0.19,34,match_id + innings + overid + over_ball_num,True,0
+ball_by_ball.csv,over_or_around,str,200999,407,0.2,2,match_id + innings + overid + over_ball_num,True,0
+ball_by_ball.csv,on_or_off,str,200999,0,0.0,2,match_id + innings + overid + over_ball_num,True,0
+ball_by_ball.csv,delivery_ist_time,str,200999,0,0.0,200826,match_id + innings + overid + over_ball_num,True,0
