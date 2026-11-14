@@ -8,3 +8,6 @@ seaborn==0.13.2
 pytest==9.0.3
 pypdf==6.20.0
 jupyter
+plotly>=5.18.0
+streamlit>=1.30.0
+
