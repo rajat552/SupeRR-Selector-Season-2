@@ -46,3 +46,13 @@ Desktop.ini
 pre_cleanup_manifest.json
 *.tmp
 
+# Remotion Video Generation Environment & Builds
+remotion-repo/
+remotion/
+video/
+.remotion/
+node_modules/
+out/
+*.mp4
+
+
