@@ -235,13 +235,31 @@ def load_data():
     with open(DATA_DIR / "player_narratives.json", "r", encoding="utf-8") as f:
         narratives = json.load(f)
         
-    for df in [all_b, all_w]:
+    for df, top10, role_name in [(all_b, b10, 'batters'), (all_w, w10, 'bowlers')]:
         if 'shrunk_wp_impact' not in df.columns and 'mean_shrunk_pwi' in df.columns:
             df['shrunk_wp_impact'] = df['mean_shrunk_pwi']
         if 'raw_pressure_lift' not in df.columns and 'mean_raw_lift' in df.columns:
             df['raw_pressure_lift'] = df['mean_raw_lift']
         if 'hp_balls' not in df.columns and 'mean_hp_balls' in df.columns:
             df['hp_balls'] = df['mean_hp_balls']
+        
+        # Merge top-10 metadata if missing in candidate pool
+        if 'final_rank' not in df.columns:
+            rank_map = dict(zip(top10['player_id'], top10['final_rank']))
+            df['final_rank'] = df['player_id'].map(rank_map)
+        if 'tier' not in df.columns:
+            tier_map = dict(zip(top10['player_id'], top10['tier']))
+            df['tier'] = df['player_id'].map(tier_map).fillna("Candidate Pool")
+        if 'valid_eligible_iters' not in df.columns:
+            iter_map = dict(zip(top10['player_id'], top10['valid_eligible_iters']))
+            df['valid_eligible_iters'] = df['player_id'].map(iter_map).fillna(1000)
+
+        df['ipl_2027_status'] = df['player_id'].astype(str).map(
+            lambda pid: narratives.get(role_name, {}).get(pid, {}).get('ipl_2027_status', 'Unverified')
+        )
+        df['status_label'] = df['player_id'].astype(str).map(
+            lambda pid: narratives.get(role_name, {}).get(pid, {}).get('status_label', 'UNVERIFIED')
+        )
 
     # Attach standardized IPL 2027 status to b10 and w10
     b10['ipl_2027_status'] = b10['player_id'].astype(str).map(
@@ -933,7 +951,7 @@ elif nav_choice == "⚖️ Player Comparison Tool":
                 'Shrunk Impact', 'Raw Lift', 'HP Balls', 'Top-10 Inclusion %', 'Candidate Eligibility %', 'Bootstrap Valid Draws', 'IPL 2027 Status'
             ]
             
-            comp_display = metrics_table.set_index('Player Name').T
+            comp_display = metrics_table.astype(str).set_index('Player Name').T
             comp_display.columns.name = "Metric"
             st.dataframe(comp_display, use_container_width=True)
             
@@ -986,7 +1004,7 @@ elif nav_choice == "⚖️ Player Comparison Tool":
                 'Defending Impact', 'Raw Lift', 'HP Balls', 'Top-10 Inclusion %', 'Candidate Eligibility %', 'Bootstrap Valid Draws', 'IPL 2027 Status'
             ]
             
-            comp_display_w = metrics_table_w.set_index('Player Name').T
+            comp_display_w = metrics_table_w.astype(str).set_index('Player Name').T
             comp_display_w.columns.name = "Metric"
             st.dataframe(comp_display_w, use_container_width=True)
             
