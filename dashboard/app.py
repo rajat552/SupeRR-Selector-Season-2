@@ -1,6 +1,6 @@
 """
 SupeRR Selector Season 2 — Interactive Intelligence Dashboard
-Official V4 Multiverse Analytical Baseline & Rajasthan Royals Recruitment Intelligence
+V4 Multiverse Analysis & Rajasthan Royals Recruitment Intelligence
 """
 
 import os
@@ -29,6 +29,8 @@ st.markdown("""
     html, body {
         font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
         -webkit-font-smoothing: antialiased;
+        background-color: #070D1B !important;
+        color: #F8FAFC !important;
     }
 
     .stMarkdown, .stMarkdown p, .stText, label, .stSelectbox label, .stMultiSelect label, .stRadio label {
@@ -36,7 +38,7 @@ st.markdown("""
         -webkit-font-smoothing: antialiased;
     }
 
-    /* Explicitly protect all Streamlit Material Symbols & Icons from font-family overrides */
+    /* Explicitly protect Streamlit Material Symbols & Icons from font-family overrides */
     [data-testid="stIconMaterial"],
     [data-testid*="Icon"],
     [data-testid="stSidebarCollapseButton"] *,
@@ -63,7 +65,7 @@ st.markdown("""
         font-family: 'JetBrains Mono', monospace !important;
     }
 
-    /* 2. Elevated Header Typography (WCAG AAA Compliant) */
+    /* 2. Elevated Header Typography */
     .main-title {
         font-size: 2.25rem !important;
         font-weight: 800 !important;
@@ -80,11 +82,10 @@ st.markdown("""
         font-weight: 400 !important;
         color: #94A3B8 !important;
         letter-spacing: -0.01em !important;
-        margin-bottom: 1.75rem !important;
+        margin-bottom: 1.5rem !important;
         line-height: 1.5 !important;
     }
 
-    /* Streamlit Heading Specificity Overrides */
     h1, h2, h3, h4 {
         font-family: 'Inter', sans-serif !important;
         letter-spacing: -0.02em !important;
@@ -101,8 +102,8 @@ st.markdown("""
         background: linear-gradient(145deg, #131F37 0%, #0C1527 100%) !important;
         border: 1px solid rgba(234, 26, 128, 0.22) !important;
         border-radius: 12px !important;
-        padding: 18px 20px !important;
-        margin-bottom: 14px !important;
+        padding: 16px 18px !important;
+        margin-bottom: 12px !important;
         box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.05) !important;
         transition: transform 0.15s ease, border-color 0.15s ease !important;
     }
@@ -113,16 +114,16 @@ st.markdown("""
     }
     
     .metric-label {
-        font-size: 0.75rem !important;
+        font-size: 0.72rem !important;
         text-transform: uppercase !important;
         color: #94A3B8 !important;
         font-weight: 700 !important;
         letter-spacing: 0.08em !important;
-        margin-bottom: 6px !important;
+        margin-bottom: 5px !important;
     }
     
     .metric-value {
-        font-size: 2.0rem !important;
+        font-size: 1.85rem !important;
         font-weight: 800 !important;
         letter-spacing: -0.03em !important;
         color: #FFFFFF !important;
@@ -130,9 +131,9 @@ st.markdown("""
     }
     
     .metric-delta {
-        font-size: 0.82rem !important;
+        font-size: 0.80rem !important;
         font-weight: 600 !important;
-        margin-top: 6px !important;
+        margin-top: 5px !important;
         display: flex !important;
         align-items: center !important;
         gap: 4px !important;
@@ -142,22 +143,34 @@ st.markdown("""
     .delta-neg { color: #F87171 !important; }
     .delta-neutral { color: #94A3B8 !important; }
 
-    /* 4. Rajasthan Royals Dark Glassmorphism Callout Box */
+    /* 4. Rajasthan Royals Glassmorphism Callout Box */
     .callout-box {
-        background: rgba(14, 27, 54, 0.75) !important;
-        border: 1px solid rgba(234, 26, 128, 0.3) !important;
+        background: rgba(14, 27, 54, 0.82) !important;
+        border: 1px solid rgba(234, 26, 128, 0.35) !important;
         border-left: 4px solid #EA1A80 !important;
-        padding: 16px 20px !important;
+        padding: 14px 18px !important;
         border-radius: 8px !important;
-        margin-bottom: 1.5rem !important;
+        margin-bottom: 1.25rem !important;
         color: #E2E8F0 !important;
-        font-size: 0.95rem !important;
+        font-size: 0.92rem !important;
         line-height: 1.6 !important;
         box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3) !important;
     }
     
     .callout-box strong {
         color: #FFFFFF !important;
+    }
+
+    .disclaimer-banner {
+        background: rgba(30, 41, 59, 0.7) !important;
+        border: 1px solid rgba(148, 163, 184, 0.25) !important;
+        border-left: 4px solid #3B82F6 !important;
+        padding: 12px 16px !important;
+        border-radius: 8px !important;
+        margin-bottom: 1.25rem !important;
+        color: #CBD5E1 !important;
+        font-size: 0.86rem !important;
+        line-height: 1.5 !important;
     }
 
     /* 5. Status Badges & Pills */
@@ -173,16 +186,10 @@ st.markdown("""
         margin-right: 6px !important;
     }
     
-    .badge-confirmed { background: rgba(34, 197, 94, 0.15) !important; color: #4ADE80 !important; border: 1px solid rgba(74, 222, 128, 0.3) !important; }
-    .badge-trade { background: rgba(59, 130, 246, 0.15) !important; color: #60A5FA !important; border: 1px solid rgba(96, 165, 250, 0.3) !important; }
-    .badge-injured { background: rgba(245, 158, 11, 0.15) !important; color: #FBBF24 !important; border: 1px solid rgba(251, 191, 36, 0.3) !important; }
-    .badge-retired { background: rgba(148, 163, 184, 0.15) !important; color: #CBD5E1 !important; border: 1px solid rgba(203, 213, 225, 0.3) !important; }
-    .badge-target { background: rgba(234, 26, 128, 0.2) !important; color: #FF66B2 !important; border: 1px solid rgba(234, 26, 128, 0.4) !important; }
-    .badge-unverified { background: rgba(168, 85, 247, 0.15) !important; color: #C084FC !important; border: 1px solid rgba(192, 132, 252, 0.3) !important; }
-    
-    .badge-tier1 { background: rgba(245, 158, 11, 0.2) !important; color: #FCD34D !important; border: 1px solid rgba(245, 158, 11, 0.4) !important; font-weight: 800 !important; }
-    .badge-tier2 { background: rgba(148, 163, 184, 0.2) !important; color: #E2E8F0 !important; border: 1px solid rgba(148, 163, 184, 0.3) !important; }
-    .badge-tier3 { background: rgba(100, 116, 139, 0.2) !important; color: #94A3B8 !important; border: 1px solid rgba(100, 116, 139, 0.3) !important; }
+    .badge-confirmed { background: rgba(59, 130, 246, 0.20) !important; color: #60A5FA !important; border: 1px solid rgba(96, 165, 250, 0.4) !important; }
+    .badge-reported { background: rgba(245, 158, 11, 0.20) !important; color: #FBBF24 !important; border: 1px solid rgba(251, 191, 36, 0.4) !important; }
+    .badge-unverified { background: rgba(148, 163, 184, 0.20) !important; color: #CBD5E1 !important; border: 1px solid rgba(203, 213, 225, 0.4) !important; }
+    .badge-retired { background: rgba(239, 68, 68, 0.20) !important; color: #F87171 !important; border: 1px solid rgba(248, 113, 113, 0.4) !important; }
 
     /* 6. Sidebar Refinement */
     [data-testid="stSidebar"] {
@@ -200,7 +207,12 @@ st.markdown("""
     .stDataFrame {
         border-radius: 10px !important;
         overflow: hidden !important;
-        border: 1px solid rgba(255, 255, 255, 0.08) !important;
+        border: 1px solid rgba(255, 255, 255, 0.10) !important;
+        background: #0C1527 !important;
+    }
+
+    div[data-testid="stDataFrame"] {
+        width: 100% !important;
     }
 </style>
 """, unsafe_allow_html=True)
@@ -230,7 +242,35 @@ def load_data():
             df['raw_pressure_lift'] = df['mean_raw_lift']
         if 'hp_balls' not in df.columns and 'mean_hp_balls' in df.columns:
             df['hp_balls'] = df['mean_hp_balls']
-            
+
+    # Attach standardized IPL 2027 status to b10 and w10
+    b10['ipl_2027_status'] = b10['player_id'].astype(str).map(
+        lambda pid: narratives.get('batters', {}).get(pid, {}).get('ipl_2027_status', 'Unverified')
+    )
+    w10['ipl_2027_status'] = w10['player_id'].astype(str).map(
+        lambda pid: narratives.get('bowlers', {}).get(pid, {}).get('ipl_2027_status', 'Unverified')
+    )
+    b10['status_label'] = b10['player_id'].astype(str).map(
+        lambda pid: narratives.get('batters', {}).get(pid, {}).get('status_label', 'UNVERIFIED')
+    )
+    w10['status_label'] = w10['player_id'].astype(str).map(
+        lambda pid: narratives.get('bowlers', {}).get(pid, {}).get('status_label', 'UNVERIFIED')
+    )
+
+    # Standardize source register status categories (Confirmed, Reported, Unverified, Retired / Historical only)
+    def map_src_status(row):
+        stat = str(row.get('ipl_2027_availability_status', '')).lower()
+        act = str(row.get('active_status', '')).lower()
+        if 'retired' in act or 'retired' in stat or 'coaching' in act or 'coach' in act:
+            return 'Retired / Historical only'
+        if 'traded' in act or 'traded' in stat or 'trade' in stat:
+            return 'Confirmed'
+        if 'injured' in act or 'injury' in stat or 'rehab' in act or 'rehab' in stat:
+            return 'Reported'
+        return 'Unverified'
+
+    sources['ipl_2027_status_category'] = sources.apply(map_src_status, axis=1)
+
     return b10, w10, all_b, all_w, rr, sources, waterfall, anova, narratives
 
 b10, w10, all_b, all_w, rr, sources, waterfall, anova, narratives = load_data()
@@ -263,10 +303,111 @@ def apply_rr_plotly_theme(fig, title=None, height=390):
     )
     return fig
 
+# --- LEADERBOARD FORMATTING & COLUMN CONFIG HELPERS ---
+def get_leaderboard_column_config(role="batter"):
+    impact_title = "Shrunk Impact (r/100b)" if role == "batter" else "Defending Impact (r/24b)"
+    impact_help = (
+        "Empirical Bayes regularized impact: runs scored per 100 balls above context expectation"
+        if role == "batter" else
+        "Empirical Bayes regularized impact: runs saved per 24 balls below context expectation"
+    )
+    raw_lift_help = (
+        "Unshrunk difference between high-pressure strike rate and normal baseline strike rate"
+        if role == "batter" else
+        "Unshrunk difference between normal baseline economy rate and high-pressure economy rate (runs saved/24b)"
+    )
+    
+    cfg = {
+        "Rank": st.column_config.NumberColumn(
+            "Rank",
+            help="Consensus V4 Multiverse Rank across 15,150 specifications",
+            format="#%d"
+        ),
+        "Player Name": st.column_config.TextColumn(
+            "Player Name",
+            help="Audited player name (identity strictly keyed on player_id)"
+        ),
+        "Player ID": st.column_config.NumberColumn(
+            "Player ID",
+            help="Canonical player_id resolving homonyms (e.g. Abdul Samad, Rashid Khan)",
+            format="%d"
+        ),
+        "Tier": st.column_config.TextColumn(
+            "Tier",
+            help="Model V4 Robustness Tier (Tier 1 Core Consensus, Tier 2 Strong Contender, Tier 3 Context-Dependent)"
+        ),
+        "Top-10 Inclusion %": st.column_config.TextColumn(
+            "Top-10 Inclusion %",
+            help="Percentage of valid model specifications (out of 15,150) in which the player finished inside the top 10. (Descriptive historical frequency across model choices, NOT a future-success probability)"
+        ),
+        "Candidate Eligibility %": st.column_config.TextColumn(
+            "Candidate Eligibility %",
+            help="Percentage of specifications in which the player met minimum sample volume thresholds to be evaluated (distinct from top-10 inclusion)"
+        ),
+        impact_title: st.column_config.TextColumn(
+            impact_title,
+            help=impact_help
+        ),
+        "Raw Pressure Lift": st.column_config.TextColumn(
+            "Raw Pressure Lift",
+            help=raw_lift_help
+        ),
+        "HP Balls": st.column_config.NumberColumn(
+            "HP Balls",
+            help="Total deliveries faced or bowled under high-pressure leverage conditions in the primary dataset",
+            format="%d"
+        ),
+        "Bootstrap Valid Draws": st.column_config.TextColumn(
+            "Bootstrap Valid Draws",
+            help="Number of resample iterations (out of 1,000 stratified match bootstrap draws) where the player was eligible"
+        ),
+        "Bootstrap 90% CI": st.column_config.TextColumn(
+            "Bootstrap 90% CI",
+            help="90% bootstrap rank confidence interval [5th percentile, 95th percentile] across 1,000 resamples"
+        ),
+        "IPL 2027 Status": st.column_config.TextColumn(
+            "IPL 2027 Status",
+            help="Real-world external market status: Confirmed (official trade), Reported (medical/rehab), Unverified (pending formal BCCI list), or Retired / Historical only"
+        )
+    }
+    return cfg
+
+def prepare_display_batters(df):
+    d = pd.DataFrame()
+    d['Rank'] = df['final_rank'].astype(int)
+    d['Player Name'] = df['player_name']
+    d['Player ID'] = df['player_id'].astype(int)
+    d['Tier'] = df['tier']
+    d['Top-10 Inclusion %'] = (df['top10_freq'] * 100).round(1).astype(str) + "%"
+    d['Candidate Eligibility %'] = (df['elig_share'] * 100).round(1).astype(str) + "%"
+    d['Shrunk Impact (r/100b)'] = df['shrunk_wp_impact'].apply(lambda x: f"+{x:.1f}")
+    d['Raw Pressure Lift'] = df['raw_lift'].apply(lambda x: f"+{x:.1f}" if x >= 0 else f"{x:.1f}")
+    d['HP Balls'] = df['hp_balls'].astype(int)
+    d['Bootstrap Valid Draws'] = df['valid_eligible_iters'].astype(int).astype(str) + " / 1,000"
+    d['Bootstrap 90% CI'] = "[" + df['boot_p05_rank'].astype(int).astype(str) + ", " + df['boot_p95_rank'].astype(int).astype(str) + "]"
+    d['IPL 2027 Status'] = df['ipl_2027_status']
+    return d
+
+def prepare_display_bowlers(df):
+    d = pd.DataFrame()
+    d['Rank'] = df['final_rank'].astype(int)
+    d['Player Name'] = df['player_name']
+    d['Player ID'] = df['player_id'].astype(int)
+    d['Tier'] = df['tier']
+    d['Top-10 Inclusion %'] = (df['top10_freq'] * 100).round(1).astype(str) + "%"
+    d['Candidate Eligibility %'] = (df['elig_share'] * 100).round(1).astype(str) + "%"
+    d['Defending Impact (r/24b)'] = df['shrunk_wp_impact'].apply(lambda x: f"+{x:.2f}")
+    d['Raw Pressure Lift'] = df['raw_lift'].apply(lambda x: f"+{x:.2f}" if x >= 0 else f"{x:.2f}")
+    d['HP Balls'] = df['hp_balls'].astype(int)
+    d['Bootstrap Valid Draws'] = df['valid_eligible_iters'].astype(int).astype(str) + " / 1,000"
+    d['Bootstrap 90% CI'] = "[" + df['boot_p05_rank'].astype(int).astype(str) + ", " + df['boot_p95_rank'].astype(int).astype(str) + "]"
+    d['IPL 2027 Status'] = df['ipl_2027_status']
+    return d
+
 # --- SIDEBAR NAVIGATION ---
 st.sidebar.image("https://img.icons8.com/color/96/cricket.png", width=64)
 st.sidebar.title("SupeRR Selector")
-st.sidebar.caption("Season 2 | Official Model V4 Intelligence")
+st.sidebar.caption("Season 2 | V4 Multiverse Analysis")
 
 nav_choice = st.sidebar.radio(
     "Navigation Menu",
@@ -293,6 +434,8 @@ st.sidebar.markdown("""
 - Deliveries: **193,988 primary**
 - Checksums: **39/39 Verified**
 """)
+
+st.sidebar.info("⚠️ **Disclaimer:** This is an independent participant research project based on historical cricket data. It is not an official Rajasthan Royals product or recruitment decision.")
 st.sidebar.caption("Rajasthan Royals Analytical Recruitment Suite")
 
 # ==============================================================================
@@ -302,6 +445,13 @@ if nav_choice == "🏠 Overview & Executive Summary":
     st.markdown('<div class="main-title">SupeRR Selector Season 2: Cricket Intelligence</div>', unsafe_allow_html=True)
     st.markdown('<div class="sub-title">Evaluating T20 Performance Under Pressure: Multiverse Specification-Curve Analysis &amp; Rajasthan Royals Recruitment Architecture</div>', unsafe_allow_html=True)
     
+    # Disclaimer Banner
+    st.markdown("""
+    <div class="disclaimer-banner">
+        <strong>Academic &amp; Participant Research Disclaimer:</strong> This is an independent participant research project based on historical cricket data. It is not an official Rajasthan Royals product or recruitment decision.
+    </div>
+    """, unsafe_allow_html=True)
+
     # KPI Row
     kpi1, kpi2, kpi3, kpi4, kpi5 = st.columns(5)
     with kpi1:
@@ -347,29 +497,67 @@ if nav_choice == "🏠 Overview & Executive Summary":
         
     st.markdown("""
     <div class="callout-box">
-        <strong>Executive Operational Mandate:</strong> This intelligence platform provides an audited, reproducible, and scientifically rigorous evaluation of player performance under high leverage in T20 cricket. Built exclusively on the verified <strong>Model V4 Multiverse</strong> architecture, it neutralizes researcher degrees of freedom across 15,150 model specifications and leave-player-out empirical Bayes baselines.
+        <strong>Executive Operational Mandate:</strong> This intelligence platform provides an audited, reproducible, and scientifically rigorous evaluation of player performance under high leverage in T20 cricket. Built exclusively on the verified <strong>Model V4 Multiverse</strong> architecture, it assesses ranking sensitivity across analytical specifications across 15,150 model specifications and leave-player-out empirical Bayes baselines.
     </div>
     """, unsafe_allow_html=True)
     
-    # Dual Top-10 Snapshot
-    col_snap_b, col_snap_w = st.columns(2)
-    with col_snap_b:
-        st.subheader("🏏 Top 10 Batters (V4 Multiverse Consensus)")
-        snap_b = b10[['final_rank', 'player_name', 'player_id', 'tier', 'top10_freq', 'shrunk_wp_impact', 'raw_lift']].copy()
-        snap_b['top10_freq'] = (snap_b['top10_freq'] * 100).round(1).astype(str) + "%"
-        snap_b['shrunk_wp_impact'] = snap_b['shrunk_wp_impact'].apply(lambda x: f"+{x:.1f}")
-        snap_b['raw_lift'] = snap_b['raw_lift'].apply(lambda x: f"+{x:.1f}" if x >= 0 else f"{x:.1f}")
-        snap_b.columns = ['Rank', 'Player Name', 'Player ID', 'Tier', 'Top-10 %', 'Shrunk Impact', 'Raw Lift']
-        st.dataframe(snap_b, hide_index=True, use_container_width=True)
+    # Leaderboard Presentation Selection
+    st.markdown("---")
+    st.markdown("### 🏆 V4 Multiverse Consensus Leaderboards Under Pressure")
+    st.markdown("""
+    *Statistical Definition:* **Top-10 Inclusion %** is the percentage of valid model specifications (out of 15,150) in which the player ranked in the top 10. It measures historical ranking robustness across researcher assumptions, **not a future-success probability**. **Candidate Eligibility %** reflects meeting minimum volume thresholds.
+    """)
+
+    view_layout = st.radio(
+        "Leaderboard View Layout",
+        ["Stacked Full-Width Tables (Recommended for Desktop)", "Tabbed View (Accessible Tab Switching)"],
+        horizontal=True,
+        label_visibility="collapsed"
+    )
+
+    disp_b = prepare_display_batters(b10)
+    disp_w = prepare_display_bowlers(w10)
+
+    if view_layout.startswith("Stacked"):
+        # Stacked Full-Width Section 1: Batters
+        st.markdown("#### 🏏 Top 10 Batters (V4 Multiverse Consensus)")
+        st.caption("Pre-registered decision threshold: Multiverse Top-10 Inclusion Frequency ≥ 45% across 15,150 specifications.")
+        st.dataframe(
+            disp_b,
+            hide_index=True,
+            use_container_width=True,
+            column_config=get_leaderboard_column_config("batter")
+        )
         
-    with col_snap_w:
-        st.subheader("🎯 Top 10 Bowlers (V4 Multiverse Consensus)")
-        snap_w = w10[['final_rank', 'player_name', 'player_id', 'tier', 'top10_freq', 'shrunk_wp_impact', 'raw_lift']].copy()
-        snap_w['top10_freq'] = (snap_w['top10_freq'] * 100).round(1).astype(str) + "%"
-        snap_w['shrunk_wp_impact'] = snap_w['shrunk_wp_impact'].apply(lambda x: f"+{x:.2f}")
-        snap_w['raw_lift'] = snap_w['raw_lift'].apply(lambda x: f"+{x:.2f}" if x >= 0 else f"{x:.2f}")
-        snap_w.columns = ['Rank', 'Player Name', 'Player ID', 'Tier', 'Top-10 %', 'Defending Impact', 'Raw Lift']
-        st.dataframe(snap_w, hide_index=True, use_container_width=True)
+        st.markdown("<br>", unsafe_allow_html=True)
+
+        # Stacked Full-Width Section 2: Bowlers
+        st.markdown("#### 🎯 Top 10 Bowlers (V4 Multiverse Consensus)")
+        st.caption("Pre-registered decision threshold: Multiverse Top-10 Inclusion Frequency ≥ 25% across 15,150 specifications.")
+        st.dataframe(
+            disp_w,
+            hide_index=True,
+            use_container_width=True,
+            column_config=get_leaderboard_column_config("bowler")
+        )
+    else:
+        tab_b, tab_w = st.tabs(["🏏 Top 10 Batters (Multiverse Consensus)", "🎯 Top 10 Bowlers (Multiverse Consensus)"])
+        with tab_b:
+            st.caption("Pre-registered decision threshold: Multiverse Top-10 Inclusion Frequency ≥ 45% across 15,150 specifications.")
+            st.dataframe(
+                disp_b,
+                hide_index=True,
+                use_container_width=True,
+                column_config=get_leaderboard_column_config("batter")
+            )
+        with tab_w:
+            st.caption("Pre-registered decision threshold: Multiverse Top-10 Inclusion Frequency ≥ 25% across 15,150 specifications.")
+            st.dataframe(
+                disp_w,
+                hide_index=True,
+                use_container_width=True,
+                column_config=get_leaderboard_column_config("bowler")
+            )
         
     st.markdown("---")
     
@@ -408,6 +596,17 @@ elif nav_choice == "🏏 Top 10 Batting Leaderboard":
     st.markdown('<div class="main-title">Top 10 Batting Leaderboard Under Pressure</div>', unsafe_allow_html=True)
     st.markdown('<div class="sub-title">Pre-Registered Decision Rule: Multiverse Top-10 Frequency ≥ 45% | Shrunk Win-Probability Impact &amp; Lift</div>', unsafe_allow_html=True)
     
+    st.markdown("""
+    <div class="callout-box">
+        <strong>Statistical Definition Standard:</strong>
+        <ul>
+            <li><strong>Top-10 Inclusion %:</strong> Percentage of valid specifications (out of 15,150) in which the batter ranked in the top 10. This is an analytical sensitivity metric reflecting specification stability, <em>not a future-success probability</em>.</li>
+            <li><strong>Candidate Eligibility %:</strong> Share of specifications where the player met minimum ball volume cutoffs.</li>
+            <li><strong>Historical Benchmark vs Actionability:</strong> Inactive or retired players (e.g. Dinesh Karthik, Andre Russell) are preserved as historical analytical benchmarks.</li>
+        </ul>
+    </div>
+    """, unsafe_allow_html=True)
+
     # Filter controls
     col_f1, col_f2 = st.columns([1, 3])
     with col_f1:
@@ -418,31 +617,18 @@ elif nav_choice == "🏏 Top 10 Batting Leaderboard":
         )
     
     df_filtered_b = b10[b10['tier'].isin(selected_tier)].copy()
+    disp_filtered_b = prepare_display_batters(df_filtered_b)
     
-    # Display Table
-    display_cols = [
-        'final_rank', 'player_name', 'player_id', 'tier', 'elig_share', 'top10_freq', 
-        'median_rank', 'shrunk_wp_impact', 'norm_sr', 'hp_sr', 'raw_lift', 'hp_balls', 
-        'boot_p05_rank', 'boot_p95_rank'
-    ]
-    df_disp = df_filtered_b[display_cols].copy()
-    df_disp['elig_share'] = (df_disp['elig_share'] * 100).round(1).astype(str) + "%"
-    df_disp['top10_freq'] = (df_disp['top10_freq'] * 100).round(1).astype(str) + "%"
-    df_disp['shrunk_wp_impact'] = df_disp['shrunk_wp_impact'].apply(lambda x: f"+{x:.1f}")
-    df_disp['hp_sr'] = df_disp['hp_sr'].round(1)
-    df_disp['norm_sr'] = df_disp['norm_sr'].round(1)
-    df_disp['raw_lift'] = df_disp['raw_lift'].apply(lambda x: f"+{x:.1f}" if x >= 0 else f"{x:.1f}")
-    df_disp['hp_balls'] = df_disp['hp_balls'].astype(int)
-    df_disp['boot_ci'] = "[" + df_disp['boot_p05_rank'].astype(int).astype(str) + ", " + df_disp['boot_p95_rank'].astype(int).astype(str) + "]"
+    # Detailed Table
+    st.dataframe(
+        disp_filtered_b,
+        hide_index=True,
+        use_container_width=True,
+        column_config=get_leaderboard_column_config("batter")
+    )
     
-    df_disp = df_disp.drop(columns=['boot_p05_rank', 'boot_p95_rank'])
-    df_disp.columns = [
-        'Rank', 'Player Name', 'Player ID', 'Tier', 'Candidate Elig %', 'Top-10 %',
-        'Median Rank', 'Shrunk Impact (r/100b)', 'Normal SR', 'HP SR', 'Raw Lift (r/100b)',
-        'HP Balls', 'Bootstrap 90% CI'
-    ]
-    st.dataframe(df_disp, hide_index=True, use_container_width=True)
-    
+    st.markdown("<br>", unsafe_allow_html=True)
+
     # Interactive Visualizations
     col_chart1, col_chart2 = st.columns(2)
     with col_chart1:
@@ -500,6 +686,17 @@ elif nav_choice == "🎯 Top 10 Bowling Leaderboard":
     st.markdown('<div class="main-title">Top 10 Bowling Leaderboard Under Pressure</div>', unsafe_allow_html=True)
     st.markdown('<div class="sub-title">Pre-Registered Decision Rule: Multiverse Top-10 Frequency ≥ 25% | Defending Shrunk Impact &amp; Dot/Wicket Suppression</div>', unsafe_allow_html=True)
     
+    st.markdown("""
+    <div class="callout-box">
+        <strong>Statistical Definition Standard:</strong>
+        <ul>
+            <li><strong>Top-10 Inclusion %:</strong> Percentage of valid specifications (out of 15,150) in which the bowler ranked in the top 10. Reflects robustness across model specifications, <em>not future predictability</em>.</li>
+            <li><strong>Defending Impact:</strong> Empirical Bayes runs saved per 24 balls against match-context baseline expectation.</li>
+            <li><strong>Market Status:</strong> Nathan Ellis and Arshdeep Singh represent Confirmed Trades; Pathirana is under Reported Rehabilitation; Bhuvneshwar Kumar is a Retired Benchmark.</li>
+        </ul>
+    </div>
+    """, unsafe_allow_html=True)
+
     # Filter controls
     col_f1, col_f2 = st.columns([1, 3])
     with col_f1:
@@ -510,32 +707,18 @@ elif nav_choice == "🎯 Top 10 Bowling Leaderboard":
         )
     
     df_filtered_w = w10[w10['tier'].isin(selected_tier_w)].copy()
+    disp_filtered_w = prepare_display_bowlers(df_filtered_w)
     
-    # Display Table
-    display_cols_w = [
-        'final_rank', 'player_name', 'player_id', 'tier', 'elig_share', 'top10_freq', 
-        'median_rank', 'shrunk_wp_impact', 'norm_er', 'hp_er', 'hp_dot_pct', 'raw_lift', 'hp_balls', 
-        'boot_p05_rank', 'boot_p95_rank'
-    ]
-    df_disp_w = df_filtered_w[display_cols_w].copy()
-    df_disp_w['elig_share'] = (df_disp_w['elig_share'] * 100).round(1).astype(str) + "%"
-    df_disp_w['top10_freq'] = (df_disp_w['top10_freq'] * 100).round(1).astype(str) + "%"
-    df_disp_w['shrunk_wp_impact'] = df_disp_w['shrunk_wp_impact'].apply(lambda x: f"+{x:.2f}")
-    df_disp_w['hp_er'] = df_disp_w['hp_er'].round(2)
-    df_disp_w['norm_er'] = df_disp_w['norm_er'].round(2)
-    df_disp_w['hp_dot_pct'] = (df_disp_w['hp_dot_pct']).round(1).astype(str) + "%"
-    df_disp_w['raw_lift'] = df_disp_w['raw_lift'].apply(lambda x: f"+{x:.2f}" if x >= 0 else f"{x:.2f}")
-    df_disp_w['hp_balls'] = df_disp_w['hp_balls'].astype(int)
-    df_disp_w['boot_ci'] = "[" + df_disp_w['boot_p05_rank'].astype(int).astype(str) + ", " + df_disp_w['boot_p95_rank'].astype(int).astype(str) + "]"
+    # Detailed Table
+    st.dataframe(
+        disp_filtered_w,
+        hide_index=True,
+        use_container_width=True,
+        column_config=get_leaderboard_column_config("bowler")
+    )
     
-    df_disp_w = df_disp_w.drop(columns=['boot_p05_rank', 'boot_p95_rank'])
-    df_disp_w.columns = [
-        'Rank', 'Player Name', 'Player ID', 'Tier', 'Candidate Elig %', 'Top-10 %',
-        'Median Rank', 'Defending Impact (r/24b)', 'Normal ER', 'HP ER', 'HP Dot %', 'Raw Lift (r/24b)',
-        'HP Balls', 'Bootstrap 90% CI'
-    ]
-    st.dataframe(df_disp_w, hide_index=True, use_container_width=True)
-    
+    st.markdown("<br>", unsafe_allow_html=True)
+
     # Interactive Visualizations
     col_chart1, col_chart2 = st.columns(2)
     with col_chart1:
@@ -620,40 +803,49 @@ elif nav_choice == "🔍 Searchable Player Profiles":
     role_key = 'batters' if discipline == "Batting" else 'bowlers'
     narrative = narratives.get(role_key, {}).get(str(pid), narratives.get(role_key, {}).get(pid, {}))
     
+    status_cat = narrative.get('ipl_2027_status', 'Unverified')
+    badge_class = {
+        'Confirmed': 'badge-confirmed',
+        'Reported': 'badge-reported',
+        'Unverified': 'badge-unverified',
+        'Retired / Historical only': 'badge-retired'
+    }.get(status_cat, 'badge-unverified')
+
     col_hdr1, col_hdr2 = st.columns([2, 1])
     with col_hdr1:
         st.markdown(f"### {selected_player_name} (`player_id`: {pid})")
         st.markdown(f"**Classification:** `{narrative.get('classification', 'Audited T20 Candidate')}` | **Role:** {narrative.get('tactical_role', 'Specialist')}")
-        st.markdown(f"**IPL 2026 Team:** {narrative.get('ipl_2026_team', 'Audited Pool')} | **Market Status:** `{narrative.get('status_label', 'UNVERIFIED')}`")
+        st.markdown(f"**IPL 2026 Team:** {narrative.get('ipl_2026_team', 'Audited Pool')} | **IPL 2027 Market Status:** <span class='badge {badge_class}'>{status_cat.upper()}</span>", unsafe_allow_html=True)
     with col_hdr2:
         if is_top10:
             st.metric("Consensus V4 Rank", f"#{int(top10_meta['final_rank'])}", delta=f"{top10_meta['top10_freq']*100:.1f}% Top-10 Inclusion")
         else:
             st.metric("Multiverse Rank", f"#{int(player_data.get('median_rank', 999))}", delta="Outside Top 10")
             
-    # Metrics Row
+    # Metrics Row 1: Primary Leverage Metrics
     if discipline == "Batting":
         m1, m2, m3, m4, m5 = st.columns(5)
         with m1:
-            st.metric("HP Strike Rate", f"{player_data['hp_sr']:.1f}", delta=f"{player_data['hp_sr'] - player_data['norm_sr']:.1f} vs Normal")
+            st.metric("Consensus Rank", f"#{int(top10_meta['final_rank'])}" if is_top10 else f"#{int(player_data.get('median_rank', 999))}")
         with m2:
-            st.metric("HP Batting Avg", f"{player_data['hp_avg']:.1f}" if pd.notna(player_data['hp_avg']) else "N/A")
+            st.metric("Robustness Tier", str(player_data.get('tier', 'Candidate Pool')))
         with m3:
-            st.metric("Shrunk Impact", f"+{player_data['shrunk_wp_impact']:.1f} r/100b")
+            st.metric("Top-10 Inclusion %", f"{player_data['top10_freq']*100:.1f}%", help="Percentage of valid model specifications where player ranked in top 10 (historical specification frequency, NOT future probability)")
         with m4:
-            st.metric("Raw Lift", f"{player_data['raw_pressure_lift']:+.1f} r/100b")
+            st.metric("Candidate Elig %", f"{player_data['elig_share']*100:.1f}%", help="Percentage of specifications meeting volume criteria")
         with m5:
-            st.metric("HP Sample Size", f"{int(player_data['hp_balls'])} balls", help="Total deliveries faced under high leverage")
+            st.metric("HP Balls Faced", f"{int(player_data['hp_balls'])} b", help="Total deliveries faced under high leverage")
             
         m6, m7, m8, m9, m10 = st.columns(5)
         with m6:
-            st.metric("Normal Strike Rate", f"{player_data['norm_sr']:.1f}")
+            st.metric("Shrunk Impact", f"+{player_data['shrunk_wp_impact']:.1f} r/100b")
         with m7:
-            st.metric("Overall SR", f"{player_data['tot_sr']:.1f}")
+            st.metric("Raw Pressure Lift", f"{player_data['raw_pressure_lift']:+.1f} r/100b")
         with m8:
-            st.metric("Multiverse Top-10 %", f"{player_data['top10_freq']*100:.1f}%")
+            st.metric("HP Strike Rate", f"{player_data['hp_sr']:.1f}", delta=f"{player_data['hp_sr'] - player_data['norm_sr']:.1f} vs Normal")
         with m9:
-            st.metric("Candidate Elig %", f"{player_data['elig_share']*100:.1f}%")
+            valid_draws = int(player_data.get('valid_eligible_iters', 1000)) if pd.notna(player_data.get('valid_eligible_iters')) else 1000
+            st.metric("Bootstrap Valid Draws", f"{valid_draws} / 1,000")
         with m10:
             if is_top10:
                 st.metric("Bootstrap 90% CI", f"[{int(top10_meta['boot_p05_rank'])}, {int(top10_meta['boot_p95_rank'])}]")
@@ -662,25 +854,26 @@ elif nav_choice == "🔍 Searchable Player Profiles":
     else:
         m1, m2, m3, m4, m5 = st.columns(5)
         with m1:
-            st.metric("HP Economy Rate", f"{player_data['hp_er']:.2f}", delta=f"{player_data['norm_er'] - player_data['hp_er']:+.2f} vs Normal", delta_color="inverse")
+            st.metric("Consensus Rank", f"#{int(top10_meta['final_rank'])}" if is_top10 else f"#{int(player_data.get('median_rank', 999))}")
         with m2:
-            st.metric("HP Dot-Ball %", f"{player_data['hp_dot_pct']:.1f}%")
+            st.metric("Robustness Tier", str(player_data.get('tier', 'Candidate Pool')))
         with m3:
-            st.metric("Defending Impact", f"+{player_data['shrunk_wp_impact']:.2f} r/24b")
+            st.metric("Top-10 Inclusion %", f"{player_data['top10_freq']*100:.1f}%", help="Percentage of valid specifications where bowler ranked in top 10 (descriptive historical frequency, NOT future probability)")
         with m4:
-            st.metric("Raw Lift", f"{player_data['raw_pressure_lift']:+.2f} r/24b")
+            st.metric("Candidate Elig %", f"{player_data['elig_share']*100:.1f}%", help="Percentage of specifications meeting volume criteria")
         with m5:
-            st.metric("HP Sample Size", f"{int(player_data['hp_balls'])} balls", help="Total deliveries bowled under high leverage")
+            st.metric("HP Balls Bowled", f"{int(player_data['hp_balls'])} b", help="Total deliveries bowled under high leverage")
             
         m6, m7, m8, m9, m10 = st.columns(5)
         with m6:
-            st.metric("Normal Economy Rate", f"{player_data['norm_er']:.2f}")
+            st.metric("Defending Impact", f"+{player_data['shrunk_wp_impact']:.2f} r/24b")
         with m7:
-            st.metric("HP Wickets", f"{int(player_data['hp_wkts'])}" if pd.notna(player_data.get('hp_wkts')) else "N/A")
+            st.metric("Raw Pressure Lift", f"{player_data['raw_pressure_lift']:+.2f} r/24b")
         with m8:
-            st.metric("Multiverse Top-10 %", f"{player_data['top10_freq']*100:.1f}%")
+            st.metric("HP Economy Rate", f"{player_data['hp_er']:.2f}", delta=f"{player_data['norm_er'] - player_data['hp_er']:+.2f} vs Normal", delta_color="inverse")
         with m9:
-            st.metric("Candidate Elig %", f"{player_data['elig_share']*100:.1f}%")
+            valid_draws = int(player_data.get('valid_eligible_iters', 1000)) if pd.notna(player_data.get('valid_eligible_iters')) else 1000
+            st.metric("Bootstrap Valid Draws", f"{valid_draws} / 1,000")
         with m10:
             if is_top10:
                 st.metric("Bootstrap 90% CI", f"[{int(top10_meta['boot_p05_rank'])}, {int(top10_meta['boot_p95_rank'])}]")
@@ -716,23 +909,30 @@ elif nav_choice == "⚖️ Player Comparison Tool":
         if len(selected_players) >= 2:
             st.subheader("Direct Metrics Comparison Matrix")
             metrics_table = comp_df[[
-                'player_name', 'player_id', 'hp_sr', 'norm_sr', 'hp_avg', 'shrunk_wp_impact', 
-                'raw_pressure_lift', 'hp_balls', 'top10_freq', 'elig_share'
+                'player_name', 'player_id', 'tier', 'final_rank', 'hp_sr', 'norm_sr', 'hp_avg', 'shrunk_wp_impact', 
+                'raw_pressure_lift', 'hp_balls', 'top10_freq', 'elig_share', 'valid_eligible_iters'
             ]].copy()
+            metrics_table['final_rank'] = metrics_table['final_rank'].apply(lambda x: f"#{int(x)}" if pd.notna(x) else "Pool")
             metrics_table['top10_freq'] = (metrics_table['top10_freq'] * 100).round(1).astype(str) + "%"
             metrics_table['elig_share'] = (metrics_table['elig_share'] * 100).round(1).astype(str) + "%"
-            metrics_table['shrunk_wp_impact'] = metrics_table['shrunk_wp_impact'].round(1)
-            metrics_table['raw_pressure_lift'] = metrics_table['raw_pressure_lift'].round(1)
-            metrics_table['hp_sr'] = metrics_table['hp_sr'].round(1)
-            metrics_table['norm_sr'] = metrics_table['norm_sr'].round(1)
-            metrics_table['hp_avg'] = metrics_table['hp_avg'].round(1)
-            metrics_table['hp_balls'] = metrics_table['hp_balls'].round(0).astype(int)
+            metrics_table['shrunk_wp_impact'] = metrics_table['shrunk_wp_impact'].apply(lambda x: f"+{x:.1f} r/100b")
+            metrics_table['raw_pressure_lift'] = metrics_table['raw_pressure_lift'].apply(lambda x: f"{x:+.1f} r/100b")
+            metrics_table['hp_sr'] = metrics_table['hp_sr'].round(1).astype(str)
+            metrics_table['norm_sr'] = metrics_table['norm_sr'].round(1).astype(str)
+            metrics_table['hp_avg'] = metrics_table['hp_avg'].round(1).astype(str)
+            metrics_table['hp_balls'] = metrics_table['hp_balls'].round(0).astype(int).astype(str) + " b"
+            metrics_table['valid_eligible_iters'] = metrics_table['valid_eligible_iters'].fillna(1000).astype(int).astype(str) + " / 1,000"
+            
+            # Map IPL status
+            metrics_table['IPL 2027 Status'] = metrics_table['player_id'].astype(str).map(
+                lambda pid: narratives.get('batters', {}).get(pid, {}).get('ipl_2027_status', 'Unverified')
+            )
+
             metrics_table.columns = [
-                'Player Name', 'Player ID', 'HP Strike Rate', 'Normal SR', 'HP Avg', 
-                'Shrunk Impact (r/100b)', 'Raw Lift (r/100b)', 'HP Balls', 'Top-10 %', 'Eligibility %'
+                'Player Name', 'Player ID', 'Robustness Tier', 'Consensus Rank', 'HP Strike Rate', 'Normal SR', 'HP Avg', 
+                'Shrunk Impact', 'Raw Lift', 'HP Balls', 'Top-10 Inclusion %', 'Candidate Eligibility %', 'Bootstrap Valid Draws', 'IPL 2027 Status'
             ]
             
-            # Format transposed table with clean player names as columns
             comp_display = metrics_table.set_index('Player Name').T
             comp_display.columns.name = "Metric"
             st.dataframe(comp_display, use_container_width=True)
@@ -744,7 +944,7 @@ elif nav_choice == "⚖️ Player Comparison Tool":
                 p_row = comp_df[comp_df['player_name'] == p].iloc[0]
                 fig_comp.add_trace(go.Bar(
                     name=p,
-                    x=['HP Strike Rate', 'Normal SR', 'Shrunk Impact', 'Raw Lift'],
+                    x=['HP Strike Rate', 'Normal SR', 'Shrunk Impact (r/100b)', 'Raw Lift (r/100b)'],
                     y=[p_row['hp_sr'], p_row['norm_sr'], p_row['shrunk_wp_impact'], p_row['raw_pressure_lift']],
                     marker_color=colors[i % len(colors)]
                 ))
@@ -762,23 +962,30 @@ elif nav_choice == "⚖️ Player Comparison Tool":
         if len(selected_players_w) >= 2:
             st.subheader("Direct Metrics Comparison Matrix")
             metrics_table_w = comp_df_w[[
-                'player_name', 'player_id', 'hp_er', 'norm_er', 'hp_dot_pct', 'shrunk_wp_impact', 
-                'raw_pressure_lift', 'hp_balls', 'top10_freq', 'elig_share'
+                'player_name', 'player_id', 'tier', 'final_rank', 'hp_er', 'norm_er', 'hp_dot_pct', 'shrunk_wp_impact', 
+                'raw_pressure_lift', 'hp_balls', 'top10_freq', 'elig_share', 'valid_eligible_iters'
             ]].copy()
+            metrics_table_w['final_rank'] = metrics_table_w['final_rank'].apply(lambda x: f"#{int(x)}" if pd.notna(x) else "Pool")
             metrics_table_w['top10_freq'] = (metrics_table_w['top10_freq'] * 100).round(1).astype(str) + "%"
             metrics_table_w['elig_share'] = (metrics_table_w['elig_share'] * 100).round(1).astype(str) + "%"
-            metrics_table_w['shrunk_wp_impact'] = metrics_table_w['shrunk_wp_impact'].round(2)
-            metrics_table_w['raw_pressure_lift'] = metrics_table_w['raw_pressure_lift'].round(2)
-            metrics_table_w['hp_er'] = metrics_table_w['hp_er'].round(2)
-            metrics_table_w['norm_er'] = metrics_table_w['norm_er'].round(2)
+            metrics_table_w['shrunk_wp_impact'] = metrics_table_w['shrunk_wp_impact'].apply(lambda x: f"+{x:.2f} r/24b")
+            metrics_table_w['raw_pressure_lift'] = metrics_table_w['raw_pressure_lift'].apply(lambda x: f"{x:+.2f} r/24b")
+            metrics_table_w['hp_er'] = metrics_table_w['hp_er'].round(2).astype(str)
+            metrics_table_w['norm_er'] = metrics_table_w['norm_er'].round(2).astype(str)
             metrics_table_w['hp_dot_pct'] = metrics_table_w['hp_dot_pct'].round(1).astype(str) + "%"
-            metrics_table_w['hp_balls'] = metrics_table_w['hp_balls'].round(0).astype(int)
+            metrics_table_w['hp_balls'] = metrics_table_w['hp_balls'].round(0).astype(int).astype(str) + " b"
+            metrics_table_w['valid_eligible_iters'] = metrics_table_w['valid_eligible_iters'].fillna(1000).astype(int).astype(str) + " / 1,000"
+            
+            # Map IPL status
+            metrics_table_w['IPL 2027 Status'] = metrics_table_w['player_id'].astype(str).map(
+                lambda pid: narratives.get('bowlers', {}).get(pid, {}).get('ipl_2027_status', 'Unverified')
+            )
+
             metrics_table_w.columns = [
-                'Player Name', 'Player ID', 'HP Economy', 'Normal ER', 'HP Dot %', 
-                'Defending Impact (r/24b)', 'Raw Lift (r/24b)', 'HP Balls', 'Top-10 %', 'Eligibility %'
+                'Player Name', 'Player ID', 'Robustness Tier', 'Consensus Rank', 'HP Economy', 'Normal ER', 'HP Dot %', 
+                'Defending Impact', 'Raw Lift', 'HP Balls', 'Top-10 Inclusion %', 'Candidate Eligibility %', 'Bootstrap Valid Draws', 'IPL 2027 Status'
             ]
             
-            # Format transposed table with clean player names as columns
             comp_display_w = metrics_table_w.set_index('Player Name').T
             comp_display_w.columns.name = "Metric"
             st.dataframe(comp_display_w, use_container_width=True)
@@ -790,7 +997,7 @@ elif nav_choice == "⚖️ Player Comparison Tool":
                 p_row_w = comp_df_w[comp_df_w['player_name'] == p].iloc[0]
                 fig_comp_w.add_trace(go.Bar(
                     name=p,
-                    x=['HP Economy Rate', 'Normal ER', 'Defending Impact', 'Raw Lift'],
+                    x=['HP Economy Rate', 'Normal ER', 'Defending Impact (r/24b)', 'Raw Lift (r/24b)'],
                     y=[p_row_w['hp_er'], p_row_w['norm_er'], p_row_w['shrunk_wp_impact'], p_row_w['raw_pressure_lift']],
                     marker_color=colors[i % len(colors)]
                 ))
@@ -863,7 +1070,7 @@ elif nav_choice == "📊 Multiverse & Bootstrap Stability":
     # Candidate Eligibility vs Top 10 Inclusion
     st.subheader("Candidate Eligibility % vs Top-10 Inclusion Frequency")
     st.markdown("""
-    A critical governance distinction: **Candidate Eligibility %** reflects whether a player meets volume thresholds in a given specification; **Top-10 Inclusion %** measures whether their performance achieves a top-10 rank.
+    **Core Governance Principle:** **Candidate Eligibility %** reflects whether a player met minimum sample volume cutoffs in a specification. **Top-10 Inclusion %** indicates how often their performance placed them in the top 10. These metrics are strictly separate.
     """)
     
     col_el1, col_el2 = st.columns(2)
@@ -959,21 +1166,21 @@ elif nav_choice == "🛡️ Rajasthan Royals 2026 Audit":
         #### 1. Death-Overs Bowling Leaks
         - **Audited Empirical Finding:** RR's overall team death ER was **10.60** (league avg 10.67), but individual variance was extreme.
         - **The Deficit:** Jofra Archer (9.35 ER) and Nandre Burger (9.33 ER) performed well, but **Sandeep Sharma conceded 13.70 rpo** (46 balls) and **Tushar Deshpande conceded 12.38 rpo** (48 balls).
-        - **Recruitment Solution:** Acquire targeted death seamers like **Nathan Ellis** (+5.50 runs saved/24b) or **Eshan Malinga** (+3.39 raw lift) to replace expensive death spells.
+        - **Recruitment Solution:** Inquire regarding targeted death seamers like **Nathan Ellis** (+5.50 runs saved/24b) or monitor **Eshan Malinga** (+3.39 raw lift) to stabilize expensive death spells.
         """)
     with rr_col2:
         st.markdown("""
         #### 2. Middle-Overs Spin Economy
         - **Audited Empirical Finding:** RR spinners conceded **9.29 rpo** in overs 7–15 compared to the tournament average of **8.97 rpo**.
         - **The Deficit:** Ravindra Jadeja held an 8.39 ER, but secondary spin leaked heavily: Yash Punja posted **9.54 ER** and Ravi Bishnoi conceded **10.11 ER** with only 21.9% dots.
-        - **Recruitment Solution:** Add an attacking, controlling wrist-spinner like **Noor Ahmad** (+2.54 impact, 34.8% dots) or **Rashid Khan** to choke middle overs.
+        - **Recruitment Solution:** Add an attacking, controlling wrist-spinner like **Noor Ahmad** (+2.54 impact, 34.8% dots) or monitor trade options to choke middle overs.
         """)
     with rr_col3:
         st.markdown("""
         #### 3. Death-Overs Batting Support
         - **Audited Empirical Finding:** Donovan Ferreira produced an exceptional **221.7 SR** across 83 death balls (league avg 169.4).
         - **The Deficit:** Secondary finishers lacked boundary output: Jadeja scored at **140.5 SR**, Shubham Dubey at **146.3 SR**, and Shimron Hetmyer managed only **121.1 SR**.
-        - **Recruitment Solution:** Secure a domestic finisher to partner Ferreira. Top targets: **Shashank Singh** (+22.2 raw lift) or **Naman Dhir** (+35.4 raw lift).
+        - **Recruitment Solution:** Target a domestic finisher to partner Ferreira if contractually released. Top analytical profiles: **Shashank Singh** (+22.2 raw lift) or **Naman Dhir** (+35.4 raw lift).
         """)
 
 # ==============================================================================
@@ -985,18 +1192,72 @@ elif nav_choice == "💼 IPL 2027 Recruitment Actionability":
     
     st.markdown("""
     <div class="callout-box">
-        <strong>Governance Rule:</strong> Statistical models reflect what happened historically in the dataset. Real-world IPL recruitment requires verifying contracts, BCCI retention rules, confirmed trades, and injury statuses via dated public reporting. Every status below is classified as <em>Confirmed Trade</em>, <em>Reported / Injured</em>, <em>Retired Benchmark</em>, <em>Retained / Unviable</em>, or <em>Unverified Auction Status</em>.
+        <strong>Strict Governance Rule:</strong> Statistical models reflect what happened historically in the dataset. Real-world IPL recruitment requires verifying contracts, BCCI retention rules, confirmed trades, and injury statuses via dated public reporting.<br><br>
+        <strong>Classification Categories:</strong>
+        <ul>
+            <li><strong>Confirmed:</strong> Official, executed trades or contract actions published by BCCI / franchises.</li>
+            <li><strong>Reported:</strong> Verified media or franchise reports (e.g. medical rehabilitation, reported retentions).</li>
+            <li><strong>Unverified:</strong> Active players awaiting formal BCCI retention list publication. <em>Never labeled auction-available.</em></li>
+            <li><strong>Retired / Historical only:</strong> Players retired from IPL competition, serving as analytical benchmarks.</li>
+        </ul>
     </div>
     """, unsafe_allow_html=True)
     
-    # Filter by Evidence / Status
-    col_s1, col_s2 = st.columns([1, 2])
+    # Status KPI Row
+    n_conf = (sources['ipl_2027_status_category'] == 'Confirmed').sum()
+    n_rep = (sources['ipl_2027_status_category'] == 'Reported').sum()
+    n_ret = (sources['ipl_2027_status_category'] == 'Retired / Historical only').sum()
+    n_unv = (sources['ipl_2027_status_category'] == 'Unverified').sum()
+
+    s1, s2, s3, s4 = st.columns(4)
+    with s1:
+        st.markdown(f"""
+        <div class="metric-card">
+            <div class="metric-label">Confirmed Trades</div>
+            <div class="metric-value">{n_conf}</div>
+            <div class="metric-delta delta-pos">Official BCCI Actions</div>
+        </div>
+        """, unsafe_allow_html=True)
+    with s2:
+        st.markdown(f"""
+        <div class="metric-card">
+            <div class="metric-label">Reported Medical/Rehab</div>
+            <div class="metric-value">{n_rep}</div>
+            <div class="metric-delta delta-neutral">Active Rehabilitation</div>
+        </div>
+        """, unsafe_allow_html=True)
+    with s3:
+        st.markdown(f"""
+        <div class="metric-card">
+            <div class="metric-label">Retired Benchmarks</div>
+            <div class="metric-value">{n_ret}</div>
+            <div class="metric-delta delta-neg">Coaching / Inactive</div>
+        </div>
+        """, unsafe_allow_html=True)
+    with s4:
+        st.markdown(f"""
+        <div class="metric-card">
+            <div class="metric-label">Unverified Active</div>
+            <div class="metric-value">{n_unv}</div>
+            <div class="metric-delta delta-neutral">Awaiting Formal List</div>
+        </div>
+        """, unsafe_allow_html=True)
+
+    # Filter controls
+    col_s1, col_s2, col_s3 = st.columns([1, 1, 2])
     with col_s1:
-        disc_filter = st.selectbox("Filter Discipline", ["All", "Batter", "Bowler"])
+        status_filter = st.selectbox(
+            "Filter Status Category",
+            ["All", "Confirmed", "Reported", "Unverified", "Retired / Historical only"]
+        )
     with col_s2:
+        disc_filter = st.selectbox("Filter Discipline", ["All", "Batter", "Bowler"])
+    with col_s3:
         search_kw = st.text_input("Search Player or Franchise", "")
         
     df_src = sources.copy()
+    if status_filter != "All":
+        df_src = df_src[df_src['ipl_2027_status_category'] == status_filter]
     if disc_filter != "All":
         df_src = df_src[df_src['discipline'] == disc_filter]
     if search_kw:
@@ -1006,19 +1267,30 @@ elif nav_choice == "💼 IPL 2027 Recruitment Actionability":
         ]
         
     st.dataframe(
-        df_src[['player_name', 'discipline', 'role', 'latest_verified_franchise', 'active_status', 'ipl_2027_availability_status', 'evidence_classification', 'source_url']],
+        df_src[['player_name', 'discipline', 'role', 'latest_verified_franchise', 'ipl_2027_status_category', 'active_status', 'ipl_2027_availability_status', 'evidence_classification', 'source_url']],
         hide_index=True,
-        use_container_width=True
+        use_container_width=True,
+        column_config={
+            "player_name": "Player Name",
+            "discipline": "Discipline",
+            "role": "Role",
+            "latest_verified_franchise": "Franchise",
+            "ipl_2027_status_category": "Standardized Status",
+            "active_status": "Active Status & Context",
+            "ipl_2027_availability_status": "Availability Details",
+            "evidence_classification": "Evidence Tier",
+            "source_url": st.column_config.LinkColumn("Source URL")
+        }
     )
     
     st.markdown("---")
     st.subheader("🔍 Key Verified Real-World Fact Register")
     
     st.markdown("""
-    - **Nathan Ellis (`player_id`: 7920):** Officially traded from **Chennai Super Kings (CSK) to Sunrisers Hyderabad (SRH) on 5 November 2026**. Overseas competition at SRH creates an active secondary trade/monitoring opportunity.
-    - **Arshdeep Singh (`player_id`: 6464):** Officially traded from **Punjab Kings (PBKS) to Mumbai Indians (MI) on 11 November 2026** in an all-cash deal. Unviable for near-term transfer.
-    - **Matheesha Pathirana (`player_id`: 8661):** Sustained a confirmed grade-2 hamstring strain on **16 May 2026** vs GT; currently undergoing rehabilitation; do not assume 2027 unavailability.
-    - **Dinesh Karthik & Andre Russell:** Classified as retired IPL players / coaches (DK: RCB Batting Coach & Mentor; Russell: KKR Power Coach). Retained as analytical benchmarks.
+    - **Nathan Ellis (`player_id`: 7920):** Officially traded from **Chennai Super Kings (CSK) to Sunrisers Hyderabad (SRH) on 5 November 2026** for INR 2.00 Cr. Overseas competition at SRH creates an active secondary trade/monitoring opportunity.
+    - **Arshdeep Singh (`player_id`: 6464):** Officially traded from **Punjab Kings (PBKS) to Mumbai Indians (MI) on 11 November 2026** in an all-cash INR 18.00 Cr deal. Unviable for near-term transfer.
+    - **Matheesha Pathirana (`player_id`: 8661):** Sustained a confirmed grade-2 hamstring strain on **16 May 2026** vs GT; currently undergoing rehabilitation; do not assume 2027 unavailability without updated medical clearance.
+    - **Dinesh Karthik, Andre Russell & Bhuvneshwar Kumar:** Classified as retired IPL players / coaches (DK: RCB Batting Coach & Mentor; Russell: KKR Power Coach; Bhuvi: transitioned to coaching). Retained as analytical benchmarks.
     - **Matthew Wade (`player_id`: 796):** Retired from international cricket (Oct 2024) and BBL (Feb 2025). Excluded by bootstrap hurdle (720/1,000 draws).
     - **Pakistani Players (e.g. Haris Rauf):** Documented non-participation in IPL auctions since 2008 as real-world context for near-miss candidates.
     """)
@@ -1030,6 +1302,12 @@ elif nav_choice == "🔬 Methodology & Governance":
     st.markdown('<div class="main-title">Methodological Architecture &amp; Scientific Governance</div>', unsafe_allow_html=True)
     st.markdown('<div class="sub-title">Leave-Player-Out Baselines, Empirical Bayes Regularization &amp; Multiverse Specification Curves</div>', unsafe_allow_html=True)
     
+    st.markdown("""
+    <div class="disclaimer-banner">
+        <strong>Academic &amp; Participant Research Disclaimer:</strong> This is an independent participant research project based on historical cricket data. It is not an official Rajasthan Royals product or recruitment decision.
+    </div>
+    """, unsafe_allow_html=True)
+
     st.markdown("""
     ### 1. Situational Pressure Definition
     Pressure is formulated as a pre-delivery leverage index:
@@ -1065,6 +1343,7 @@ elif nav_choice == "🔬 Methodology & Governance":
     1. **Non-Causal Interpretability:** ANOVA variance decomposition reflects researcher model choices, not intrinsic player talent.
     2. **Role Confounding:** Finishers naturally face higher leverage than openers; baselines control for context but role specialization remains.
     3. **Survivor Bias:** Players who fail repeatedly under pressure lose their spot in the playing XI, leaving only resilient survivors in long-horizon samples.
+    4. **Descriptive vs Predictive:** Walk-forward split tests demonstrate that pressure splits are descriptive documentation of past execution, not guaranteed future performance.
     """)
 
 # ==============================================================================
@@ -1113,7 +1392,7 @@ elif nav_choice == "📥 Downloads & Data Export":
         
     with col_d4:
         st.subheader("📋 Verified External Source Register CSV")
-        st.write("Complete 51-player dated research register with URLs and evidence classifications.")
+        st.write("Complete 51-player dated research register with standardized status categories and evidence classifications.")
         src_csv = sources.to_csv(index=False).encode('utf-8')
         st.download_button(
             label="📥 Download source_register_all.csv",
@@ -1125,8 +1404,9 @@ elif nav_choice == "📥 Downloads & Data Export":
 # --- FOOTER ---
 st.markdown("---")
 st.markdown("""
-<div style="text-align: center; color: #64748B; font-size: 0.85rem;">
-    SupeRR Selector Season 2 — Round 1 Analytics Submission | Official Model V4 Multiverse Architecture<br>
+<div style="text-align: center; color: #64748B; font-size: 0.85rem; padding: 14px 0;">
+    SupeRR Selector Season 2 — Round 1 Analytics Submission | V4 Multiverse Analysis<br>
+    <em>Disclaimer: This is an independent participant research project based on historical cricket data. It is not an official Rajasthan Royals product or recruitment decision.</em><br>
     Strictly Read-Only | Verified &amp; Audited | No Proprietary Ball-by-Ball Data Exposed
 </div>
 """, unsafe_allow_html=True)

@@ -55,4 +55,21 @@ node_modules/
 out/
 *.mp4
 
+# Locally cloned external PDF tooling
+/.tools/pdfme-upstream/
+/.tools/pdfme-cli-workspace/
+/.tools/pdfme-render-cache/
+.tools/
+
+# Node generated dependencies and builds
+**/node_modules/
+**/dist/
+**/build/
+*.tsbuildinfo
+
+# Temporary PDF rendering outputs
+*.tmp
+*.log
+
+
 
