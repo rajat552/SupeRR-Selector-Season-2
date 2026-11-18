@@ -49,16 +49,16 @@ img_pressure_dist = get_base64_image(DATA_AUDIT_DIR / "pressure_index_distributi
 
 def make_page1_table_bat():
     bat_recs = {
-        "Shashank Singh": "Priority if available",
-        "Tim David": "Watchlist",
-        "Naman Dhir": "Priority if available",
-        "Dinesh Karthik": "Historical benchmark – retired; RCB Coach",
-        "Heinrich Klaasen": "Watchlist",
-        "Suryakumar Yadav": "Watchlist",
-        "Rinku Singh": "Priority if available",
-        "Romario Shepherd": "Watchlist",
-        "Andre Russell": "Historical benchmark – retired; KKR Coach",
-        "Rashid Khan": "Priority if available"
+        "Shashank Singh": "Retained (PBKS) — Historical Benchmark",
+        "Tim David": "Retained (RCB) — Historical Benchmark",
+        "Naman Dhir": "Retained (MI) — Historical Benchmark",
+        "Dinesh Karthik": "Retired — Historical Benchmark Only",
+        "Heinrich Klaasen": "Retained (SRH) — Historical Benchmark",
+        "Suryakumar Yadav": "Retained (MI) — Historical Benchmark",
+        "Rinku Singh": "Retained (KKR) — Historical Benchmark",
+        "Romario Shepherd": "Retained (RCB) — Historical Benchmark",
+        "Andre Russell": "Retired — Historical Benchmark Only (KKR Coach)",
+        "Rashid Khan": "Retained (GT) — Historical Benchmark"
     }
     rows = []
     for _, r in top10_bat.iterrows():
@@ -84,16 +84,16 @@ def make_page1_table_bat():
 
 def make_page1_table_bowl():
     bowl_recs = {
-        "Sunil Narine": "Watchlist",
-        "Jasprit Bumrah": "Watchlist",
-        "Rashid Khan": "Priority if available",
-        "Matheesha Pathirana": "Watchlist",
-        "Eshan Malinga": "Priority if available",
-        "Nathan Ellis": "Priority if available (traded CSK -> SRH)",
-        "Noor Ahmad": "Priority if available",
-        "Arshdeep Singh": "Watchlist (traded PBKS -> MI)",
-        "Prasidh Krishna": "Watchlist",
-        "Bhuvneshwar Kumar": "Watchlist"
+        "Sunil Narine": "Retained (KKR) — Historical Benchmark",
+        "Jasprit Bumrah": "Retained (MI) — Historical Benchmark",
+        "Rashid Khan": "Retained (GT) — Historical Benchmark",
+        "Matheesha Pathirana": "Released (CSK) — Reg & Medical Pending",
+        "Eshan Malinga": "Retained (SRH) — Historical Benchmark",
+        "Nathan Ellis": "Trade In (SRH) — Retained / Unavailable",
+        "Noor Ahmad": "Retained (CSK) — Historical Benchmark",
+        "Arshdeep Singh": "Trade In (MI) — Retained / Unavailable",
+        "Prasidh Krishna": "Retained (GT) — Historical Benchmark",
+        "Bhuvneshwar Kumar": "Retained (RCB) — Historical Benchmark"
     }
     rows = []
     for _, r in top10_bowl.iterrows():
@@ -725,19 +725,19 @@ def build_html():
   <div class="page-body">
     <div class="masthead">
       <div class="masthead-title">SupeRR Selector Season 2 — Round 1 Intelligence Submission</div>
-      <div class="masthead-tag">Pre-Registered Multiverse Architecture (3.19M Evaluations)</div>
+      <div class="masthead-tag">Pre-Registered Multiverse Architecture (3.19M Evaluations) &bull; Post-Retention Reconciled Audit</div>
     </div>
 
     <h1 class="doc-hero-title">Evaluating Cricket Performance Under Pressure: Multiverse Analysis & Rajasthan Royals Recruitment Strategy</h1>
     <div class="doc-hero-subtitle">
-      <span>Participant: Rajat Aggarwal | Canonical Model V4 Release</span>
+      <span>Participant: Rajat Aggarwal | Canonical Model V4 Release (Post-Retention Audit 18 Nov 2026)</span>
       <span>Official Scope: 837 Matches | 193,988 Deliveries (185,692 Legal Balls)</span>
     </div>
 
     <div class="kpi-row">
       <div class="kpi-card">
         <div class="kpi-val">3.19M</div>
-        <div class="kpi-lbl">Total Specifications Evaluated</div>
+        <div class="kpi-lbl">Player-Spec Records (15.15k Specs/Role)</div>
       </div>
       <div class="kpi-card pink">
         <div class="kpi-val">193,988</div>
@@ -766,7 +766,7 @@ def build_html():
     <div class="callout-box blue" style="padding:4px 7px; margin-bottom:4px; font-size:7.2pt; line-height:1.26;">
       <div class="callout-title" style="font-size:8.0pt;">Three Core Empirical Findings</div>
       <div>
-        &bull; <strong>Multiverse Specification Sensitivity & ANOVA:</strong> Evaluating 15,150 specifications per role reveals that player_id main effects account for 76.58% (batting) and 65.73% (bowling) of percentile rank variance in a Sequential Type I ANOVA summing to exactly 100.00%. Methodological sensitivity operates through player &times; spec interactions (21.44% batting, 32.79% bowling).<br>
+        &bull; <strong>Multiverse Specification Sensitivity & ANOVA:</strong> Evaluating 15,150 specifications per role reveals that player_id main effects account for 60.17% (batting) and 62.08% (bowling) of percentile rank variance in a Sequential Type I ANOVA summing to exactly 100.00%. Methodological sensitivity operates through player &times; spec interactions and residual error (25.56% batting, 22.08% bowling), while format scope accounts for 9.69% and 9.44%.<br>
         &bull; <strong>Bootstrap Filter Removes Volatile Assets:</strong> The 1,000-draw stability hurdle (&ge;800 draws) eliminated sample-dependent fringe candidates (Matthew Wade qualified in only 720/1,000 draws; Mujeeb Ur Rahman in 744/1,000; Naveen ul Haq in 513/1,000), promoting resilient contributors.<br>
         &bull; <strong>Rajasthan Royals 2026 Phase Audit:</strong> RR's death bowling was league-average overall (ER 10.60 vs league 10.67), but Sandeep Sharma (ER 13.70) and Tushar Deshpande (ER 12.38) leaked runs. In the middle overs, spin economy lagged (Jadeja 8.39, Bishnoi 10.11 vs league 8.97).
       </div>
@@ -1165,7 +1165,7 @@ def build_html():
     <div class="formula-card" style="padding:10px 14px; margin:6px 0;">
       <div class="formula-title" style="font-size:9.8pt;">Leave-Player-Out Expectation Formula</div>
       <div class="formula-math" style="font-size:12.0pt; padding:6px 0;">E[R<sub>i, c</sub>] = [&sum;<sub>j &ne; i</sub> R<sub>j, c</sub>] / [&sum;<sub>j &ne; i</sub> B<sub>j, c</sub>] &emsp;|&emsp; E[W<sub>i, c</sub>] = [&sum;<sub>j &ne; i</sub> W<sub>j, c</sub>] / [&sum;<sub>j &ne; i</sub> B<sub>j, c</sub>]</div>
-      <div class="formula-desc" style="font-size:8.4pt; line-height:1.42;">Where cell c is defined by Match Phase (Powerplay, Middle, Death) &times; Venue Scoring Tier (High, Medium, Low) &times; Match Track (IPL vs T20I). If effective sample size (N<sub>cell</sub> &minus; n<sub>i, c</sub>) falls below 50 deliveries, the expectation hierarchically pools upward to Phase &times; Track, and ultimately to global Phase baselines.</div>
+      <div class="formula-desc" style="font-size:8.4pt; line-height:1.42;">Where cell c is defined by the 7-level hierarchy (finest level: Match Track &times; Season &times; Phase &times; Wickets Down &times; Role/Style &times; Opponent Tier). If effective sample size (N<sub>cell</sub> &minus; n<sub>i, c</sub>) falls below 50 deliveries, the expectation hierarchically pools upward across 7 tiers down to Phase and global LPO. In production, 100.00% of deliveries resolve at Levels 0–3, strictly preserving complete IPL vs T20I format isolation without any cross-format leakage.</div>
     </div>
 
     <div class="section-h2" style="margin-top:8px;">2. Wicket Valuation & Dirichlet-Multinomial Bayesian Regularization</div>
@@ -1209,8 +1209,8 @@ def build_html():
 
       <div class="formula-card" style="padding:9px 12px;">
         <div class="formula-title" style="font-size:9.2pt;">Maintenance Lift (&Delta;<sub>maint</sub>)</div>
-        <div class="formula-math" style="font-size:11.2pt; padding:4px 0;">&Delta;<sub>maint</sub> = PWI<sub>High Pressure</sub> &minus; 0.70 &middot; PWI<sub>Normal Baseline</sub></div>
-        <div class="formula-desc" style="font-size:8.0pt; line-height:1.38;">Acknowledges that maintaining elite production under intense pressure (where league average drops by 10.3 SR) represents massive positive value, even if raw lift is neutral.</div>
+        <div class="formula-math" style="font-size:10.8pt; padding:4px 0;">&Delta;<sub>maint</sub> = PWI<sub>HP</sub> &minus; 0.35 &middot; max(PWI<sub>Normal</sub>, Floor)</div>
+        <div class="formula-desc" style="font-size:8.0pt; line-height:1.38;">Floor = &minus;5.0 runs/100b (batters), &minus;3.0 runs/24b (bowlers). Attenuates normal baseline drag with &alpha; = 0.35 to reward players who maintain elite output under pressure without penalizing high-volume anchors.</div>
       </div>
     </div>
   </div>
@@ -1248,7 +1248,7 @@ def build_html():
     </div>
 
     <div class="section-h2">2. The 8-Dimensional Multiverse Grid (15,150 Specifications)</div>
-    <p style="font-size:9.2pt; line-height:1.44;">Rather than presenting a single cherry-picked model, we pre-registered an 8-dimensional multiverse evaluating 15,150 unique methodological permutations per discipline (3,196,444 player-specification evaluations in total):</p>
+    <p style="font-size:9.2pt; line-height:1.44;">Rather than presenting a single cherry-picked model, we pre-registered an 8-dimensional multiverse evaluating 15,150 valid specifications per discipline (30,300 valid specifications and 3,196,444 player-specification evaluation records across the Parquet database):</p>
 
     <table style="font-size:8.0pt; margin:6px 0 10px 0;">
       <thead>
@@ -1261,62 +1261,66 @@ def build_html():
       </thead>
       <tbody>
         <tr>
-          <td><strong>Dim 1</strong></td>
-          <td style="text-align:left;">Pressure Formulation</td>
-          <td>3</td>
-          <td style="text-align:left;">P1 (Raw Leverage Index), P2 (Continuous Sigmoid Index), P3 (Multi-Factor Dynamic RRR).</td>
-        </tr>
-        <tr>
-          <td><strong>Dim 2</strong></td>
-          <td style="text-align:left;">Weighting Scheme</td>
-          <td>5</td>
-          <td style="text-align:left;">W1 (Logistic Sigmoid k=12.5), W2 (Linear Ramp), W3 (Threshold &ge;0.50), W4 (Exponential), W5 (Unweighted).</td>
-        </tr>
-        <tr>
-          <td><strong>Dim 3</strong></td>
-          <td style="text-align:left;">Scoring Model</td>
-          <td>3</td>
-          <td style="text-align:left;">Model A (Cumulative Volume), Model B (Rate Impact per 100b/24b), Model C (Net Win Probability Added).</td>
-        </tr>
-        <tr>
-          <td><strong>Dim 4</strong></td>
-          <td style="text-align:left;">Wicket Valuation (V)</td>
-          <td>3</td>
-          <td style="text-align:left;">V = 4.0 runs (Conservative), V = 6.0 runs (Canonical T20 Par), V = 8.0 runs (High Collapse Penalty).</td>
-        </tr>
-        <tr>
-          <td><strong>Dim 5</strong></td>
-          <td style="text-align:left;">Context Baseline Grid</td>
-          <td>3</td>
-          <td style="text-align:left;">B1 (Phase &times; Venue Tier &times; Track), B2 (Phase &times; Track), B3 (Phase-only Global Baseline).</td>
-        </tr>
-        <tr>
-          <td><strong>Dim 6</strong></td>
-          <td style="text-align:left;">Shrinkage Prior (&alpha;<sub>0</sub>)</td>
-          <td>3</td>
-          <td style="text-align:left;">S1 (&alpha;<sub>0</sub> = 15 balls &ndash; Weak Prior), S2 (&alpha;<sub>0</sub> = 25 balls &ndash; Empirical Bayes), S3 (&alpha;<sub>0</sub> = 40 balls &ndash; Heavy Shrinkage).</td>
-        </tr>
-        <tr>
-          <td><strong>Dim 7</strong></td>
-          <td style="text-align:left;">Sample Volume Gating</td>
-          <td>5</td>
-          <td style="text-align:left;">G1 (&ge;75 HP balls), G2 (&ge;100 HP balls), G3 (&ge;125 HP balls), G4 (&ge;150 HP balls), G5 (&ge;200 HP balls).</td>
-        </tr>
-        <tr>
-          <td><strong>Dim 8</strong></td>
+          <td><strong>Dim F</strong></td>
           <td style="text-align:left;">Competition Scope Track</td>
           <td>3</td>
-          <td style="text-align:left;">T1 (Combined IPL + T20I Primary), T2 (IPL Matches Only), T3 (IPL Primary + T20I Sensitivity).</td>
+          <td style="text-align:left;">F1 (IPL + All T20I), F2 (IPL + Full-Member T20I), F3 (IPL Exclusively).</td>
+        </tr>
+        <tr>
+          <td><strong>Dim W</strong></td>
+          <td style="text-align:left;">Wickets State in Baseline</td>
+          <td>2</td>
+          <td style="text-align:left;">W0 (Without wickets down bucket), W1 (With wickets bucket '0-2', '3-5', '6+').</td>
+        </tr>
+        <tr>
+          <td><strong>Dim P</strong></td>
+          <td style="text-align:left;">Situational Pressure Def</td>
+          <td>5 / 6</td>
+          <td style="text-align:left;">P1 (Sigmoid 0.40), P2 (Sigmoid 0.425), P3 (Sigmoid 0.45), P4 (Discrete &ge;0.50), P5 (Def C Situational). Bowlers evaluate P0–P5 (P0 = Diagnostic V2 Benchmark).</td>
+        </tr>
+        <tr>
+          <td><strong>Dim V</strong></td>
+          <td style="text-align:left;">Wicket Valuation (V)</td>
+          <td>4</td>
+          <td style="text-align:left;">V = 4.0 runs, V = 6.0 runs (Canonical T20 Par), V = 8.0 runs, V = Context-Marginal.</td>
+        </tr>
+        <tr>
+          <td><strong>Dim K</strong></td>
+          <td style="text-align:left;">EB Shrinkage Strength (K)</td>
+          <td>3</td>
+          <td style="text-align:left;">K = 60 (Light Shrinkage), K = 120 (Canonical Empirical Bayes), K = 180 (Heavy Shrinkage).</td>
+        </tr>
+        <tr>
+          <td><strong>Dim G</strong></td>
+          <td style="text-align:left;">Sample Volume Gating</td>
+          <td>3</td>
+          <td style="text-align:left;">Lenient (200b / 80 HP balls), Standard (300b / 120 HP balls), Strict (400b / 150 HP balls).</td>
+        </tr>
+        <tr>
+          <td><strong>Dim M</strong></td>
+          <td style="text-align:left;">Scoring Formulation</td>
+          <td>2 + 1</td>
+          <td style="text-align:left;">Model A (Cumulative Volume), Model B (Attenuated Rate Lift) + Model C (Canonical Ridge-Logit).</td>
+        </tr>
+        <tr>
+          <td><strong>Dim S</strong></td>
+          <td style="text-align:left;">Composite Metric Weights</td>
+          <td>7</td>
+          <td style="text-align:left;">S0 (Base 50/30/20) + 6 One-at-a-time Sensitivity Perturbations (S1&ndash;S6).</td>
         </tr>
       </tbody>
     </table>
+
+    <div class="callout-box navy" style="padding:6px 10px; margin-top:3px; margin-bottom:6px; font-size:7.6pt; line-height:1.32;">
+      <strong>Combinatorial Accounting:</strong> Each (F, W, P) cache evaluates (4 &times; 3 &times; 3 &times; 2 &times; 7) = 504 specs + 1 Model C spec = 505 specs. <strong>Batting:</strong> 3 scopes &times; 2 wicket states &times; 5 pressure defs &times; 505 = <strong>15,150 valid specs</strong>. <strong>Bowling:</strong> 3 &times; 2 &times; 6 &times; 505 = <strong>18,180 total specs</strong> (where 3,030 P0 specs serve as diagnostic single-index benchmarks flagged is_valid=False, leaving <strong>15,150 valid bowling specs</strong>).
+    </div>
 
     <div class="section-h2" style="margin-top:6px;">3. Pre-Match Dual Track Rating Isolation</div>
     <p style="font-size:9.2pt; line-height:1.44;">To eliminate cross-format confounding, team and player strength ratings are maintained on independent Elo tracks (separate IPL and T20I tracks). All pre-match ratings are computed strictly using historical fixtures completed prior to the current match date (match_date &lt; current_match_date), guaranteeing zero look-ahead contamination.</p>
 
     <div class="card card-tint" style="padding:10px 14px; margin-top:8px; border-left:3.5px solid #004BA0;">
       <div class="formula-title" style="color:#004BA0; font-size:9.2pt;">Multiverse Robustness Governance Guarantee</div>
-      <p style="font-size:8.4pt; margin:0; line-height:1.40;">By systematically evaluating candidates across 15,150 model specifications rather than a single hand-crafted metric, researcher bias and parameter cherry-picking are entirely eliminated. Any player appearing in the consensus top 10 is mathematically proven to withstand extreme sensitivity perturbations across leverage thresholds, scoring formulations, and wicket valuations.</p>
+      <p style="font-size:8.4pt; margin:0; line-height:1.40;">By systematically evaluating candidates across 15,150 model specifications rather than a single hand-crafted metric, researcher degrees of freedom and parameter cherry-picking are systematically minimized through pre-registration. Any player appearing in the consensus top 10 demonstrates robust resilience across wide sensitivity perturbations across leverage thresholds, scoring formulations, and wicket valuations.</p>
     </div>
   </div>
 
@@ -1355,49 +1359,57 @@ def build_html():
       <tbody>
         <tr style="background-color:#F0FDF4; font-weight:700;">
           <td style="text-align:left;"><strong>Player Identity Main Effect (player_id)</strong></td>
-          <td><strong>3,142,890</strong></td>
-          <td class="metric-positive"><strong>76.58%</strong></td>
-          <td><strong>2,718,450</strong></td>
-          <td class="metric-positive"><strong>65.73%</strong></td>
-          <td style="text-align:left;"><strong>Dominant source of variance: true player skill drives rankings.</strong></td>
+          <td><strong>285,702,638</strong></td>
+          <td class="metric-positive"><strong>60.17%</strong></td>
+          <td><strong>581,828,132</strong></td>
+          <td class="metric-positive"><strong>62.08%</strong></td>
+          <td style="text-align:left;"><strong>Dominant source of variance: consistent individual player differences drive rankings.</strong></td>
         </tr>
         <tr>
-          <td style="text-align:left;">Player &times; Specification Interaction</td>
-          <td>879,840</td>
-          <td>21.44%</td>
-          <td>1,356,210</td>
-          <td>32.79%</td>
-          <td style="text-align:left;">Methodological sensitivity operates through player-specific profile shifts.</td>
+          <td style="text-align:left;">Competition Scope Main Effect (f_scope: IPL vs T20I)</td>
+          <td>46,026,415</td>
+          <td>9.69%</td>
+          <td>88,438,217</td>
+          <td>9.44%</td>
+          <td style="text-align:left;">Primary analytical fork: international sample vs IPL exclusivity.</td>
         </tr>
         <tr>
-          <td style="text-align:left;">Scoring Model Main Effect (Model A/B/C)</td>
-          <td>42,150</td>
-          <td>1.03%</td>
-          <td>35,420</td>
-          <td>0.86%</td>
-          <td style="text-align:left;">Volume vs Rate choices create minor baseline shifts.</td>
+          <td style="text-align:left;">Sample Volume Gate Main Effect (g_gate: Lenient/Std/Strict)</td>
+          <td>13,379,929</td>
+          <td>2.82%</td>
+          <td>44,188,960</td>
+          <td>4.72%</td>
+          <td style="text-align:left;">Qualification threshold shifts candidate pool density.</td>
         </tr>
         <tr>
-          <td style="text-align:left;">Weighting Scheme Main Effect</td>
-          <td>18,420</td>
-          <td>0.45%</td>
-          <td>12,650</td>
-          <td>0.31%</td>
-          <td style="text-align:left;">Continuous sigmoid vs linear weights have minimal direct main effect.</td>
+          <td style="text-align:left;">Pressure Definition Main Effect (p_def: P1–P5)</td>
+          <td>8,082,966</td>
+          <td>1.70%</td>
+          <td>15,398,001</td>
+          <td>1.64%</td>
+          <td style="text-align:left;">Continuous center shifting (0.40 vs 0.45) & discrete thresholds.</td>
         </tr>
         <tr>
-          <td style="text-align:left;">Wicket Value & Shrinkage Main Effects</td>
-          <td>20,580</td>
-          <td>0.50%</td>
-          <td>13,120</td>
-          <td>0.31%</td>
-          <td style="text-align:left;">Regularization priors adjust tails without perturbing elite core.</td>
+          <td style="text-align:left;">Model, Wicket Value, Weights & Shrinkage (w, v, m, k, s)</td>
+          <td>253,856</td>
+          <td>0.05%</td>
+          <td>338,186</td>
+          <td>0.04%</td>
+          <td style="text-align:left;">Mathematical hyperparameter choices demonstrate negligible sensitivity.</td>
+        </tr>
+        <tr>
+          <td style="text-align:left;">Player &times; Specification Interaction & Residual</td>
+          <td>121,353,012</td>
+          <td>25.56%</td>
+          <td>206,958,209</td>
+          <td>22.08%</td>
+          <td style="text-align:left;">Individual profile shifts across specifications justify consensus aggregation.</td>
         </tr>
         <tr style="background-color:#F1F5F9; font-weight:700;">
           <td style="text-align:left;"><strong>TOTAL VARIANCE EXPLAINED</strong></td>
-          <td><strong>4,103,880</strong></td>
+          <td><strong>474,798,816</strong></td>
           <td><strong>100.00%</strong></td>
-          <td><strong>4,135,850</strong></td>
+          <td><strong>937,149,704</strong></td>
           <td><strong>100.00%</strong></td>
           <td style="text-align:left;"><strong>Exact mathematical reconciliation across all specifications.</strong></td>
         </tr>
@@ -1411,7 +1423,7 @@ def build_html():
 
     <div class="callout-box emerald" style="padding:8px 12px;">
       <div class="callout-title" style="font-size:9.2pt;">Core Methodological Takeaway</div>
-      <div style="font-size:8.2pt; line-height:1.38;">Because player identity main effects explain 76.58% (batting) and 65.73% (bowling) of rank variance, true skill is the dominant driver of performance under pressure. However, because player &times; specification interactions account for 21.44% to 32.79% of variance, reporting consensus rankings aggregated across 15,150 specifications is vastly superior to relying on any single cherry-picked specification curve.</div>
+      <div style="font-size:8.2pt; line-height:1.38;">Player identity main effects explain 60.17% (batting) and 62.08% (bowling) of rank variance in a Sequential Type I ANOVA [player_id, f_scope, g_gate, p_def, w, v, m, k, s] on the unbalanced candidate panel, demonstrating that observed player differences dominate methodological noise rather than serving as causal proof of invariant talent. Because player &times; specification interactions account for 22.08% to 25.56% of variance, reporting consensus rankings aggregated across 15,150 specifications is essential.</div>
     </div>
   </div>
 
@@ -1474,7 +1486,7 @@ def build_html():
         <span><strong>HP Balls:</strong> 327</span>
       </div>
       <div class="dossier-prose" style="font-size:6.8pt; line-height:1.26;">
-        <strong>Empirical Evidence:</strong> Shashank achieved a 94.9% top-10 finish across all eligible specifications, demonstrating extraordinary resilience when leverage peaks. His raw lift of +22.2 runs/100b reflects a surge from a normal baseline of +10.0 to a high-pressure PWI of +32.2. He rises under pressure in 100.0% of evaluated specifications. <strong>Tactical Scouting Fit:</strong> Elite domestic middle-to-death finisher; direct tactical solution for RR.
+        <strong>Empirical Evidence:</strong> Shashank achieved a 94.9% top-10 finish across all eligible specifications, demonstrating extraordinary resilience when leverage peaks. His raw lift of +22.2 runs/100b reflects a surge from a normal baseline of +10.0 to a high-pressure PWI of +32.2. He rises under pressure in 100.0% of evaluated specifications. <strong>Availability & Tactical Context:</strong> Retained by Punjab Kings (PBKS) for IPL 2027; preserved in analytical rankings as an unmanipulated historical performance benchmark.
       </div>
     </div>
 
@@ -1492,7 +1504,7 @@ def build_html():
         <span><strong>HP Balls:</strong> 570</span>
       </div>
       <div class="dossier-prose" style="font-size:6.8pt; line-height:1.26;">
-        <strong>Empirical Evidence:</strong> Highest absolute high-pressure output in the dataset (+42.9 runs/100b) across 570 balls. Achieves a median rank of 1.0 with a tight bootstrap 90% interval of [1, 16]. Rises under pressure in 78.1% of specifications. <strong>Tactical Scouting Fit:</strong> Proven overseas power hitter. Clears boundaries immediately from ball one under extreme required run rates.
+        <strong>Empirical Evidence:</strong> Highest absolute high-pressure output in the dataset (+42.9 runs/100b) across 570 balls. Achieves a median rank of 1.0 with a tight bootstrap 90% interval of [1, 16]. Rises under pressure in 78.1% of specifications. <strong>Availability & Tactical Context:</strong> Retained by Royal Challengers Bengaluru (RCB); elite overseas power-finishing historical benchmark.
       </div>
     </div>
 
@@ -1510,13 +1522,13 @@ def build_html():
         <span><strong>HP Balls:</strong> 186</span>
       </div>
       <div class="dossier-prose" style="font-size:6.8pt; line-height:1.26;">
-        <strong>Empirical Evidence:</strong> Demonstrates the highest positive pressure lift (+35.4 runs/100b) among all regular batters, surging from &minus;0.7 normal output to +34.7 in high leverage across 186 balls. Qualified in 91.1% of specifications with 88.6% top-10 frequency. <strong>Tactical Scouting Fit:</strong> Emerging young Indian boundary creator. Unflazed by extreme run-rate demands.
+        <strong>Empirical Evidence:</strong> Demonstrates the highest positive pressure lift (+35.4 runs/100b) among all regular batters, surging from &minus;0.7 normal output to +34.7 in high leverage across 186 balls. Qualified in 91.1% of specifications with 88.6% top-10 frequency. <strong>Availability & Tactical Context:</strong> Retained by Mumbai Indians (MI); domestic high-leverage elevation benchmark.
       </div>
     </div>
 
     <div class="player-dossier" style="padding:3.5px 6.5px; margin-bottom:2.5px;">
       <div class="dossier-header">
-        <span class="dossier-name" style="font-size:8.0pt;">4. Dinesh Karthik <span class="id-muted">(ID: 143)</span> &mdash; Tier 1 | Historical Benchmark (Retired)</span>
+        <span class="dossier-name" style="font-size:8.0pt;">4. Dinesh Karthik <span class="id-muted">(ID: 143)</span> &mdash; Tier 2 | Historical Benchmark (Retired)</span>
         <span class="badge badge-tier1" style="font-size:5.6pt;">Historical Benchmark</span>
       </div>
       <div class="dossier-metrics" style="font-size:6.4pt; padding:1.5px 4px;">
@@ -1534,7 +1546,7 @@ def build_html():
 
     <div class="player-dossier" style="padding:3.5px 6.5px; margin-bottom:2.5px;">
       <div class="dossier-header">
-        <span class="dossier-name" style="font-size:8.0pt;">5. Heinrich Klaasen <span class="id-muted">(ID: 4260)</span> &mdash; Tier 1 | Sunrisers Hyderabad</span>
+        <span class="dossier-name" style="font-size:8.0pt;">5. Heinrich Klaasen <span class="id-muted">(ID: 4260)</span> &mdash; Tier 2 | Sunrisers Hyderabad</span>
         <span class="badge badge-tier1" style="font-size:5.6pt;">Consensus #5 Batter</span>
       </div>
       <div class="dossier-metrics" style="font-size:6.4pt; padding:1.5px 4px;">
@@ -1546,7 +1558,7 @@ def build_html():
         <span><strong>HP Balls:</strong> 459</span>
       </div>
       <div class="dossier-prose" style="font-size:6.8pt; line-height:1.26;">
-        <strong>Empirical Evidence:</strong> World-class spin destroyer (+24.9 PWI across 459 HP balls). Features in top 10 across 74.4% of specifications with exceptional maintenance lift (+17.4). <strong>Tactical Scouting Fit:</strong> Premium overseas middle-order anchor and boundary creator. Dominates defensive spin fields in overs 7–16; top priority if available.
+        <strong>Empirical Evidence:</strong> World-class spin destroyer (+24.9 PWI across 459 HP balls). Features in top 10 across 74.4% of specifications with exceptional maintenance lift (+17.4). <strong>Availability & Tactical Context:</strong> Retained by Sunrisers Hyderabad (SRH, ₹23.00 Cr); world-class middle-overs spin-tackling benchmark.
       </div>
     </div>
   </div>
@@ -1585,7 +1597,7 @@ def build_html():
         <span><strong>HP Balls:</strong> 657</span>
       </div>
       <div class="dossier-prose">
-        <strong>Empirical Evidence:</strong> Massive sample volume of 657 HP balls with shrunk PWI of +25.4. His raw lift is &minus;4.6, reflecting an astronomical normal baseline (+30.0). Classified as "Elite all the time" (rises in 23.3% of specs). <strong>Tactical Fit:</strong> 360-degree boundary manipulator whose high baseline provides unmatched floor and ceiling against elite bowling attacks.
+        <strong>Empirical Evidence:</strong> Massive sample volume of 657 HP balls with shrunk PWI of +25.4. His raw lift is &minus;4.6, reflecting an astronomical normal baseline (+30.0). Classified as "Elite all the time" (rises in 23.3% of specs). <strong>Availability & Tactical Context:</strong> Retained by Mumbai Indians (MI); world-class 360-degree high-pressure historical benchmark.
       </div>
     </div>
 
@@ -1603,7 +1615,7 @@ def build_html():
         <span><strong>HP Balls:</strong> 507</span>
       </div>
       <div class="dossier-prose">
-        <strong>Empirical Evidence:</strong> Prototypical chase finisher (+31.0 PWI, +17.9 raw lift across 507 HP balls). Rises under pressure in 80.0% of multiverse specifications with 63.1% top-10 inclusion. <strong>Tactical Fit:</strong> Elite left-handed death finisher. High situational awareness and composure in final-over run chases.
+        <strong>Empirical Evidence:</strong> Prototypical chase finisher (+31.0 PWI, +17.9 raw lift across 507 HP balls). Rises under pressure in 80.0% of multiverse specifications with 63.1% top-10 inclusion. <strong>Availability & Tactical Context:</strong> Retained by Kolkata Knight Riders (KKR, ₹13.00 Cr); elite domestic chase-finishing benchmark.
       </div>
     </div>
 
@@ -1621,7 +1633,7 @@ def build_html():
         <span><strong>HP Balls:</strong> 431</span>
       </div>
       <div class="dossier-prose">
-        <strong>Empirical Evidence:</strong> Powerhouse lower-order hitter (+28.7 PWI, +5.0 lift across 431 balls). Finishes in the top 10 across 55.5% of multiverse runs. <strong>Tactical Fit:</strong> Explosive No. 7/8 finisher capable of turning matches in 10-ball cameos. Excellent supplementary pace-hitting option.
+        <strong>Empirical Evidence:</strong> Powerhouse lower-order hitter (+28.7 PWI, +5.0 lift across 431 balls). Finishes in the top 10 across 55.5% of multiverse runs. <strong>Availability & Tactical Context:</strong> Retained by Royal Challengers Bengaluru (RCB); lower-order explosive power-hitting benchmark.
       </div>
     </div>
 
@@ -1645,7 +1657,7 @@ def build_html():
 
     <div class="player-dossier" style="padding:4.5px 7.5px; margin-bottom:4px;">
       <div class="dossier-header">
-        <span class="dossier-name">10. Rashid Khan <span class="id-muted">(ID: 4722)</span> &mdash; Tier 2 | Gujarat Titans</span>
+        <span class="dossier-name">10. Rashid Khan <span class="id-muted">(ID: 4722)</span> &mdash; Tier 3 | Gujarat Titans</span>
         <span class="badge badge-tier2">Rises Under Pressure</span>
       </div>
       <div class="dossier-metrics">
@@ -1657,7 +1669,7 @@ def build_html():
         <span><strong>HP Balls:</strong> 377</span>
       </div>
       <div class="dossier-prose">
-        <strong>Empirical Evidence:</strong> Extraordinary dual-threat asset. As a batter, records a raw lift of +40.3 (surging from &minus;12.2 to +28.1). Features in the top 10 in 47.9% of specifications (61.6% retention when eligible) and also finishes #3 among bowlers.
+        <strong>Empirical Evidence:</strong> Extraordinary dual-threat asset. As a batter, records a raw lift of +40.3 (surging from &minus;12.2 to +28.1). Features in the top 10 in 47.9% of specifications (61.6% retention when eligible) and also finishes #3 among bowlers. <strong>Availability:</strong> Retained by Gujarat Titans (GT, ₹18.00 Cr); dual-threat benchmark.
       </div>
     </div>
 
@@ -1726,7 +1738,7 @@ def build_html():
         <span><strong>HP Balls:</strong> 422</span>
       </div>
       <div class="dossier-prose" style="font-size:6.8pt; line-height:1.26;">
-        <strong>Empirical Evidence:</strong> Perfect 100.0% top-10 frequency across all 15,150 specifications. Defends +6.57 runs saved per 24 balls across 422 HP deliveries. Remarkably stable with a median rank of 3.0 and IQR of 1.0. <strong>Tactical Scouting Fit:</strong> Premier defensive spinner in T20 history. Smothers run rates in high leverage while restricting boundary access. Unlikely to leave KKR; mandatory watchlist.
+        <strong>Empirical Evidence:</strong> Perfect 100.0% top-10 frequency across all 15,150 specifications. Defends +6.57 runs saved per 24 balls across 422 HP deliveries. Remarkably stable with a median rank of 3.0 and IQR of 1.0. <strong>Tactical Scouting Fit:</strong> Premier defensive spinner in T20 history. Smothers run rates in high leverage while restricting boundary access. Retained by Kolkata Knight Riders (KKR, ₹12.00 Cr); premier defensive spin benchmark in T20 history.
       </div>
     </div>
 
@@ -1744,7 +1756,7 @@ def build_html():
         <span><strong>HP Balls:</strong> 332</span>
       </div>
       <div class="dossier-prose" style="font-size:6.8pt; line-height:1.26;">
-        <strong>Empirical Evidence:</strong> Highest absolute defending impact (+7.61 runs saved/24b) in the competition. Finishes inside top 10 in 99.2% of specifications with median rank 2.0 across 332 balls. <strong>Tactical Scouting Fit:</strong> Elite death-overs pace execution. Flawless yorker and slower-ball control against elite finishers. Franchise cornerstone.
+        <strong>Empirical Evidence:</strong> Highest absolute defending impact (+7.61 runs saved/24b) in the competition. Finishes inside top 10 in 99.2% of specifications with median rank 2.0 across 332 balls. <strong>Availability & Tactical Context:</strong> Retained by Mumbai Indians (MI, ₹18.00 Cr); the global standard for high-pressure death bowling.
       </div>
     </div>
 
@@ -1762,13 +1774,13 @@ def build_html():
         <span><strong>HP Balls:</strong> 706</span>
       </div>
       <div class="dossier-prose" style="font-size:6.8pt; line-height:1.26;">
-        <strong>Empirical Evidence:</strong> Heaviest high-pressure workload in the database (706 balls) while defending +5.59 runs/24b with +2.75 raw lift. Top 10 in 93.5% of multiverse runs. <strong>Tactical Scouting Fit:</strong> Irreplaceable wicket-taking wrist-spinner who thrives in high leverage. Combined with his #10 batting ranking, represents the ultimate MVP asset.
+        <strong>Empirical Evidence:</strong> Heaviest high-pressure workload in the database (706 balls) while defending +5.59 runs/24b with +2.75 raw lift. Top 10 in 93.5% of multiverse runs. <strong>Tactical Scouting Fit:</strong> Irreplaceable wicket-taking wrist-spinner who thrives in high leverage. Retained by Gujarat Titans (GT, ₹18.00 Cr); primary wrist-spin benchmark across the multiverse.
       </div>
     </div>
 
     <div class="player-dossier" style="padding:3.5px 6.5px; margin-bottom:2.5px;">
       <div class="dossier-header">
-        <span class="dossier-name" style="font-size:8.0pt;">4. Matheesha Pathirana <span class="id-muted">(ID: 8661)</span> &mdash; Tier 1 | Kolkata Knight Riders</span>
+        <span class="dossier-name" style="font-size:8.0pt;">4. Matheesha Pathirana <span class="id-muted">(ID: 8661)</span> &mdash; Tier 1 | Chennai Super Kings (Released)</span>
         <span class="badge badge-tier1" style="font-size:5.6pt;">Consensus #4 Bowler</span>
       </div>
       <div class="dossier-metrics" style="font-size:6.4pt; padding:1.5px 4px;">
@@ -1780,13 +1792,13 @@ def build_html():
         <span><strong>HP Balls:</strong> 307</span>
       </div>
       <div class="dossier-prose" style="font-size:6.8pt; line-height:1.26;">
-        <strong>Empirical Evidence:</strong> Sling-action death specialist defending +5.34 runs/24b across 307 HP balls. Top 10 in 83.4% of specifications. <strong>Injury Context:</strong> Suffered hamstring injury in May 2026; actively rehabilitating. Healthy trajectory makes him a lethal recruitment target.
+        <strong>Empirical Evidence:</strong> Sling-action death specialist defending +5.34 runs/24b across 307 HP balls. Top 10 in 83.4% of specifications. <strong>Availability & Medical Governance:</strong> Historical V4 death-bowling performance is elite. Released by CSK. Auction registration (23 Nov 2026 deadline) and 2027 medical/workload clearance remain subject to official verification.
       </div>
     </div>
 
     <div class="player-dossier" style="padding:3.5px 6.5px; margin-bottom:2.5px;">
       <div class="dossier-header">
-        <span class="dossier-name" style="font-size:8.0pt;">5. Eshan Malinga <span class="id-muted">(ID: 39657)</span> &mdash; Tier 1 | Sunrisers Hyderabad</span>
+        <span class="dossier-name" style="font-size:8.0pt;">5. Eshan Malinga <span class="id-muted">(ID: 39657)</span> &mdash; Tier 2 | Sunrisers Hyderabad</span>
         <span class="badge badge-tier1" style="font-size:5.6pt;">Consensus #5 Bowler</span>
       </div>
       <div class="dossier-metrics" style="font-size:6.4pt; padding:1.5px 4px;">
@@ -1798,7 +1810,7 @@ def build_html():
         <span><strong>HP Balls:</strong> 176</span>
       </div>
       <div class="dossier-prose" style="font-size:6.8pt; line-height:1.26;">
-        <strong>Empirical Evidence:</strong> Outstanding emergence under pressure (+3.85 PWI, +3.39 raw lift across 176 balls). Features in top 10 in 71.9% of specifications. <strong>Tactical Scouting Fit:</strong> High-pace sling bowler who executes yorkers under intense scrutiny. Prime high-upside acquisition for RR.
+        <strong>Empirical Evidence:</strong> Outstanding emergence under pressure (+3.85 PWI, +3.39 raw lift across 176 balls). Features in top 10 in 71.9% of specifications. <strong>Availability & Tactical Context:</strong> Retained by Sunrisers Hyderabad (SRH); breakout high-pace sling-action bowling benchmark.
       </div>
     </div>
   </div>
@@ -1837,7 +1849,7 @@ def build_html():
         <span><strong>HP Balls:</strong> 229</span>
       </div>
       <div class="dossier-prose">
-        <strong>Empirical Evidence:</strong> Elite death specialist defending +5.50 runs/24b with +3.15 raw lift. Top 10 in 54.8% of specs (72.5% retention when eligible). <strong>Official Trade Note:</strong> Mapped to CSK in raw data; officially traded CSK &rarr; SRH on 5 Nov 2026 for INR 2.00 Cr all-cash [Official SRH/IPL Confirmation]. Prime tactical death option.
+        <strong>Empirical Evidence:</strong> Elite death specialist defending +5.50 runs/24b with +3.15 raw lift. Top 10 in 54.8% of specs (72.5% retention when eligible). <strong>Availability & Trade Context:</strong> Mapped to CSK in raw data; officially traded CSK &rarr; SRH on 5 Nov 2026 for ₹2.00 Cr all-cash; retained by SRH for IPL 2027. Historical benchmark.
       </div>
     </div>
 
@@ -1855,7 +1867,7 @@ def build_html():
         <span><strong>HP Balls:</strong> 351</span>
       </div>
       <div class="dossier-prose">
-        <strong>Empirical Evidence:</strong> Left-arm wrist-spin control defending +2.54 runs/24b across 351 HP balls. Top 10 in 40.1% of multiverse runs. <strong>Tactical Fit:</strong> Solves RR's middle-overs wicket-taking deficit against right-hand heavy top orders.
+        <strong>Empirical Evidence:</strong> Left-arm wrist-spin control defending +2.54 runs/24b across 351 HP balls. Top 10 in 40.1% of multiverse runs. <strong>Availability & Tactical Context:</strong> Retained by Chennai Super Kings (CSK); elite left-arm wrist-spin historical benchmark.
       </div>
     </div>
 
@@ -1873,7 +1885,7 @@ def build_html():
         <span><strong>HP Balls:</strong> 593</span>
       </div>
       <div class="dossier-prose">
-        <strong>Empirical Evidence:</strong> Heavy-volume Indian left-arm seamer (593 HP balls) defending +1.90 runs/24b. <strong>Official Trade Note:</strong> Mapped to PBKS in raw data; traded PBKS &rarr; MI on 11 Nov 2026 in swap deal for Hardik Pandya [Official iplt20.com].
+        <strong>Empirical Evidence:</strong> Heavy-volume Indian left-arm seamer (593 HP balls) defending +1.90 runs/24b. <strong>Availability & Trade Context:</strong> Mapped to PBKS in raw data; traded PBKS &rarr; MI on 11 Nov 2026 (₹18.00 Cr all-cash); retained by MI. High-volume Indian death-bowling benchmark.
       </div>
     </div>
 
@@ -1891,7 +1903,7 @@ def build_html():
         <span><strong>HP Balls:</strong> 234</span>
       </div>
       <div class="dossier-prose">
-        <strong>Empirical Evidence:</strong> High-release hit-the-deck pace defending +2.96 runs/24b with +2.67 raw lift across 234 HP balls. Rises under pressure in 68.3% of specifications. <strong>Tactical Fit:</strong> Excellent hard-length extractor who complements Jofra Archer at Sawai Mansingh Stadium.
+        <strong>Empirical Evidence:</strong> High-release hit-the-deck pace defending +2.96 runs/24b with +2.67 raw lift across 234 HP balls. Rises under pressure in 68.3% of specifications. <strong>Availability & Tactical Context:</strong> Retained by Gujarat Titans (GT); high-release pace benchmark.
       </div>
     </div>
 
@@ -1909,7 +1921,7 @@ def build_html():
         <span><strong>HP Balls:</strong> 361</span>
       </div>
       <div class="dossier-prose">
-        <strong>Empirical Evidence:</strong> Veteran swing and knuckleball master defending +3.25 runs/24b across 361 balls. Elite baseline output (+4.56). Dependable Powerplay and 19th-over specialist.
+        <strong>Empirical Evidence:</strong> Veteran swing and knuckleball master defending +3.25 runs/24b across 361 balls. Elite baseline output (+4.56). Retained by Royal Challengers Bengaluru (RCB); veteran powerplay and knuckleball control benchmark.
       </div>
     </div>
 
@@ -2043,31 +2055,35 @@ def build_html():
       </tbody>
     </table>
 
-    <div class="section-h2" style="margin-top:5px;">2. Phase-by-Phase Weakness Diagnostics & Recruitment Solutions</div>
-    <div class="grid-2" style="gap:11px; margin-top:5px;">
-      <div class="callout-box navy" style="padding:9px 13px;">
-        <div class="callout-title" style="font-size:9.4pt;">Phase Diagnostic &bull; Death-Overs Pace Leaks</div>
-        <p style="font-size:8.3pt; margin:0; line-height:1.40;"><strong>Deficit:</strong> While RR death bowling ER was 10.60 overall (vs league 10.67), supporting pacers Sandeep Sharma (ER 13.70) and Tushar Deshpande (ER 12.38) leaked runs excessively, leaving Archer unsupported.<br>
-        <strong>Recruitment Target:</strong> <strong>Nathan Ellis</strong> (defending impact +5.50 r/24b; traded CSK &rarr; SRH) or <strong>Prasidh Krishna</strong> (+2.96 r/24b, hard length) as dedicated death co-spearheads.</p>
+    <div class="callout-box navy" style="padding:5px 9px; margin-bottom:5px; font-size:7.5pt;">
+      <strong>Confirmed Post-Retention Squad Position (17 Nov 2026 Cutoff):</strong> 19 players under contract (17 retained + 2 trades in) | <strong>Available Purse: ₹27.05 Cr</strong> (7th in IPL) | <strong>6 Open Slots</strong> (3 Overseas). Confirmed Trades In: <strong>Mohammed Shami</strong> (LSG &rarr; RR, ₹8.00 Cr pace spearhead), <strong>M. Siddharth</strong> (LSG &rarr; RR, ₹0.75 Cr SLA spin); Traded Out: <strong>Sam Curran</strong> (RR &rarr; LSG, ₹14.50 Cr). Key Releases: <strong>Shimron Hetmyer</strong> (clearing ₹11.00 Cr), <strong>Tushar Deshpande</strong> (clearing ₹6.50 Cr).
+    </div>
+
+    <div class="section-h2" style="margin-top:2px;">2. Post-Retention Phase Solutions & Recruitment Strategy</div>
+    <div class="grid-2" style="gap:8px; margin-top:3px;">
+      <div class="callout-box navy" style="padding:6px 10px;">
+        <div class="callout-title" style="font-size:8.6pt;">Phase Solution &bull; Death-Overs Pace Spearhead</div>
+        <p style="font-size:7.6pt; margin:0; line-height:1.32;"><strong>Deficit:</strong> Supporting pacers Sandeep Sharma (ER 13.70) and released Deshpande (ER 12.38) leaked runs excessively at the death.<br>
+        <strong>Recruitment Target:</strong> <strong>Matheesha Pathirana</strong> (RR Priority #1 Bowler, V4 Impact +5.34 r/24b, 83.4% Top-10 freq; Max Bid: ₹11.50 Cr) or <strong>Trent Boult</strong> (Priority #3, new-ball/death left-arm swing, ₹5.00 Cr) / <strong>Avesh Khan</strong> (Priority #2, heavy-ball workhorse, ₹5.50 Cr).</p>
       </div>
 
-      <div class="callout-box blue" style="padding:9px 13px;">
-        <div class="callout-title" style="font-size:9.4pt;">Phase Diagnostic &bull; Middle-Overs Spin Penetration</div>
-        <p style="font-size:8.3pt; margin:0; line-height:1.40;"><strong>Deficit:</strong> RR middle-overs spin economy lagged league par (Jadeja 8.39, Bishnoi 10.11 vs league 8.97). RR conceded boundaries on 17.8% of middle balls.<br>
-        <strong>Recruitment Target:</strong> <strong>Noor Ahmad</strong> (+2.54 runs/24b defended) or <strong>Rashid Khan</strong> (#3 Bowler, 706 HP balls) to choke middle overs and force attacking errors.</p>
+      <div class="callout-box emerald" style="padding:6px 10px;">
+        <div class="callout-title" style="font-size:8.6pt;">Phase Solution &bull; Lower-Order Finisher Rebalance</div>
+        <p style="font-size:7.6pt; margin:0; line-height:1.32;"><strong>Deficit:</strong> Donovan Ferreira (death SR 221.7) had no reliable partner; Hetmyer released to recover ₹11 Cr purse.<br>
+        <strong>Recruitment Target:</strong> <strong>Nehal Wadhera</strong> (RR Priority #1 Batter, domestic LHB finisher, death SR 172.9, 100% elig, 976 boot draws; Max Bid: ₹7.50 Cr) and <strong>M Shahrukh Khan</strong> (Priority #2, domestic RHB pace destroyer, death SR 168.4, 93.4% elig; Max Bid: ₹4.50 Cr).</p>
       </div>
     </div>
 
-    <div class="grid-2" style="gap:11px; margin-top:5px;">
-      <div class="callout-box emerald" style="padding:9px 13px;">
-        <div class="callout-title" style="font-size:9.4pt;">Phase Diagnostic &bull; Lower-Order Finisher Isolation</div>
-        <p style="font-size:8.3pt; margin:0; line-height:1.40;"><strong>Deficit:</strong> At the death, Donovan Ferreira (SR 221.7) had no reliable partner. Shimron Hetmyer struck at only 121.1, causing RR to lose 3 close chases.<br>
-        <strong>Recruitment Target:</strong> <strong>Shashank Singh</strong> (#1 Batter, +22.2 lift) or <strong>Naman Dhir</strong> (#3 Batter, +35.4 lift) to provide ruthless boundary execution.</p>
+    <div class="grid-2" style="gap:8px; margin-top:4px;">
+      <div class="callout-box blue" style="padding:6px 10px;">
+        <div class="callout-title" style="font-size:8.6pt;">Phase Solution &bull; Middle-Overs Spin Balance</div>
+        <p style="font-size:7.6pt; margin:0; line-height:1.32;"><strong>Deficit:</strong> RR conceded boundaries on 17.8% of middle balls (Jadeja 8.39, Bishnoi 10.11 ER).<br>
+        <strong>Tactical Adjustment:</strong> Acquisition of <strong>M. Siddharth</strong> (LSG trade, ₹0.75 Cr) secures domestic SLA control, preserving overseas slots exclusively for death bowling (Pathirana).</p>
       </div>
 
-      <div class="callout-box gold" style="padding:9px 13px;">
-        <div class="callout-title" style="font-size:9.4pt;">Tactical Execution &bull; 2027 Auction Strategy</div>
-        <p style="font-size:8.3pt; margin:0; line-height:1.40;"><strong>Strategy:</strong> Allocate 45% of available auction budget to secure an Indian pressure-tested finisher (Shashank/Naman Dhir) and 35% to secure a specialized death-overs bowler (Ellis/Pathirana/Prasidh), resolving RR's audited structural leaks.</p>
+      <div class="callout-box gold" style="padding:6px 10px;">
+        <div class="callout-title" style="font-size:8.6pt;">RR Auction Purse Allocation Plan (₹27.05 Cr Available)</div>
+        <p style="font-size:7.6pt; margin:0; line-height:1.32;"><strong>Primary Scenario:</strong> <strong>Pathirana</strong> (₹10.50 Cr, OS#1) + <strong>Wadhera</strong> (₹6.50 Cr, Ind#1) + <strong>Shahrukh</strong> (₹4.00 Cr, Ind#2) + <strong>Boult</strong> (₹3.50 Cr, OS#2) + 2 Uncapped (₹0.60 Cr) + Reserve (₹1.95 Cr) = <strong>₹27.05 Cr</strong>.<br><strong>Contingency Pivot:</strong> If Pathirana exceeds ceiling/fails medical, pivot to <strong>Boult</strong> (₹4.50 Cr) + <strong>Avesh Khan</strong> (₹5.00 Cr) + <strong>Wadhera</strong> (₹7.50 Cr) + <strong>Shahrukh</strong> (₹4.50 Cr) + <strong>Mustafizur</strong> (₹2.50 Cr) + 1 Uncapped (₹0.30 Cr) + Reserve (₹2.75 Cr) = <strong>₹27.05 Cr</strong>.</p>
       </div>
     </div>
   </div>
@@ -2190,11 +2206,11 @@ def build_html():
       <tbody>
         <tr>
           <td><span class="rank-circle">11</span></td>
-          <td style="text-align:left;"><strong>Ashutosh Sharma (8101)</strong></td>
+          <td style="text-align:left;"><strong>Ashutosh Sharma (8101)*</strong></td>
           <td>38.20%</td>
           <td>9.0 [11.0]</td>
-          <td>662 / 1000</td>
-          <td style="text-align:left;">Explosive lower-order finisher (+29.7 raw lift); sample volatility in bootstrap draws.</td>
+          <td><span class="metric-negative">662 / 1000 (Failed)</span></td>
+          <td style="text-align:left;">Explosive finisher (+29.7 raw lift), but fails formal stability hurdle (&lt; 800 draws); high-variance exploratory option only.</td>
         </tr>
         <tr>
           <td><span class="rank-circle">12</span></td>
@@ -2287,21 +2303,54 @@ def build_html():
       </tbody>
     </table>
 
-    <div class="section-h2" style="margin-top:5px;">3. Strategic Contingency Scenarios</div>
-    <div class="grid-2" style="gap:11px; margin-top:5px;">
-      <div class="callout-box navy" style="padding:10px 13px;">
-        <div class="callout-title" style="font-size:9.4pt;">Scenario A &bull; Auction Bidding Wars on Top Targets</div>
-        <p style="font-size:8.3pt; margin:0; line-height:1.40;">If aggressive bidding on Shashank Singh or Tim David exceeds INR 12.0 Cr, immediately pivot to <strong>Naman Dhir</strong> (#3 Batter, +35.4 lift) or <strong>Ashutosh Sharma</strong> (Rank 11) to preserve budget for bowling reinforcements.</p>
-      </div>
-      <div class="callout-box emerald" style="padding:10px 13px;">
-        <div class="callout-title" style="font-size:9.4pt;">Scenario B &bull; Overseas Roster Constraints</div>
-        <p style="font-size:8.3pt; margin:0; line-height:1.40;">With Jofra Archer occupying one overseas slot, if RR acquires an overseas batter (Tim David / Klaasen), prioritize Indian domestic bowlers (<strong>Prasidh Krishna</strong>, <strong>Arshdeep Singh</strong>, <strong>Krunal Pandya</strong>) to balance the starting XI.</p>
-      </div>
+    <div class="section-h2" style="margin-top:4px;">3. Post-Retention Auction Recruitment Shortlist (Dual-Ranking Architecture)</div>
+    <div class="grid-2" style="gap:8px; margin-top:2px;">
+      <table style="font-size:7.2pt;">
+        <thead>
+          <tr>
+            <th>RR#</th>
+            <th>V4#</th>
+            <th style="text-align:left;">Focus Batter</th>
+            <th>Role Fit</th>
+            <th>PWI</th>
+            <th>Max Bid</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td><strong>#1</strong></td><td>#56</td><td style="text-align:left;"><strong>Nehal Wadhera (7059)</strong></td><td>Indian LHB Finisher</td><td>-2.11</td><td>₹7.50 Cr</td></tr>
+          <tr><td><strong>#2</strong></td><td>#73</td><td style="text-align:left;"><strong>M Shahrukh Khan (3782)</strong></td><td>Indian RHB Pace Hitter</td><td>-2.69</td><td>₹4.50 Cr</td></tr>
+          <tr><td><strong>#3</strong></td><td>#42</td><td style="text-align:left;"><strong>Nitish Rana (4246)</strong></td><td>LHB Anchor/Floater</td><td>+6.19</td><td>₹4.00 Cr</td></tr>
+        </tbody>
+      </table>
+
+      <table style="font-size:7.2pt;">
+        <thead>
+          <tr>
+            <th>RR#</th>
+            <th>V4#</th>
+            <th style="text-align:left;">Focus Bowler</th>
+            <th>Role Fit</th>
+            <th>PWI</th>
+            <th>Max Bid</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td><strong>#1</strong></td><td>#4</td><td style="text-align:left;"><strong>Matheesha Pathirana (8661)</strong></td><td>Overseas Death Specialist</td><td>+5.34</td><td>₹11.50 Cr</td></tr>
+          <tr><td><strong>#2</strong></td><td>#31</td><td style="text-align:left;"><strong>Avesh Khan (3653)</strong></td><td>Domestic Pace Workhorse</td><td>+0.29</td><td>₹5.50 Cr</td></tr>
+          <tr><td><strong>#3</strong></td><td>#30</td><td style="text-align:left;"><strong>Trent Boult (2320)</strong></td><td>Left-Arm Swing Spearhead</td><td>+2.39</td><td>₹5.00 Cr</td></tr>
+        </tbody>
+      </table>
     </div>
 
-    <div class="callout-box gold" style="padding:10px 13px; margin-top:8px;">
-      <div class="callout-title" style="font-size:9.4pt;">Scenario C &bull; Dynamic Impact Player Flexibility</div>
-      <p style="font-size:8.3pt; margin:0; line-height:1.40;">Leverage the IPL Impact Player rule to pair defensive spin specialists like <strong>Krunal Pandya</strong> (Rank 11) or <strong>Varun Chakravarthy</strong> (Rank 13) with death-overs batting accelerators like <strong>Ashutosh Sharma</strong> (Rank 11), optimizing phase-by-phase resource allocation according to pitch par.</p>
+    <div class="grid-2" style="gap:8px; margin-top:4px;">
+      <div class="callout-box navy" style="padding:6px 10px;">
+        <div class="callout-title" style="font-size:8.4pt;">Contingency Scenario A &bull; Bidding Inflation on Pathirana</div>
+        <p style="font-size:7.4pt; margin:0; line-height:1.32;">If aggressive bidding for Pathirana exceeds the ₹11.50 Cr hard ceiling, immediately pivot to <strong>Trent Boult</strong> (Target ₹3.50–5.00 Cr) paired with <strong>Avesh Khan</strong> (Target ₹4.50–5.50 Cr), shifting remaining purse capital to guarantee securing primary Indian finisher <strong>Nehal Wadhera</strong>.</p>
+      </div>
+      <div class="callout-box gold" style="padding:6px 10px;">
+        <div class="callout-title" style="font-size:8.4pt;">Contingency Scenario B &bull; Medical & Registration Governance</div>
+        <p style="font-size:7.4pt; margin:0; line-height:1.32;">Candidate screening enforces strict governance filters: <strong>Jacob Bethell</strong> subject to ECB medical clearance; <strong>Mitchell Starc</strong> opted out per official media confirmation; <strong>Mustafizur Rahman</strong> subject to BCB NOC issuance; <strong>Matheesha Pathirana</strong> subject to auction registration and 2027 fitness clearance. Registration: <em>Pending - Deadline 23 Nov 2026; Final List 3 Dec 2026</em>.</p>
+      </div>
     </div>
   </div>
 
@@ -2384,15 +2433,18 @@ pytest tests/model_v2 tests/model_v3 tests/model_v4 -q<br><br>
 python outputs/pdf_redesign/generate_professional_report.py
     </div>
 
-    <div class="section-h2" style="margin-top:3px;">Appendix C: External Verification Citations & IPL 2026 Teams</div>
-    <div style="font-size:7.2pt; line-height:1.32; color:#334155;">
-      &bull; <strong>Nathan Ellis (SRH / IPL Official, 2026-11-05):</strong> Mapped to CSK in raw data; officially traded CSK &rarr; SRH on 5 Nov 2026 for INR 2.00 Cr all-cash. [Official]<br>
-      &bull; <strong>Arshdeep Singh (iplt20.com, 2026-11-11):</strong> Mapped to PBKS in raw data; officially traded PBKS &rarr; MI on 11 Nov 2026 in swap deal for Hardik Pandya. [Official]<br>
-      &bull; <strong>Matheesha Pathirana (KKR / ESPNcricinfo, 2026-05-18):</strong> Sustained hamstring injury on 16 May 2026; actively rehabilitating; confirmed fit for 2027 cycle. [Official / Media]<br>
-      &bull; <strong>Andre Russell (The Hindu, 2025-11-30):</strong> Retired from IPL on 30 Nov 2025; active KKR Power Coach for IPL 2026. [Media]<br>
-      &bull; <strong>Dinesh Karthik (India TV, 2024-07-01):</strong> Retired post-IPL 2024; active RCB Batting Coach & Mentor (2025–2026). [Media]<br>
-      &bull; <strong>Matthew Wade (cricket.com.au, 2024-10-29):</strong> Retired from international/domestic cricket; transition to coaching. [Official]<br>
-      &bull; <strong>IPL 2027 Auction Statuses:</strong> All active players without confirmed retentions are marked <em>UNVERIFIED</em> pending BCCI auction releases.
+    <div style="font-size:6.7pt; color:#64748B; margin-top:1px; line-height:1.25;">
+      * <strong>Matthew Wade (796):</strong> Excluded from consensus rankings after failing the pre-registered bootstrap stability hurdle (720/1,000 valid resamples &lt; 800 threshold; retired from international and domestic cricket).<br>
+      ^ <strong>Reeza Hendricks (768):</strong> Excluded from consensus rankings due to insufficient high-pressure delivery volume across multi-season full-member/IPL filters (&lt;50% specification eligibility).
+    </div>
+
+    <div class="section-h2" style="margin-top:2px;">Appendix C: External Verification Citations & IPL 2027 Regulatory Timeline</div>
+    <div style="font-size:6.9pt; line-height:1.26; color:#334155;">
+      &bull; <strong>Official Post-Retention Audit (17 Nov 2026 Cutoff):</strong> All 10 franchises submitted final retention filings at 17:00 IST. Total retained: 184; Released: 89; Open slots: 66 (25 overseas); Total purse balance: ₹297.95 Cr across 10 franchises.<br>
+      &bull; <strong>Rajasthan Royals Confirmed Status (17 Nov 2026):</strong> 19 players under contract (14 Indian, 5 Overseas), ₹27.05 Cr purse (7th in IPL), 6 open slots (3 overseas). Trades In: Mohammed Shami (LSG &rarr; RR, ₹8.00 Cr), M. Siddharth (LSG &rarr; RR, ₹0.75 Cr). Trade Out: Sam Curran (RR &rarr; LSG, ₹14.50 Cr). Releases: Shimron Hetmyer (₹11.00 Cr), Tushar Deshpande (₹6.50 Cr). [Official IPLT20 / Rajasthan Royals]<br>
+      &bull; <strong>Confirmed League Trades:</strong> Hardik Pandya (MI &rarr; PBKS); Arshdeep Singh (PBKS &rarr; MI, ₹18.00 Cr all-cash); Rishabh Pant (LSG &rarr; DC); Kuldeep Yadav (DC &rarr; LSG); Nathan Ellis & Khaleel Ahmed (CSK &rarr; SRH); Liam Livingstone & Jack Edwards (SRH &rarr; CSK); T Natarajan (DC &rarr; SRH); Zeeshan Ansari (SRH &rarr; DC); Harshal Patel (SRH &rarr; GT). [Official]<br>
+      &bull; <strong>Medical & Regulatory Status:</strong> Matheesha Pathirana (recovering from hamstring injury; 2027 fitness clearance pending verification); Jacob Bethell (subject to ECB medical clearance); Mitchell Starc (opted out per official media confirmation); Mustafizur Rahman (subject to BCB NOC issuance); Russell & Dinesh Karthik (retired benchmarks). [Reputable Media / Official]<br>
+      &bull; <strong>Auction Timeline:</strong> Retention deadline: 17 Nov 2026 (Closed) &bull; Player auction registration deadline: 23 Nov 2026 (Pending) &bull; Final auction list publication: 3 Dec 2026 (Pending) &bull; Auction Date: 16 Dec 2026 at ITC Grand Goa, Goa (11:00 AM IST).
     </div>
 
     <div class="callout-box emerald" style="margin-top:4px; padding:5px 8px;">
@@ -2460,6 +2512,26 @@ def main():
 
     if num_pages != 15:
         print(f"WARNING: Expected exactly 15 pages, got {num_pages}!")
+    else:
+        print("PERFECT: Document rendered to exactly 15 pages without overflow.")
+
+    # Synchronize official submission deliverables in outputs/final_package
+    import hashlib, shutil
+    final_pkg_dir = ROOT / "outputs" / "final_package"
+    final_pkg_dir.mkdir(parents=True, exist_ok=True)
+
+    dest_post_retention = final_pkg_dir / "SupeRR_Final_Report_PostRetention.pdf"
+    dest_canonical = final_pkg_dir / "SupeRR_Final_Report.pdf"
+    dest_final = final_pkg_dir / "SupeRR_Final_Report_Final.pdf"
+
+    shutil.copy2(OUT_PDF, dest_post_retention)
+    shutil.copy2(OUT_PDF, dest_canonical)
+    shutil.copy2(OUT_PDF, dest_final)
+
+    sha256 = hashlib.sha256(OUT_PDF.read_bytes()).hexdigest()
+    print(f"Copied to: {dest_post_retention}")
+    print(f"Copied to: {dest_canonical}")
+    print(f"Final PDF SHA-256: {sha256}")
 
 if __name__ == "__main__":
     main()

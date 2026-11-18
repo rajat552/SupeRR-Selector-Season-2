@@ -203,20 +203,42 @@ pytest tests/model_v2 tests/model_v3 tests/model_v4 -q
 
 ---
 
-## 11. Location of the Final PDF and Ranking CSVs
+## 11. Launching the Interactive Intelligence Dashboard
+
+To run the full Rajasthan Royals recruitment dashboard locally:
+
+```powershell
+streamlit run app.py
+```
+
+*Live Public Deployment:* [https://superr-selector-season-2.streamlit.app/](https://superr-selector-season-2.streamlit.app/)
+
+---
+
+## 12. Location of the Final PDF, Ranking CSVs & Post-Retention Shortlists
 
 - **Canonical Final Report (PDF):**
-  [`outputs/final_package/SupeRR_Final_Report.pdf`](file:///c:/Users/LENOVO/OneDrive/Desktop/SupeRR-Selector-Season-2/outputs/final_package/SupeRR_Final_Report.pdf)
+  [`outputs/final_package/SupeRR_Final_Report.pdf`](file:///c:/Users/LENOVO/OneDrive/Desktop/SupeRR-Selector-Season-2/outputs/final_package/SupeRR_Final_Report.pdf) *(15 pages, A4 publication layout, SHA-256: `c8177b52d10aaff39441e16b9c65662b07274627f60d6d8ece3d0e62288b1c2b`)*
 - **Top 10 Batters (CSV):**
   [`outputs/final_package/final_top10_batters.csv`](file:///c:/Users/LENOVO/OneDrive/Desktop/SupeRR-Selector-Season-2/outputs/final_package/final_top10_batters.csv)
 - **Top 10 Bowlers (CSV):**
   [`outputs/final_package/final_top10_bowlers.csv`](file:///c:/Users/LENOVO/OneDrive/Desktop/SupeRR-Selector-Season-2/outputs/final_package/final_top10_bowlers.csv)
 - **Report Markdown Source:**
   [`outputs/final_package/SupeRR_Final_Report.md`](file:///c:/Users/LENOVO/OneDrive/Desktop/SupeRR-Selector-Season-2/outputs/final_package/SupeRR_Final_Report.md)
+- **Post-Retention Roster Register (10 Franchises):**
+  [`docs/POST_RETENTION_FRANCHISE_ROSTER_REGISTER.csv`](file:///c:/Users/LENOVO/OneDrive/Desktop/SupeRR-Selector-Season-2/docs/POST_RETENTION_FRANCHISE_ROSTER_REGISTER.csv)
+- **Rajasthan Royals Final Batting Shortlist:**
+  [`outputs/auction/RR_FINAL_BATTING_SHORTLIST.csv`](file:///c:/Users/LENOVO/OneDrive/Desktop/SupeRR-Selector-Season-2/outputs/auction/RR_FINAL_BATTING_SHORTLIST.csv)
+- **Rajasthan Royals Final Bowling Shortlist:**
+  [`outputs/auction/RR_FINAL_BOWLING_SHORTLIST.csv`](file:///c:/Users/LENOVO/OneDrive/Desktop/SupeRR-Selector-Season-2/outputs/auction/RR_FINAL_BOWLING_SHORTLIST.csv)
+- **Released Player V4 Multiverse Screening (92 Players):**
+  [`outputs/auction/RELEASED_PLAYER_V4_SCREENING.csv`](file:///c:/Users/LENOVO/OneDrive/Desktop/SupeRR-Selector-Season-2/outputs/auction/RELEASED_PLAYER_V4_SCREENING.csv)
+- **Post-Retention Master Availability Register (141 Players):**
+  [`docs/POST_RETENTION_AVAILABILITY_REGISTER.csv`](file:///c:/Users/LENOVO/OneDrive/Desktop/SupeRR-Selector-Season-2/docs/POST_RETENTION_AVAILABILITY_REGISTER.csv)
 
 ---
 
-## 12. Reproducibility and Verification Instructions
+## 13. Reproducibility and Verification Instructions
 
 1. **Verify V1 Immutability Manifest (39/39 Checksums):**
    ```powershell
@@ -224,15 +246,19 @@ pytest tests/model_v2 tests/model_v3 tests/model_v4 -q
    ```
    *Expected Output:* `{'checked': 39, 'mismatches': 0}`
 
-2. **Recompile the Final PDF Report:**
+2. **Recompile the Publication-Quality PDF Report:**
    ```powershell
-   python outputs/submission_final/compile_final_report.py
+   python outputs/pdf_redesign/generate_professional_report.py
    ```
 
-3. **Run the Automated PDF & Player Verification Suite:**
+3. **Verify Dashboard Headless (AppTest):**
    ```powershell
-   python outputs/submission_final/build_verification.py
+   python -c "from streamlit.testing.v1 import AppTest; at = AppTest.from_file('dashboard/app.py'); at.run(); assert not at.exception; print('Dashboard AppTest Passed!')"
    ```
 
-4. **Detailed Verification Logs:**
-   Refer to [`outputs/final_package/VERIFICATION.md`](file:///c:/Users/LENOVO/OneDrive/Desktop/SupeRR-Selector-Season-2/outputs/final_package/VERIFICATION.md) and [`outputs/final_package/REPRODUCIBILITY.md`](file:///c:/Users/LENOVO/OneDrive/Desktop/SupeRR-Selector-Season-2/outputs/final_package/REPRODUCIBILITY.md) for full delivery-by-delivery worked calculations, ANOVA tables, and audit logs.
+4. **Detailed Audit & Governance Documentation:**
+   - [`docs/PROJECT_AUDIT.md`](file:///c:/Users/LENOVO/OneDrive/Desktop/SupeRR-Selector-Season-2/docs/PROJECT_AUDIT.md) — Comprehensive repository architecture & risk audit
+   - [`docs/DATA_QUALITY_AUDIT.md`](file:///c:/Users/LENOVO/OneDrive/Desktop/SupeRR-Selector-Season-2/docs/DATA_QUALITY_AUDIT.md) — Exact delivery waterfall ledger & cricket accounting
+   - [`docs/MODEL_VALIDATION.md`](file:///c:/Users/LENOVO/OneDrive/Desktop/SupeRR-Selector-Season-2/docs/MODEL_VALIDATION.md) — Multiverse specification curve & ANOVA variance decomposition
+   - [`docs/CHANGELOG.md`](file:///c:/Users/LENOVO/OneDrive/Desktop/SupeRR-Selector-Season-2/docs/CHANGELOG.md) — Comprehensive engineering and change log
+   - [`outputs/final_package/VERIFICATION.md`](file:///c:/Users/LENOVO/OneDrive/Desktop/SupeRR-Selector-Season-2/outputs/final_package/VERIFICATION.md) — Automated player ID and numerical reconciliation

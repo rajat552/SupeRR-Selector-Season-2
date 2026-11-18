@@ -41,6 +41,10 @@ ehthumbs.db
 Desktop.ini
 .vscode/
 .idea/
+.env
+*.env
+*.pem
+*.key
 
 # Scratch & temporary inspection files
 pre_cleanup_manifest.json
@@ -70,6 +74,24 @@ out/
 # Temporary PDF rendering outputs
 *.tmp
 *.log
+
+# Workflow instructions & documentation
+[Ww]orkflow*.md
+docs/
+docs
+[Pp]roject*[Uu]nderstanding*.md
+
+# Outputs: retain final submission deliverable bundle (outputs/final_package/), ignore all other output files & folders
+outputs/*
+!outputs/final_package/
+!outputs/final_package/**
+
+# Notebooks
+notebooks/
+notebook/
+
+# Local backups & archives
+archive/
 
 
 

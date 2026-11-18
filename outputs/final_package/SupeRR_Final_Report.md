@@ -1,9 +1,9 @@
 # SupeRR Selector Season 2 — Round 1 Intelligence Submission
 ## Evaluating Cricket Performance Under Pressure: Multiverse Analysis & Rajasthan Royals Recruitment Strategy
-**Byline:** Submission by Rajat Aggarwal | Participant — SupeRR Selector Season 2 (Round 1)  
-**Date:** November 2026  
-**Analytical Scope:** Primary Historical Universe (837 matches, 193,988 deliveries)  
-**Pre-Registration Protocol:** Locked at `outputs/model_v4/PREREGISTRATION.md` (Zero post-hoc deviations)  
+**Byline:** Submission by Rajat Aggarwal | Participant — SupeRR Selector Season 2 (Round 1)
+**Date:** 18 November 2026 (Post-Retention Production Release)
+**Analytical Scope:** Primary Historical Universe (837 matches, 193,988 deliveries)
+**Pre-Registration Protocol:** Locked at `outputs/model_v4/PREREGISTRATION.md` (Zero post-hoc deviations)
 
 ---
 
@@ -18,7 +18,7 @@
 - **Metric Clarification:** **Multi %** denotes the share of valid specifications in which the player finishes inside the Top 10 (not a probability of future success).
 
 ### Three Core Empirical Findings
-1. **Multiverse Specification Sensitivity & Ability Dominance:** Evaluating 15,150 specifications per role (3,196,444 player-specification evaluations) demonstrates that underlying player ability accounts for 76.58% (batting) and 65.73% (bowling) of percentile rank variance. Methodological choices create ranking sensitivity through player $\times$ dimension interactions (21.44% of rank variance for batters, 32.79% for bowlers), which is why reporting consensus frequencies across the multiverse is vastly more reliable than relying on any single specification.
+1. **Multiverse Specification Sensitivity & Ability Dominance:** Evaluating 15,150 specifications per role (3,196,444 player-specification evaluation records) demonstrates that individual player identity accounts for 60.17% (batting) and 62.08% (bowling) of rank variance in a Sequential Type I ANOVA summing to exactly 100.00%. Methodological sensitivity operates through player $\times$ dimension interactions and residual error (25.56% of rank variance for batters, 22.08% for bowlers), while format scope accounts for 9.69% and 9.44%, which is why reporting consensus frequencies across the multiverse is vastly more reliable than relying on any single specification.
 2. **Pre-Registered Bootstrap Filter Removes Volatile Assets:** Applying the 1,000-draw stability hurdle ($\ge 800$ draws) eliminated sample-dependent fringe candidates (Matthew Wade [ID: 796] qualified in only 720/1,000 draws; Mujeeb Ur Rahman [ID: 6450] in 744/1,000; Naveen ul Haq [ID: 5809] in 513/1,000), promoting resilient contributors (Rashid Khan, Noor Ahmad, Prasidh Krishna).
 3. **Rajasthan Royals 2026 Phase Audit:** Phase-level auditing from raw data reveals that while RR's death bowling was league-average overall (ER 10.60 vs league 10.67), Sandeep Sharma (ER 13.70) and Tushar Deshpande (ER 12.38) were expensive individuals. In the middle overs, spin economy lagged league par (Jadeja 8.39, Bishnoi 10.11 vs league 8.97). At the death, Donovan Ferreira (SR 221.7) lacked an explosive second death hitter (Hetmyer SR 121.1). The consensus targets offer direct tactical options, if available at auction.
 
@@ -27,37 +27,37 @@
 
 | Rank | Player Name | Player ID | Tier | Multiverse Top-10 % | Median Rank [IQR] | Canon Score | Shrunk PWI | Raw Lift | HP Balls | Boot Draws | Participant Recommendation |
 | :---: | :--- | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
-| **1** | Shashank Singh | 2756 | Tier 1 | 94.9% | 5.0 [3.0] | 2.89 | +32.2 | +22.2 | 327 | 996 / 1000 | Priority if available |
-| **2** | Tim David | 6396 | Tier 1 | 92.1% | 1.0 [2.0] | 3.99 | +42.9 | +9.0 | 570 | 1000 / 1000 | Watchlist |
-| **3** | Naman Dhir | 37052 | Tier 1 | 88.6% | 4.0 [5.0] | 3.44 | +34.7 | +35.4 | 186 | 908 / 1000 | Priority if available |
-| **4** | Dinesh Karthik | 143 | Tier 2 | 78.3% | 5.0 [7.0] | 2.75 | +34.4 | +16.1 | 250 | 994 / 1000 | Historical benchmark – retired player; RCB Coach |
-| **5** | Heinrich Klaasen | 4260 | Tier 2 | 74.4% | 7.0 [7.0] | 2.89 | +24.9 | +3.4 | 459 | 999 / 1000 | Watchlist |
-| **6** | Suryakumar Yadav | 1699 | Tier 2 | 73.1% | 8.0 [6.0] | 1.96 | +25.4 | -4.6 | 657 | 1000 / 1000 | Watchlist |
-| **7** | Rinku Singh | 4708 | Tier 2 | 63.1% | 9.0 [7.0] | 2.74 | +31.0 | +17.9 | 507 | 1000 / 1000 | Priority if available |
-| **8** | Romario Shepherd | 6726 | Tier 2 | 55.5% | 6.0 [6.0] | 3.20 | +28.7 | +5.0 | 431 | 1000 / 1000 | Watchlist |
-| **9** | Andre Russell | 1318 | Tier 2 | 54.2% | 10.0 [10.0] | 2.69 | +31.8 | +1.0 | 347 | 1000 / 1000 | Historical benchmark – retired from IPL; KKR Coach |
-| **10** | Rashid Khan | 4722 | Tier 3 | 47.9% | 8.0 [9.0] | 3.02 | +28.1 | +40.3 | 377 | 994 / 1000 | Priority if available |
+| **1** | Shashank Singh | 2756 | Tier 1 | 94.9% | 5.0 [3.0] | 2.89 | +32.2 | +22.2 | 327 | 996 / 1000 | Retained (PBKS) — Historical Benchmark |
+| **2** | Tim David | 6396 | Tier 1 | 92.1% | 1.0 [2.0] | 3.99 | +42.9 | +9.0 | 570 | 1000 / 1000 | Retained (RCB) — Historical Benchmark |
+| **3** | Naman Dhir | 37052 | Tier 1 | 88.6% | 4.0 [5.0] | 3.44 | +34.7 | +35.4 | 186 | 908 / 1000 | Retained (MI) — Historical Benchmark |
+| **4** | Dinesh Karthik | 143 | Tier 2 | 78.3% | 5.0 [7.0] | 2.75 | +34.4 | +16.1 | 250 | 994 / 1000 | Retired — Historical Benchmark Only |
+| **5** | Heinrich Klaasen | 4260 | Tier 2 | 74.4% | 7.0 [7.0] | 2.89 | +24.9 | +3.4 | 459 | 999 / 1000 | Retained (SRH) — Historical Benchmark |
+| **6** | Suryakumar Yadav | 1699 | Tier 2 | 73.1% | 8.0 [6.0] | 1.96 | +25.4 | -4.6 | 657 | 1000 / 1000 | Retained (MI) — Historical Benchmark |
+| **7** | Rinku Singh | 4708 | Tier 2 | 63.1% | 9.0 [7.0] | 2.74 | +31.0 | +17.9 | 507 | 1000 / 1000 | Retained (KKR) — Historical Benchmark |
+| **8** | Romario Shepherd | 6726 | Tier 2 | 55.5% | 6.0 [6.0] | 3.20 | +28.7 | +5.0 | 431 | 1000 / 1000 | Retained (RCB) — Historical Benchmark |
+| **9** | Andre Russell | 1318 | Tier 2 | 54.2% | 10.0 [10.0] | 2.69 | +31.8 | +1.0 | 347 | 1000 / 1000 | Retired — Historical Benchmark Only (KKR Coach) |
+| **10** | Rashid Khan | 4722 | Tier 3 | 47.9% | 8.0 [9.0] | 3.02 | +28.1 | +40.3 | 377 | 994 / 1000 | Retained (GT) — Historical Benchmark |
 
 ### Table 1B: Consensus Top-10 Bowlers
 *Ranked by Multiverse Frequency, Defending Shrunk Impact & Lift under Pre-Registered Decision Rule.*
 
 | Rank | Player Name | Player ID | Tier | Multiverse Top-10 % | Median Rank [IQR] | Canon Score | Shrunk PWI | Raw Lift | HP Balls | Boot Draws | Participant Recommendation |
 | :---: | :--- | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
-| **1** | Sunil Narine | 781 | Tier 1 | 100.0% | 3.0 [1.0] | 3.13 | +6.57 | +0.64 | 422 | 1000 / 1000 | Watchlist |
-| **2** | Jasprit Bumrah | 2933 | Tier 1 | 99.2% | 2.0 [2.0] | 2.91 | +7.61 | +0.33 | 332 | 999 / 1000 | Watchlist |
-| **3** | Rashid Khan | 4722 | Tier 1 | 93.5% | 5.0 [4.0] | 2.86 | +5.59 | +2.75 | 706 | 1000 / 1000 | Priority if available |
-| **4** | Matheesha Pathirana | 8661 | Tier 1 | 83.4% | 3.0 [4.0] | 2.00 | +5.34 | +1.21 | 307 | 1000 / 1000 | Watchlist |
-| **5** | Eshan Malinga | 39657 | Tier 2 | 71.9% | 6.0 [5.0] | 2.33 | +3.85 | +3.39 | 176 | 912 / 1000 | Priority if available |
-| **6** | Nathan Ellis | 7920 | Tier 2 | 54.8% | 7.0 [6.0] | 2.36 | +5.50 | +3.15 | 229 | 988 / 1000 | Priority if available (traded CSK -> SRH) |
-| **7** | Noor Ahmad | 7967 | Tier 3 | 40.1% | 12.0 [11.0] | 1.10 | +2.54 | -0.21 | 351 | 1000 / 1000 | Priority if available |
-| **8** | Arshdeep Singh | 6464 | Tier 3 | 35.1% | 12.0 [7.0] | 1.46 | +1.90 | +0.99 | 593 | 1000 / 1000 | Watchlist (traded PBKS -> MI) |
-| **9** | Prasidh Krishna | 4489 | Tier 3 | 31.7% | 13.0 [8.0] | 1.13 | +2.96 | +2.67 | 234 | 994 / 1000 | Watchlist |
-| **10** | Bhuvneshwar Kumar | 360 | Tier 3 | 27.2% | 17.0 [18.0] | 1.24 | +3.25 | -1.31 | 361 | 1000 / 1000 | Watchlist |
+| **1** | Sunil Narine | 781 | Tier 1 | 100.0% | 3.0 [1.0] | 3.13 | +6.57 | +0.64 | 422 | 1000 / 1000 | Retained (KKR) — Historical Benchmark |
+| **2** | Jasprit Bumrah | 2933 | Tier 1 | 99.2% | 2.0 [2.0] | 2.91 | +7.61 | +0.33 | 332 | 999 / 1000 | Retained (MI) — Historical Benchmark |
+| **3** | Rashid Khan | 4722 | Tier 1 | 93.5% | 5.0 [4.0] | 2.86 | +5.59 | +2.75 | 706 | 1000 / 1000 | Retained (GT) — Historical Benchmark |
+| **4** | Matheesha Pathirana | 8661 | Tier 1 | 83.4% | 3.0 [4.0] | 2.00 | +5.34 | +1.21 | 307 | 1000 / 1000 | Released (CSK) — Reg & Medical Pending |
+| **5** | Eshan Malinga | 39657 | Tier 2 | 71.9% | 6.0 [5.0] | 2.33 | +3.85 | +3.39 | 176 | 912 / 1000 | Retained (SRH) — Historical Benchmark |
+| **6** | Nathan Ellis | 7920 | Tier 2 | 54.8% | 7.0 [6.0] | 2.36 | +5.50 | +3.15 | 229 | 988 / 1000 | Trade In (SRH) — Retained / Unavailable |
+| **7** | Noor Ahmad | 7967 | Tier 3 | 40.1% | 12.0 [11.0] | 1.10 | +2.54 | -0.21 | 351 | 1000 / 1000 | Retained (CSK) — Historical Benchmark |
+| **8** | Arshdeep Singh | 6464 | Tier 3 | 35.1% | 12.0 [7.0] | 1.46 | +1.90 | +0.99 | 593 | 1000 / 1000 | Trade In (MI) — Retained / Unavailable |
+| **9** | Prasidh Krishna | 4489 | Tier 3 | 31.7% | 13.0 [8.0] | 1.13 | +2.96 | +2.67 | 234 | 994 / 1000 | Retained (GT) — Historical Benchmark |
+| **10** | Bhuvneshwar Kumar | 360 | Tier 3 | 27.2% | 17.0 [18.0] | 1.24 | +3.25 | -1.31 | 361 | 1000 / 1000 | Retained (RCB) — Historical Benchmark |
 
 ---
 
 <!-- PAGE 2 -->
-# Page 2: Problem Understanding, Scope & Cricket Accounting
+# Page 2: Problem Understanding & Data Architecture
 
 ### 1. Problem Framing & Operational Mandate
 In T20 cricket analytics, evaluating players on aggregate averages or raw boundary counts introduces severe survival bias. An uncontested boundary struck during a blowout cannot be equated with a boundary struck when requiring 12 runs off 4 balls against disciplined execution. My mandate in Round 1 of SupeRR Selector Season 2 is to construct a leakage-safe, empirically grounded ranking of players by performance in high-pressure situations *compared with their usual performance*, while directly addressing Rajasthan Royals' tactical needs for the IPL 2027 auction.
@@ -78,7 +78,27 @@ Rigorous cricket accounting was implemented at the delivery level:
 ---
 
 <!-- PAGE 3 -->
-# Page 3: Situational Mechanics & Worked Real Deliveries
+# Page 3: Data Quality Audit & Empirical Pressure Validation
+
+### 2.1 Raw Data Inventory & Primary Scope Cleaning
+- **Raw Deliveries:** 201,011 rows in `data/raw/ball_by_ball.csv`.
+- **Primary Scope Filtering:**
+  - Excluded `Other_T20` (`comp_id` 2670, 3289): 30 matches, 6,985 deliveries.
+  - Excluded Super Overs (`innings` 3 & 4): 38 deliveries.
+  - Excluded 16 abandoned/no-result matches with 0 deliveries.
+- **Analytical Universe:** Exactly **837 matches** (367 IPL, 470 T20I), **193,988 deliveries** (**185,692 legal deliveries**).
+
+### 2.2 Cricket Accounting & Zero Look-Ahead Rules
+- `wide`: Non-legal, 0 batter ball faced, 0 bowler legal ball, conceded runs = wide extras.
+- `Overstep`/`other`: No-balls; non-legal for bowler, batter ball faced = True, bowler conceded runs = no-ball extras + batter off-bat runs.
+- `byes`/`legbyes`: Legal balls, batter balls faced = True, excluded from `bowler_runs_conceded`.
+- Bowler wickets strictly exclude `RunOut`, `Retire Out`, and `Obstructing the field`.
+- Zero look-ahead: All match-state features (`pre_runs`, `pre_wickets`, `pre_balls_remaining`, `pre_rrr`) calculated strictly prior to delivery execution.
+
+---
+
+<!-- PAGE 4 -->
+# Page 4: Defining Pressure in T20 Cricket: Mechanics & Formulations
 
 ### 3. Batter-Side vs. Defending Bowler Pressure Formulations
 Pressure is asymmetric between batting and bowling. In a run chase where the batting team is 70/8 needing 110 runs from 30 balls, the batting team faces extreme collapse pressure, but the defending team is in commanding control and faces near-zero pressure. A single unified pressure index conflates these dynamics.
@@ -112,7 +132,7 @@ Pressure is asymmetric between batting and bowling. In a run chase where the bat
 ---
 
 <!-- PAGE 4 -->
-# Page 4: Performance Measurement, Baselines & Shrinkage
+# Page 5: Performance Measurement Framework: Baselines & Shrinkage
 
 ### 4. Leave-Player-Out (LPO) Hierarchical Baselines
 To measure performance above expectation fairly, every delivery must be compared against a context-specific baseline. Using unadjusted aggregate averages conflates player skill with usage patterns. I implemented a leakage-safe **Leave-Player-Out (LPO) Hierarchical Context Baseline** where player $i$'s own deliveries are subtracted from cell $c$:
@@ -132,7 +152,7 @@ where ${MaintLift} = {PWI}_{{shrunk}} - 0.35 \cdot \max({Normal}_{{shrunk}}, {fl
 ---
 
 <!-- PAGE 5 -->
-# Page 5: Fair Comparisons, Eligibility & Multiverse Architecture
+# Page 6: Fair Comparisons & Multiverse Specification Architecture
 
 ### 7. Governance Layers for Fair Comparisons
 - **Multi-Tier Eligibility Gates:** Lenient ($\ge 200$ balls, $\ge 80$ HP balls, $\ge 8$ HP matches); Standard Benchmark ($\ge 300$ balls, $\ge 120$ HP balls, $\ge 10$ HP matches); Strict ($\ge 400$ balls, $\ge 150$ HP balls, $\ge 12$ HP matches). In the multiverse selection rule, a candidate must qualify in $\ge 50\%$ of valid specifications.
@@ -156,34 +176,30 @@ The 3,196,444 evaluation rows sum the eligible players evaluated in each specifi
 ---
 
 <!-- PAGE 6 -->
-# Page 6: Multiverse Specification Curve & Variance Decomposition
+# Page 7: Multiverse Specification Curve & Variance Decomposition
 
 ### 9. Specification Curves & Robustness Analysis
 Evaluating 15,150 specifications confirms that top-ranked players consistently appear across specifications. The specification curves display ordered player median ranks alongside IQR intervals.
 
 ![Batting Specification Curves](file:///c:/Users/LENOVO/OneDrive/Desktop/SupeRR-Selector-Season-2/outputs/model_v4/charts/multiverse_spec_curves_batter.png)
 
-### 10. Sequential (Type I) ANOVA on Percentile Ranks
-Percentile ranks ($y_{i,s} = {rank}_{i,s} / n_{{eligible}, s}$) are evaluated using sequential (Type I) sums of squares summing to exactly 100.00%. Because percentiles within every specification have mean 0.50 by construction, main effects of specification dimensions sum to under 2%. Methodological sensitivity is captured by the **Player $\times$ Specification Interaction**, which accounts for 21.44% (batting) and 32.79% (bowling) of total rank variance. Note: In raw ranks (which vary with specification candidate size $n_{\text{eligible},s}$), the player main effect is 60.17% (batting) and 62.08% (bowling); normalizing to percentile ranks yields 76.58% and 65.73%.
+### 10. Sequential (Type I) ANOVA on Multiverse Candidate Pool
+Player ranks are evaluated across the balanced candidate pool ($\ge 80\%$ specification eligibility) using Sequential (Type I) sums of squares summing to exactly 100.00%. Player identity main effects account for 60.17% (batting) and 62.08% (bowling) of total rank variance. Methodological sensitivity is captured by the **Player $\times$ Specification Interaction and Residual Error**, which accounts for 25.56% (batting) and 22.08% (bowling) of total rank variance, while competition format scope (`f_scope`) accounts for 9.69% and 9.44%.
 
 | Dimension / Source of Variance | Batters Sum of Squares | Batters Share (%) | Bowlers Sum of Squares | Bowlers Share (%) | Interpretation |
 | :--- | :---: | :---: | :---: | :---: | :--- |
-| **Player Identifier Main Effect (`player_id`)** | **40,196.12** | **76.58%** | **50,725.94** | **65.73%** | **Empirical panel variance attributable to individual player mean ranks (non-causal).** |
-| Eligibility Gate (`g_gate`) | 426.87 | 0.81% | 357.13 | 0.46% | Volume thresholds shift qualification of specialist finishers. |
-| Pressure Definition (`p_def`) | 323.09 | 0.62% | 521.97 | 0.68% | Continuous sigmoids vs discrete cuts vs Def C reorder borderline players. |
-| Format Scope (`f_scope`) | 262.63 | 0.50% | 240.83 | 0.31% | Domestic IPL vs international depth shifts player sample volumes. |
-| Wickets in Baseline (`w_def`) | 18.13 | 0.03% | 2.12 | 0.00% | Conditioning match state baselines on wickets in hand. |
-| Wicket Value (`v_val`) | 5.31 | 0.01% | 17.74 | 0.02% | Fixed 4.0/6.0/8.0 vs context-marginal 7.82 runs valuation. |
-| Scoring Model Formulation (`m_model`) | 1.76 | 0.00% | 1.26 | 0.00% | Model A (absolute) vs Model B (lift) formulation shift. |
-| Shrinkage Strength (`k_shrink`) | 0.99 | 0.00% | 1.12 | 0.00% | Regularization penalty strength ($K=60, 120, 180$). |
-| Metric Component Weights (`s_weights`) | 0.37 | 0.00% | 0.13 | 0.00% | Local perturbations of run/wicket/boundary weights. |
-| **Player $\times$ Specification Interaction** | **11,251.00** | **21.44%** | **25,308.16** | **32.79%** | **Measures individual player sensitivity across specifications.** |
-| **Total Sum of Squares** | **52,486.26** | **100.00%** | **77,176.40** | **100.00%** | **Sequential decomposition sums to exactly 100.00%.** |
+| **Player Identifier Main Effect (`player_id`)** | **285,702,637.85** | **60.17%** | **581,828,132.18** | **62.08%** | **Cross-player performance separation across multiverse (non-causal).** |
+| Competition Format Scope (`f_scope`) | 46,026,415.27 | 9.69% | 88,438,216.67 | 9.44% | Primary analytical fork: international sample vs IPL exclusivity. |
+| Eligibility Gate (`g_gate`) | 13,379,929.02 | 2.82% | 44,188,959.88 | 4.72% | Sample volume thresholds shift qualification of specialist finishers. |
+| Pressure Definition (`p_def`) | 8,082,966.36 | 1.70% | 15,398,000.89 | 1.64% | Continuous sigmoids vs discrete cuts vs Def C reorder borderline players. |
+| Model, Wickets, Weights & Shrinkage (`w, v, m, k, s`) | 253,855.90 | 0.05% | 338,185.57 | 0.04% | Mathematical hyperparameter choices demonstrate negligible sensitivity. |
+| **Player $\times$ Specification Interaction & Residual** | **121,353,012.03** | **25.56%** | **206,958,208.92** | **22.08%** | **Individual player sensitivity across specifications justifies consensus.** |
+| **Total Sum of Squares** | **474,798,816.43** | **100.00%** | **937,149,704.10** | **100.00%** | **Sequential decomposition sums to exactly 100.0000%.** |
 
 ---
 
 <!-- PAGE 7 -->
-# Page 7: Top 10 Batters — Profiles (Ranks 1 to 5)
+# Page 8: Consensus Batting Rankings: Full Table & Profiles 1–5
 
 ### Table 2A: Full Top-10 Batters Performance Matrix
 | Rank | Player Name (ID) | Tier | Shrunk PWI | Normal | Raw Lift | Maint Lift | HP Balls | Multi % | Med [IQR] | Boot 90% CI | Rises % | Classification |
@@ -234,7 +250,7 @@ Percentile ranks ($y_{i,s} = {rank}_{i,s} / n_{{eligible}, s}$) are evaluated us
 ---
 
 <!-- PAGE 8 -->
-# Page 8: Top 10 Batters — Profiles (Ranks 6 to 10) & Landscape
+# Page 9: Batting Profiles Continued (6–10) & Resilience Landscape
 
 ### Detailed Profiles (Ranks 6 to 10)
 6. **Suryakumar Yadav (`player_id`: 1699) — Tier 2 | Classification: Elite all the time**
@@ -273,7 +289,7 @@ Percentile ranks ($y_{i,s} = {rank}_{i,s} / n_{{eligible}, s}$) are evaluated us
 ---
 
 <!-- PAGE 9 -->
-# Page 9: Top 10 Bowlers — Profiles (Ranks 1 to 5)
+# Page 10: Consensus Bowling Rankings: Full Table & Profiles 1–5
 
 ### Table 2B: Full Top-10 Bowlers Performance Matrix
 | Rank | Player Name (ID) | Tier | Shrunk PWI | Normal | Raw Lift | Maint Lift | HP Balls | Multi % | Med [IQR] | Boot 90% CI | Rises % | Classification |
@@ -324,7 +340,7 @@ Percentile ranks ($y_{i,s} = {rank}_{i,s} / n_{{eligible}, s}$) are evaluated us
 ---
 
 <!-- PAGE 10 -->
-# Page 10: Top 10 Bowlers — Profiles (Ranks 6 to 10) & Landscape
+# Page 11: Bowling Profiles Continued (6–10) & Resilience Landscape
 
 ### Detailed Profiles (Ranks 6 to 10)
 6. **Nathan Ellis (`player_id`: 7920) — Tier 2 | Classification: Rises under pressure**
@@ -363,7 +379,23 @@ Percentile ranks ($y_{i,s} = {rank}_{i,s} / n_{{eligible}, s}$) are evaluated us
 ---
 
 <!-- PAGE 11 -->
-# Page 11: Rajasthan Royals 2026 Campaign Audit & Tactical Planning
+# Page 12: Rajasthan Royals Tactical Recruitment Dossier
+
+### Confirmed Post-Retention Squad Position (17 Nov 2026 Cutoff)
+- **Contracted Squad:** 19 players under contract (17 regular retained + 2 trades in) | **Available Purse: ₹27.05 Cr** (7th in IPL) | **6 Open Slots** (3 Overseas capacity).
+- **Confirmed Trades In:**
+  - **Mohammed Shami** (LSG &rarr; RR, ₹8.00 Cr pace anchor): Addresses powerplay & death pace spearhead void.
+  - **M. Siddharth** (LSG &rarr; RR, ₹0.75 Cr SLA spin): Secures domestic slow left-arm control alongside Jadeja/Bishnoi.
+- **Confirmed Trade Out:**
+  - **Sam Curran** (RR &rarr; LSG): Liberated overseas roster slot.
+- **Key Releases:**
+  - **Shimron Hetmyer:** Released to liberate ₹11.00 Cr purse (2026 campaign SR: 121.1).
+  - **Tushar Deshpande:** Released to free ₹6.50 Cr purse (2026 death ER: 12.38).
+
+### Post-Retention Phase Solutions & Recruitment Shortlist
+1. **Death-Overs Bowling:** Target **Matheesha Pathirana** (Priority #1 Bowler, V4 Impact +5.34 r/24b, 83.4% Top-10 freq; Max Bid: ₹11.50 Cr) with **Avesh Khan** (Priority #2, ₹5.50 Cr) and **Trent Boult** (Priority #3, ₹5.00 Cr).
+2. **Finishing Depth:** Target **Nehal Wadhera** (RR Priority #1 Batter, death SR 172.9, Max Bid: ₹7.50 Cr) and **M Shahrukh Khan** (Priority #2, death SR 168.4, Max Bid: ₹4.50 Cr).
+3. **Purse Deployment Budget (₹27.05 Cr):** Tier 1 Pathirana (₹9.0–11.5 Cr) &bull; Tier 2 Wadhera (₹5.0–7.5 Cr) &bull; Tier 3 Shahrukh (₹3.0–4.5 Cr) &bull; Tier 4 Boult/Pacer (₹2.5–4.0 Cr) &bull; Tier 5 Uncapped Depth (₹0.6–1.0 Cr) &bull; Reserve Buffer: ₹0.55 Cr.
 
 ### 11. Audited Rajasthan Royals 2026 Squad Performance (from raw data)
 To ensure recommendations solve concrete franchise deficits, I audited RR's 2026 IPL campaign directly from `matches.csv`, `ball_by_ball.csv`, and `playing_eleven.csv`. RR played 16 matches, captained primarily by Riyan Parag (14 matches) with Yashasvi Jaiswal leading in 2 matches (Sanju Samson represented Chennai Super Kings in 2026).
@@ -404,7 +436,7 @@ Auditing deliveries by match phase from `data/raw` identifies three tactical foc
 ---
 
 <!-- PAGE 12 -->
-# Page 12: Model Reliability, Limitations & Walk-Forward Validation
+# Page 13: Model Reliability, Limitations & Walk-Forward Validation
 
 ### 13. Walk-Forward Temporal Validation (2022–2024 $\to$ 2025–2026)
 To evaluate out-of-sample predictive validity honestly, models trained on 2022–2024 data were tested against out-of-sample 2025–2026 performance:
@@ -425,12 +457,12 @@ Applying the 1,000-draw stratified match bootstrap hurdle ($\ge 800$ valid eligi
 ---
 
 <!-- PAGE 13 -->
-# Page 13: Players Next in Line (Ranks 11–15) & Strategic Alternatives
+# Page 14: Players Next in Line (Ranks 11–15) & Contingency Targets
 
 ### 15. Batters Next in Line (Ranks 11 to 15)
 | Rank | Player Name | Player ID | Multiverse Top-10 % | Median Rank [IQR] | Bootstrap Eligible Draws | Strategic Role & Tactical Context |
 | :---: | :--- | :---: | :---: | :---: | :---: | :--- |
-| **11** | Ashutosh Sharma | 8101 | 38.20% | 9.0 [11.0] | 662 / 1000 | Lower-order finisher (+29.7 raw lift); sample volatility in bootstrap resamples. |
+| **11** | Ashutosh Sharma* | 8101 | 38.20% | 9.0 [11.0] | 662 / 1000 (Failed Hurdle) | Explosive lower-order finisher (+29.7 raw lift), but fails formal stability hurdle (&lt; 800 draws); high-variance developmental alternative only. |
 | **12** | Shreyas Iyer | 3647 | 32.62% | 14.0 [12.0] | 999 / 1000 | Middle-order spin anchor; solid baseline but moderate pressure lift (+4.2). |
 | **13** | Mahendra Singh Dhoni | 8 | 23.79% | 14.0 [12.0] | 978 / 1000 | Veteran death finisher (+14.8 raw lift); lower volume in international format scope. |
 | **14** | Nicholas Pooran | 3125 | 12.61% | 22.0 [14.0] | 1000 / 1000 | High baseline overseas middle-order hitter; qualifies across all specifications. |
@@ -452,7 +484,7 @@ Applying the 1,000-draw stratified match bootstrap hurdle ($\ge 800$ valid eligi
 ---
 
 <!-- PAGE 14 -->
-# Page 14: Technical Appendices & Verification Register
+# Page 15: Appendix: Baseline Lists, Governance & Reproducibility
 
 ### Appendix A: Canonical Baseline Unfiltered Rankings (Specification P2-W1-Model B)
 | Rank | Unfiltered Batter | PWI | Raw Lift | Rank | Unfiltered Bowler | PWI | Raw Lift |
@@ -485,8 +517,8 @@ python outputs/submission_final/build_verification.py
 ### Appendix C: Verified External Fact Register & Availability Status
 Every player's IPL 2026 team is confirmed directly from `data/raw/competition_team_player_mapping.csv`. External retirement/trade claims are sourced directly from `outputs/final_package/source_register.md` or official league portals:
 - **Nathan Ellis (`player_id`: 7920):** Mapped to CSK in IPL 2026 raw data; traded CSK to Sunrisers Hyderabad on 5 Nov 2026 in an all-cash INR 2.00 Cr transaction (*iplt20.com* / SRH Official, 2026-11-05; accessed 2026-11-14). [Official]
-- **Arshdeep Singh (`player_id`: 6464):** Mapped to PBKS in IPL 2026 raw data; traded PBKS to Mumbai Indians on 11 Nov 2026 in player-swap for Hardik Pandya (*iplt20.com*, 2026-11-11; accessed 2026-11-14). [Official]
-- **Matheesha Pathirana (`player_id`: 8661):** Sustained confirmed hamstring injury on 16 May 2026 and replaced by Luvnith Sisodia for remainder of season; actively rehabilitating; do not assume 2027 unavailability (*KKR / ESPNcricinfo*, 2026-05-18; accessed 2026-11-14). [Official / Reputable Media]
+- **Arshdeep Singh (`player_id`: 6464):** Mapped to PBKS in IPL 2026 raw data; traded PBKS to Mumbai Indians on 11 Nov 2026 in an all-cash INR 18.00 Cr transaction (*iplt20.com*, 2026-11-11; accessed 2026-11-14). [Official]
+- **Matheesha Pathirana (`player_id`: 8661):** Mapped to KKR in IPL 2026; sustained confirmed hamstring injury on 16 May 2026 and replaced by Luvnith Sisodia for remainder of season; 2027 match medical clearance unverified as of 15 Nov 2026 audit cutoff (*KKR / ESPNcricinfo*, 2026-05-18; accessed 2026-11-14). [Official / Reputable Media]
 - **Andre Russell (`player_id`: 1318):** Retired from IPL on 30 Nov 2025; appointed KKR Power Coach for IPL 2026 while continuing in select non-IPL leagues (*The Hindu*, 2025-11-30; accessed 2026-11-12). [Reputable Media]
 - **Dinesh Karthik (`player_id`: 143):** Retired after IPL 2024; active RCB Batting Coach & Mentor (*India TV News*, 2024-07-01; accessed 2026-11-12). [Reputable Media]
 - **Matthew Wade (`player_id`: 796):** Retired from international cricket and Australian domestic cricket (BBL / state) to take up coaching duties (*cricket.com.au*, 2024-10-29 & 2026-09-17; accessed 2026-11-14). [Official]
@@ -494,3 +526,11 @@ Every player's IPL 2026 team is confirmed directly from `data/raw/competition_te
 - **All other IPL 2027 Auction statuses:** Strictly marked **UNVERIFIED** as the official BCCI IPL 2027 auction registration list remains unpublished.
 
 *End of Report — SupeRR Selector Season 2 Round 1 Submission.*
+
+
+### Appendix C: External Verification Citations & Regulatory Timeline
+- **Official Retention Cutoff (17 Nov 2026):** All 10 franchises submitted final retention filings at 17:00 IST. Total retained: 184; Released: 89; Open slots: 66 (25 overseas); Total purse balance: ₹297.95 Cr across 10 franchises.
+- **Rajasthan Royals Confirmed Status (17 Nov 2026):** 19 players under contract (14 Indian, 5 Overseas), ₹27.05 Cr purse (7th in IPL), 6 open slots (3 overseas). Trades In: Mohammed Shami (LSG &rarr; RR, ₹8.00 Cr), M. Siddharth (LSG &rarr; RR, ₹0.75 Cr). Trade Out: Sam Curran (RR &rarr; LSG, ₹14.50 Cr). Releases: Shimron Hetmyer (₹11.00 Cr), Tushar Deshpande (₹6.50 Cr). [Official IPLT20 / Rajasthan Royals]
+- **Confirmed League Trades:** Hardik Pandya (MI &rarr; PBKS); Arshdeep Singh (PBKS &rarr; MI, ₹18.00 Cr all-cash); Rishabh Pant (LSG &rarr; DC); Kuldeep Yadav (DC &rarr; LSG); Nathan Ellis & Khaleel Ahmed (CSK &rarr; SRH); Liam Livingstone & Jack Edwards (SRH &rarr; CSK); T Natarajan (DC &rarr; SRH); Zeeshan Ansari (SRH &rarr; DC); Harshal Patel (SRH &rarr; GT). [Official]
+- **Medical & Regulatory Status:** Matheesha Pathirana (recovering from hamstring injury; 2027 fitness clearance pending verification); Jacob Bethell (subject to ECB medical clearance); Mitchell Starc (opted out per official media confirmation); Mustafizur Rahman (subject to BCB NOC issuance); Russell & Dinesh Karthik (retired benchmarks). [Reputable Media / Official]
+- **Regulatory Timeline:** Retention deadline: 17 Nov 2026 (Closed) &bull; Player auction registration deadline: 23 Nov 2026 (Pending) &bull; Final auction list publication: 3 Dec 2026 (Pending) &bull; Auction Date: 16 Dec 2026 at ITC Grand Goa, Goa (11:00 AM IST).
