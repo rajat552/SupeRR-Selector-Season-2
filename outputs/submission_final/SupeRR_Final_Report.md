@@ -1,9 +1,9 @@
 # SupeRR Selector Season 2 — Round 1 Intelligence Submission
 ## Evaluating Cricket Performance Under Pressure: Multiverse Analysis & Rajasthan Royals Recruitment Strategy
-**Byline:** Submission by Rajat Aggarwal | Participant — SupeRR Selector Season 2 (Round 1)  
-**Date:** November 2026  
-**Analytical Scope:** Primary Historical Universe (837 matches, 193,988 deliveries)  
-**Pre-Registration Protocol:** Locked at `outputs/model_v4/PREREGISTRATION.md` (Zero post-hoc deviations)  
+**Byline:** Submission by Rajat Aggarwal | Participant — SupeRR Selector Season 2 (Round 1)
+**Date:** November 2026
+**Analytical Scope:** Primary Historical Universe (837 matches, 193,988 deliveries)
+**Pre-Registration Protocol:** Locked at `outputs/model_v4/PREREGISTRATION.md` (Zero post-hoc deviations)
 
 ---
 
@@ -89,7 +89,7 @@ Pressure is asymmetric between batting and bowling. In a run chase where the bat
   In innings 2, chase urgency and boundary deficits govern leverage:
   PI_{{bat}, 2} = 0.50 S_{{rrr}} + 0.30 S_{{wkts}} + 0.20 S_{{urgency}} + {boost}_{{close}}
   Continuous weights use a logistic sigmoid centered at $x_0 = 0.425$ with slope $k = 12.5$ (scale $s = 0.08$):
-  w_k = {1}{1 + e^{-12.5(PI_k - 0.425)}} = {1}{1 + e^{-(PI_k - 0.425)/0.08}}
+  w_k = \sigma(PI_k) = \frac{1}{1 + e^{-12.5 \cdot (PI_k - 0.425)}} \equiv \frac{1}{1 + e^{-(PI_k - 0.425) / 0.08}} \quad (\text{Slope } k=12.5 \leftrightarrow \text{Scale } s=0.08, \; \text{Center } x_0=0.425)
 - **Defending Bowler Formulation:**
   In innings 1, pressure evaluates opponent onslaughts (CRR > par with $\le 3$ wickets down) and death overs (16–20 with $\le 5$ wickets down), with a collapse damper when opponents lose $\ge 6$ wickets. In innings 2, leverage peaks during balanced chases (RRR ratio 0.7–1.5 with chasing side having $\ge 4$ wickets in hand); when the chasing side loses $\ge 7$ wickets, tail-damping reduces leverage to 0.20.
 
@@ -446,6 +446,9 @@ Applying the 1,000-draw stratified match bootstrap hurdle ($\ge 800$ valid eligi
 | **13** | Mohammad Nawaz | 2490 | 24.85% | 11.0 [10.0] | 990 / 1000 | Left-arm spinner (+2.15 raw lift); derived strictly from international T20I matches. |
 | **14** | T Natarajan | 4265 | 22.40% | 18.0 [11.0] | 1000 / 1000 | Specialized Indian death bowler; strong consistency under pressure. |
 | **15** | Ravi Bishnoi | 7503 | 21.80% | 19.0 [12.0] | 1000 / 1000 | Attacking Indian leg-spinner; currently on RR roster (ER 9.88 in 2026). |
+
+> **Governance Note on Next-in-Line Ranks 11–15 vs. IPL 2027 Auction Availability:**
+> Ranks 11–15 reflect empirical Model V4 performance over the 2022–2026 data window. Crucially, multiple players in this cohort are **retained** by their franchises (e.g., Shreyas Iyer, MS Dhoni, Nicholas Pooran, Tilak Varma) or unavailable. To ensure tactical relevance, Rajasthan Royals' recruitment strategy applies post-retention screening to evaluate *only verified auction-available candidates* through our dual-ranking framework.
 
 *(Note: Abbas Afridi achieved 27.83% top-10 frequency across lenient specifications, but qualified in only 40.03% of specifications, failing the 50% candidate gate. Pakistani players have historically not participated in the IPL player auction since 2008 and 2027 auction registration/eligibility remains unconfirmed; their metrics derive strictly from international T20Is).*
 

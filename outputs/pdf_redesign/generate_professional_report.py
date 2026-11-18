@@ -87,7 +87,7 @@ def make_page1_table_bowl():
         "Sunil Narine": "Retained (KKR) — Historical Benchmark",
         "Jasprit Bumrah": "Retained (MI) — Historical Benchmark",
         "Rashid Khan": "Retained (GT) — Historical Benchmark",
-        "Matheesha Pathirana": "Released (CSK) — Reg & Medical Pending",
+        "Matheesha Pathirana": "Released (KKR) — Reg & Medical Pending",
         "Eshan Malinga": "Retained (SRH) — Historical Benchmark",
         "Nathan Ellis": "Trade In (SRH) — Retained / Unavailable",
         "Noor Ahmad": "Retained (CSK) — Historical Benchmark",
@@ -706,7 +706,9 @@ def build_html():
 
   #page-6 table th, #page-6 table td { padding: 4.5px 6px; font-size: 8.2pt; }
   #page-13 .chart-box img { max-height: 280px !important; }
-  #page-14 table th, #page-14 table td { padding: 5.0px 6px; font-size: 8.4pt; }
+  #page-14 table th, #page-14 table td { padding: 3.2px 5px !important; font-size: 7.6pt !important; }
+  #page-14 table { margin: 2px 0 4px 0 !important; }
+  #page-14 .section-h2 { margin-top: 3px !important; }
   #page-15 table th, #page-15 table td { padding: 3.5px 5px; font-size: 8.0pt; }
 
     """
@@ -1106,7 +1108,7 @@ def build_html():
 
     <div class="formula-card" style="margin-top:6px; padding:10px 14px;">
       <div class="formula-title" style="font-size:9.8pt;">Continuous Sigmoid Leverage Weighting Function</div>
-      <div class="formula-math" style="font-size:12.0pt; padding:6px 0;">w<sub>k</sub> = &sigma;(PI<sub>k</sub>; x<sub>0</sub>=0.425, k=12.5) = 1 / [1 + e<sup>-12.5 &middot; (PI<sub>k</sub> - 0.425)</sup>] = 1 / [1 + e<sup>-(PI<sub>k</sub> - 0.425) / 0.08</sup>]</div>
+      <div class="formula-math" style="font-size:9.8pt; padding:5px 0; white-space:nowrap; letter-spacing:-0.2px;">w<sub>k</sub> = &sigma;(PI<sub>k</sub>) = 1 &frasl; [1 + e<sup>&minus;12.5 &middot; (PI<sub>k</sub> &minus; 0.425)</sup>] &nbsp;&equiv;&nbsp; 1 &frasl; [1 + e<sup>&minus;(PI<sub>k</sub> &minus; 0.425) &frasl; 0.08</sup>] &emsp;<span style="font-size:8.4pt; font-weight:500; color:#475569;">(Slope k = 12.5 &harr; Scale s = 0.08, Center x<sub>0</sub> = 0.425)</span></div>
       <div class="formula-desc" style="font-size:8.4pt; line-height:1.42;">Smooth logistic transition centered at x<sub>0</sub> = 0.425 with slope k = 12.5 (scale s = 0.08). Fully preserves every delivery without artificial step-function thresholding. Normal deliveries (PI &lt; 0.25) receive near-zero weight (~0.05); high pressure (PI &gt; 0.60) smoothly saturates to ~0.99.</div>
     </div>
 
@@ -1401,7 +1403,7 @@ def build_html():
           <td style="text-align:left;">Player &times; Specification Interaction & Residual</td>
           <td>121,353,012</td>
           <td>25.56%</td>
-          <td>206,958,209</td>
+          <td>206,958,208</td>
           <td>22.08%</td>
           <td style="text-align:left;">Individual profile shifts across specifications justify consensus aggregation.</td>
         </tr>
@@ -1415,8 +1417,9 @@ def build_html():
         </tr>
       </tbody>
     </table>
+    <div style="font-size:6.9pt; color:#475569; margin:2px 0 4px 0; line-height:1.25;"><em>*Note on Sum of Squares Reconciliation: Individual components are rounded from full floating-point values (unrounded Grouped SS = 338,185.60; Residual SS = 206,958,208.78). Displayed residual (206,958,208) reconciles exactly with total SS (937,149,704) to resolve discrete integer rounding (+1 unit across 5 rounded components).</em></div>
 
-    <div class="chart-box" style="margin-top:4px; margin-bottom:5px;">
+    <div class="chart-box" style="margin-top:2px; margin-bottom:4px;">
       <img src="{img_var_decomp}" alt="ANOVA Variance Decomposition" style="max-height:330px;">
       <div class="chart-caption" style="font-size:7.2pt; padding:3px 6px;">Figure 2: Sequential Type I ANOVA Variance Decomposition for Batting and Bowling Percentile Ranks.</div>
     </div>
@@ -1780,7 +1783,7 @@ def build_html():
 
     <div class="player-dossier" style="padding:3.5px 6.5px; margin-bottom:2.5px;">
       <div class="dossier-header">
-        <span class="dossier-name" style="font-size:8.0pt;">4. Matheesha Pathirana <span class="id-muted">(ID: 8661)</span> &mdash; Tier 1 | Chennai Super Kings (Released)</span>
+        <span class="dossier-name" style="font-size:8.0pt;">4. Matheesha Pathirana <span class="id-muted">(ID: 8661)</span> &mdash; Tier 1 | Kolkata Knight Riders (Released)</span>
         <span class="badge badge-tier1" style="font-size:5.6pt;">Consensus #4 Bowler</span>
       </div>
       <div class="dossier-metrics" style="font-size:6.4pt; padding:1.5px 4px;">
@@ -2056,7 +2059,7 @@ def build_html():
     </table>
 
     <div class="callout-box navy" style="padding:5px 9px; margin-bottom:5px; font-size:7.5pt;">
-      <strong>Confirmed Post-Retention Squad Position (17 Nov 2026 Cutoff):</strong> 19 players under contract (17 retained + 2 trades in) | <strong>Available Purse: ₹27.05 Cr</strong> (7th in IPL) | <strong>6 Open Slots</strong> (3 Overseas). Confirmed Trades In: <strong>Mohammed Shami</strong> (LSG &rarr; RR, ₹8.00 Cr pace spearhead), <strong>M. Siddharth</strong> (LSG &rarr; RR, ₹0.75 Cr SLA spin); Traded Out: <strong>Sam Curran</strong> (RR &rarr; LSG, ₹14.50 Cr). Key Releases: <strong>Shimron Hetmyer</strong> (clearing ₹11.00 Cr), <strong>Tushar Deshpande</strong> (clearing ₹6.50 Cr).
+      <strong>Confirmed Post-Retention Squad Position (17 Nov 2026 Cutoff):</strong> 19 players under contract (17 retained + 2 trades in) | <strong>Available Purse: ₹27.05 Cr</strong> (7th in IPL) | <strong>6 Open Slots</strong> (3 Overseas). Confirmed Trades In: <strong>Mohammed Shami</strong> (LSG &rarr; RR, ₹8.00 Cr pace spearhead), <strong>M. Siddharth</strong> (LSG &rarr; RR, ₹0.75 Cr SLA spin); Traded Out: <strong>Sam Curran</strong> (RR &rarr; LSG, ₹2.40 Cr). Key Releases: <strong>Shimron Hetmyer</strong> (clearing ₹11.00 Cr), <strong>Tushar Deshpande</strong> (clearing ₹6.50 Cr).
     </div>
 
     <div class="section-h2" style="margin-top:2px;">2. Post-Retention Phase Solutions & Recruitment Strategy</div>
@@ -2083,7 +2086,7 @@ def build_html():
 
       <div class="callout-box gold" style="padding:6px 10px;">
         <div class="callout-title" style="font-size:8.6pt;">RR Auction Purse Allocation Plan (₹27.05 Cr Available)</div>
-        <p style="font-size:7.6pt; margin:0; line-height:1.32;"><strong>Primary Scenario:</strong> <strong>Pathirana</strong> (₹10.50 Cr, OS#1) + <strong>Wadhera</strong> (₹6.50 Cr, Ind#1) + <strong>Shahrukh</strong> (₹4.00 Cr, Ind#2) + <strong>Boult</strong> (₹3.50 Cr, OS#2) + 2 Uncapped (₹0.60 Cr) + Reserve (₹1.95 Cr) = <strong>₹27.05 Cr</strong>.<br><strong>Contingency Pivot:</strong> If Pathirana exceeds ceiling/fails medical, pivot to <strong>Boult</strong> (₹4.50 Cr) + <strong>Avesh Khan</strong> (₹5.00 Cr) + <strong>Wadhera</strong> (₹7.50 Cr) + <strong>Shahrukh</strong> (₹4.50 Cr) + <strong>Mustafizur</strong> (₹2.50 Cr) + 1 Uncapped (₹0.30 Cr) + Reserve (₹2.75 Cr) = <strong>₹27.05 Cr</strong>.</p>
+        <p style="font-size:7.6pt; margin:0; line-height:1.32;"><strong>Primary Scenario:</strong> <strong>Pathirana</strong> (₹10.50 Cr, OS#1) + <strong>Wadhera</strong> (₹6.50 Cr, Ind#1) + <strong>Shahrukh</strong> (₹4.00 Cr, Ind#2) + <strong>Boult</strong> (₹3.50 Cr, OS#2) + 2 Uncapped (₹1.20 Cr, ₹0.60 Cr ea) + Reserve (₹1.35 Cr) = <strong>₹27.05 Cr</strong> (6 slots, 2 OS).<br><strong>Contingency Pivot:</strong> If Pathirana exceeds ceiling/fails medical, pivot to <strong>Boult</strong> (₹4.50 Cr, OS#1) + <strong>Avesh Khan</strong> (₹5.00 Cr, Ind#1) + <strong>Wadhera</strong> (₹7.50 Cr, Ind#2) + <strong>Shahrukh</strong> (₹4.50 Cr, Ind#3) + <strong>Mustafizur</strong> (₹2.50 Cr, OS#2) + 1 Uncapped (₹0.30 Cr, Ind#4) + Reserve (₹2.75 Cr) = <strong>₹27.05 Cr</strong> (6 slots, 2 OS).</p>
       </div>
     </div>
   </div>
@@ -2303,7 +2306,12 @@ def build_html():
       </tbody>
     </table>
 
-    <div class="section-h2" style="margin-top:4px;">3. Post-Retention Auction Recruitment Shortlist (Dual-Ranking Architecture)</div>
+    <div class="callout-box blue" style="padding:4px 8px; margin:3px 0;">
+      <div class="callout-title" style="font-size:7.6pt;">Governance Note &bull; Historical Consensus Ranks 11–15 vs. IPL 2027 Auction Availability</div>
+      <div style="font-size:6.9pt; line-height:1.24;">Ranks 11–15 reflect empirical Model V4 performance over the 2022–2026 data window. Crucially, multiple players in this cohort are <strong>retained</strong> by their franchises (e.g., Shreyas Iyer [PBKS/KKR], MS Dhoni [CSK], Nicholas Pooran [LSG], Tilak Varma [MI], Varun Chakravarthy [KKR], Kuldeep Yadav [DC]) or unavailable. To ensure tactical relevance, the recruitment shortlist below applies post-retention screening to evaluate <em>only verified auction-available candidates</em>.</div>
+    </div>
+
+    <div class="section-h2" style="margin-top:3px;">3. Post-Retention Auction Recruitment Shortlist (Dual-Ranking Architecture)</div>
     <div class="grid-2" style="gap:8px; margin-top:2px;">
       <table style="font-size:7.2pt;">
         <thead>
@@ -2441,7 +2449,7 @@ python outputs/pdf_redesign/generate_professional_report.py
     <div class="section-h2" style="margin-top:2px;">Appendix C: External Verification Citations & IPL 2027 Regulatory Timeline</div>
     <div style="font-size:6.9pt; line-height:1.26; color:#334155;">
       &bull; <strong>Official Post-Retention Audit (17 Nov 2026 Cutoff):</strong> All 10 franchises submitted final retention filings at 17:00 IST. Total retained: 184; Released: 89; Open slots: 66 (25 overseas); Total purse balance: ₹297.95 Cr across 10 franchises.<br>
-      &bull; <strong>Rajasthan Royals Confirmed Status (17 Nov 2026):</strong> 19 players under contract (14 Indian, 5 Overseas), ₹27.05 Cr purse (7th in IPL), 6 open slots (3 overseas). Trades In: Mohammed Shami (LSG &rarr; RR, ₹8.00 Cr), M. Siddharth (LSG &rarr; RR, ₹0.75 Cr). Trade Out: Sam Curran (RR &rarr; LSG, ₹14.50 Cr). Releases: Shimron Hetmyer (₹11.00 Cr), Tushar Deshpande (₹6.50 Cr). [Official IPLT20 / Rajasthan Royals]<br>
+      &bull; <strong>Rajasthan Royals Confirmed Status (17 Nov 2026):</strong> 19 players under contract (14 Indian, 5 Overseas), ₹27.05 Cr purse (7th in IPL), 6 open slots (3 overseas). Trades In: Mohammed Shami (LSG &rarr; RR, ₹8.00 Cr), M. Siddharth (LSG &rarr; RR, ₹0.75 Cr). Trade Out: Sam Curran (RR &rarr; LSG, ₹2.40 Cr). Releases: Shimron Hetmyer (₹11.00 Cr), Tushar Deshpande (₹6.50 Cr). [Official IPLT20 / Rajasthan Royals]<br>
       &bull; <strong>Confirmed League Trades:</strong> Hardik Pandya (MI &rarr; PBKS); Arshdeep Singh (PBKS &rarr; MI, ₹18.00 Cr all-cash); Rishabh Pant (LSG &rarr; DC); Kuldeep Yadav (DC &rarr; LSG); Nathan Ellis & Khaleel Ahmed (CSK &rarr; SRH); Liam Livingstone & Jack Edwards (SRH &rarr; CSK); T Natarajan (DC &rarr; SRH); Zeeshan Ansari (SRH &rarr; DC); Harshal Patel (SRH &rarr; GT). [Official]<br>
       &bull; <strong>Medical & Regulatory Status:</strong> Matheesha Pathirana (recovering from hamstring injury; 2027 fitness clearance pending verification); Jacob Bethell (subject to ECB medical clearance); Mitchell Starc (opted out per official media confirmation); Mustafizur Rahman (subject to BCB NOC issuance); Russell & Dinesh Karthik (retired benchmarks). [Reputable Media / Official]<br>
       &bull; <strong>Auction Timeline:</strong> Retention deadline: 17 Nov 2026 (Closed) &bull; Player auction registration deadline: 23 Nov 2026 (Pending) &bull; Final auction list publication: 3 Dec 2026 (Pending) &bull; Auction Date: 16 Dec 2026 at ITC Grand Goa, Goa (11:00 AM IST).

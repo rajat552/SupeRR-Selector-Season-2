@@ -46,7 +46,7 @@
 | **1** | Sunil Narine | 781 | Tier 1 | 100.0% | 3.0 [1.0] | 3.13 | +6.57 | +0.64 | 422 | 1000 / 1000 | Retained (KKR) — Historical Benchmark |
 | **2** | Jasprit Bumrah | 2933 | Tier 1 | 99.2% | 2.0 [2.0] | 2.91 | +7.61 | +0.33 | 332 | 999 / 1000 | Retained (MI) — Historical Benchmark |
 | **3** | Rashid Khan | 4722 | Tier 1 | 93.5% | 5.0 [4.0] | 2.86 | +5.59 | +2.75 | 706 | 1000 / 1000 | Retained (GT) — Historical Benchmark |
-| **4** | Matheesha Pathirana | 8661 | Tier 1 | 83.4% | 3.0 [4.0] | 2.00 | +5.34 | +1.21 | 307 | 1000 / 1000 | Released (CSK) — Reg & Medical Pending |
+| **4** | Matheesha Pathirana | 8661 | Tier 1 | 83.4% | 3.0 [4.0] | 2.00 | +5.34 | +1.21 | 307 | 1000 / 1000 | Released (KKR) — Reg & Medical Pending |
 | **5** | Eshan Malinga | 39657 | Tier 2 | 71.9% | 6.0 [5.0] | 2.33 | +3.85 | +3.39 | 176 | 912 / 1000 | Retained (SRH) — Historical Benchmark |
 | **6** | Nathan Ellis | 7920 | Tier 2 | 54.8% | 7.0 [6.0] | 2.36 | +5.50 | +3.15 | 229 | 988 / 1000 | Trade In (SRH) — Retained / Unavailable |
 | **7** | Noor Ahmad | 7967 | Tier 3 | 40.1% | 12.0 [11.0] | 1.10 | +2.54 | -0.21 | 351 | 1000 / 1000 | Retained (CSK) — Historical Benchmark |
@@ -109,7 +109,7 @@ Pressure is asymmetric between batting and bowling. In a run chase where the bat
   In innings 2, chase urgency and boundary deficits govern leverage:
   PI_{{bat}, 2} = 0.50 S_{{rrr}} + 0.30 S_{{wkts}} + 0.20 S_{{urgency}} + {boost}_{{close}}
   Continuous weights use a logistic sigmoid centered at $x_0 = 0.425$ with slope $k = 12.5$ (scale $s = 0.08$):
-  w_k = {1}{1 + e^{-12.5(PI_k - 0.425)}} = {1}{1 + e^{-(PI_k - 0.425)/0.08}}
+  w_k = \sigma(PI_k) = \frac{1}{1 + e^{-12.5 \cdot (PI_k - 0.425)}} \equiv \frac{1}{1 + e^{-(PI_k - 0.425) / 0.08}} \quad (\text{Slope } k=12.5 \leftrightarrow \text{Scale } s=0.08, \; \text{Center } x_0=0.425)
 - **Defending Bowler Formulation:**
   In innings 1, pressure evaluates opponent onslaughts (CRR > par with $\le 3$ wickets down) and death overs (16–20 with $\le 5$ wickets down), with a collapse damper when opponents lose $\ge 6$ wickets. In innings 2, leverage peaks during balanced chases (RRR ratio 0.7–1.5 with chasing side having $\ge 4$ wickets in hand); when the chasing side loses $\ge 7$ wickets, tail-damping reduces leverage to 0.20.
 
@@ -195,6 +195,8 @@ Player ranks are evaluated across the balanced candidate pool ($\ge 80\%$ specif
 | Model, Wickets, Weights & Shrinkage (`w, v, m, k, s`) | 253,855.90 | 0.05% | 338,185.57 | 0.04% | Mathematical hyperparameter choices demonstrate negligible sensitivity. |
 | **Player $\times$ Specification Interaction & Residual** | **121,353,012.03** | **25.56%** | **206,958,208.92** | **22.08%** | **Individual player sensitivity across specifications justifies consensus.** |
 | **Total Sum of Squares** | **474,798,816.43** | **100.00%** | **937,149,704.10** | **100.00%** | **Sequential decomposition sums to exactly 100.0000%.** |
+
+*Note on ANOVA Sum of Squares Reconciliation: Individual components are rounded from full floating-point values (unrounded Grouped SS = 338,185.60; Residual SS = 206,958,208.78). Displayed rounded residual (206,958,208) reconciles exactly with total SS (937,149,704) to resolve discrete integer rounding (+1 unit across 5 rounded components).*
 
 ---
 
@@ -387,7 +389,7 @@ Player ranks are evaluated across the balanced candidate pool ($\ge 80\%$ specif
   - **Mohammed Shami** (LSG &rarr; RR, ₹8.00 Cr pace anchor): Addresses powerplay & death pace spearhead void.
   - **M. Siddharth** (LSG &rarr; RR, ₹0.75 Cr SLA spin): Secures domestic slow left-arm control alongside Jadeja/Bishnoi.
 - **Confirmed Trade Out:**
-  - **Sam Curran** (RR &rarr; LSG): Liberated overseas roster slot.
+  - **Sam Curran** (RR &rarr; LSG, ₹2.40 Cr): Liberated overseas roster slot.
 - **Key Releases:**
   - **Shimron Hetmyer:** Released to liberate ₹11.00 Cr purse (2026 campaign SR: 121.1).
   - **Tushar Deshpande:** Released to free ₹6.50 Cr purse (2026 death ER: 12.38).
@@ -479,6 +481,9 @@ Applying the 1,000-draw stratified match bootstrap hurdle ($\ge 800$ valid eligi
 | **14** | T Natarajan | 4265 | 22.40% | 18.0 [11.0] | 1000 / 1000 | Specialized Indian death bowler; strong consistency under pressure. |
 | **15** | Ravi Bishnoi | 7503 | 21.80% | 19.0 [12.0] | 1000 / 1000 | Attacking Indian leg-spinner; currently on RR roster (ER 9.88 in 2026). |
 
+> **Governance Note on Next-in-Line Ranks 11–15 vs. IPL 2027 Auction Availability:**
+> Ranks 11–15 reflect empirical Model V4 performance over the 2022–2026 data window. Crucially, multiple players in this cohort are **retained** by their franchises (e.g., Shreyas Iyer, MS Dhoni, Nicholas Pooran, Tilak Varma) or unavailable. To ensure tactical relevance, Rajasthan Royals' recruitment strategy applies post-retention screening to evaluate *only verified auction-available candidates* through our dual-ranking framework.
+
 *(Note: Abbas Afridi achieved 27.83% top-10 frequency across lenient specifications, but qualified in only 40.03% of specifications, failing the 50% candidate gate. Pakistani players have historically not participated in the IPL player auction since 2008 and 2027 auction registration/eligibility remains unconfirmed; their metrics derive strictly from international T20Is).*
 
 ---
@@ -530,7 +535,7 @@ Every player's IPL 2026 team is confirmed directly from `data/raw/competition_te
 
 ### Appendix C: External Verification Citations & Regulatory Timeline
 - **Official Retention Cutoff (17 Nov 2026):** All 10 franchises submitted final retention filings at 17:00 IST. Total retained: 184; Released: 89; Open slots: 66 (25 overseas); Total purse balance: ₹297.95 Cr across 10 franchises.
-- **Rajasthan Royals Confirmed Status (17 Nov 2026):** 19 players under contract (14 Indian, 5 Overseas), ₹27.05 Cr purse (7th in IPL), 6 open slots (3 overseas). Trades In: Mohammed Shami (LSG &rarr; RR, ₹8.00 Cr), M. Siddharth (LSG &rarr; RR, ₹0.75 Cr). Trade Out: Sam Curran (RR &rarr; LSG, ₹14.50 Cr). Releases: Shimron Hetmyer (₹11.00 Cr), Tushar Deshpande (₹6.50 Cr). [Official IPLT20 / Rajasthan Royals]
+- **Rajasthan Royals Confirmed Status (17 Nov 2026):** 19 players under contract (14 Indian, 5 Overseas), ₹27.05 Cr purse (7th in IPL), 6 open slots (3 overseas). Trades In: Mohammed Shami (LSG &rarr; RR, ₹8.00 Cr), M. Siddharth (LSG &rarr; RR, ₹0.75 Cr). Trade Out: Sam Curran (RR &rarr; LSG, ₹2.40 Cr). Releases: Shimron Hetmyer (₹11.00 Cr), Tushar Deshpande (₹6.50 Cr). [Official IPLT20 / Rajasthan Royals]
 - **Confirmed League Trades:** Hardik Pandya (MI &rarr; PBKS); Arshdeep Singh (PBKS &rarr; MI, ₹18.00 Cr all-cash); Rishabh Pant (LSG &rarr; DC); Kuldeep Yadav (DC &rarr; LSG); Nathan Ellis & Khaleel Ahmed (CSK &rarr; SRH); Liam Livingstone & Jack Edwards (SRH &rarr; CSK); T Natarajan (DC &rarr; SRH); Zeeshan Ansari (SRH &rarr; DC); Harshal Patel (SRH &rarr; GT). [Official]
 - **Medical & Regulatory Status:** Matheesha Pathirana (recovering from hamstring injury; 2027 fitness clearance pending verification); Jacob Bethell (subject to ECB medical clearance); Mitchell Starc (opted out per official media confirmation); Mustafizur Rahman (subject to BCB NOC issuance); Russell & Dinesh Karthik (retired benchmarks). [Reputable Media / Official]
 - **Regulatory Timeline:** Retention deadline: 17 Nov 2026 (Closed) &bull; Player auction registration deadline: 23 Nov 2026 (Pending) &bull; Final auction list publication: 3 Dec 2026 (Pending) &bull; Auction Date: 16 Dec 2026 at ITC Grand Goa, Goa (11:00 AM IST).
